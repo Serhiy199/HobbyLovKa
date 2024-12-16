@@ -1,0 +1,14 @@
+.navigation {
+    display: inline-flex;
+    gap: 32px;
+    margin-left: 450px;
+}
+
+.link {
+    color: #101828;
+    font-weight: 500;
+}
+
+.isActive {
+    color: #d84343;
+}

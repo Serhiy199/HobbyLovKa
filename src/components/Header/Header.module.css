@@ -1,0 +1,14 @@
+.head {
+    padding: 24px 64px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dadde1;
+}
+
+.link {
+    font-weight: 800;
+    color: #101828;
+}
+
+.logo {
+    color: #475467;
+}
