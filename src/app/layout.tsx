@@ -1,8 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from '../components/Header/Header';
+import Header from '../components/header/header';
 
 const interSans = Inter({
   subsets: ['latin'],
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${interSans.className}`}>
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

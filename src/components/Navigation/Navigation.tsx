@@ -1,9 +1,8 @@
-// import { NavLink } from 'react-router-dom';
 'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navigation, link, isActive } from './Navigation.module.css';
+import { navigation, link, isActive } from './navigation.module.css';
 import clsx from 'clsx';
 
 export default function Navigation() {
@@ -14,7 +13,7 @@ export default function Navigation() {
       <Link href="/" className={clsx(link, pathname === '/' && isActive)}>
         Home
       </Link>
-      <Link href="/campers" className={clsx(link, pathname === '/campers' && isActive)}>
+      <Link href="/catalog" className={clsx(link, pathname === '/catalog' && isActive)}>
         Catalog
       </Link>
     </nav>
