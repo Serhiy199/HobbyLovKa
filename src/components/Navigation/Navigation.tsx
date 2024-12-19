@@ -2,18 +2,18 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navigation, link, isActive } from './navigation.module.css';
+import css from './navigation.module.css';
 import clsx from 'clsx';
 
 export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className={navigation}>
-      <Link href="/" className={clsx(link, pathname === '/' && isActive)}>
+    <nav className={css.navigation}>
+      <Link href="/" className={clsx(css.link, pathname === '/' && css.isActive)}>
         Home
       </Link>
-      <Link href="/catalog" className={clsx(link, pathname === '/catalog' && isActive)}>
+      <Link href="/catalog" className={clsx(css.link, pathname === '/catalog' && css.isActive)}>
         Catalog
       </Link>
     </nav>
