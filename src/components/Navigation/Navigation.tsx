@@ -6,7 +6,7 @@ import css from './navigation.module.css';
 import clsx from 'clsx';
 
 export default function Navigation() {
-  const pathname = usePathname();
+  const pathname: string = usePathname();
 
   return (
     <nav className={css.navigation}>
