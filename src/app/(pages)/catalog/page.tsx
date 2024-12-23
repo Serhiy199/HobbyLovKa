@@ -8,8 +8,8 @@ export default async function Catalog() {
 
     return (
         <ul className={css.catalog}>
-            {items.map((list: CatalogProps): React.ReactNode => {
-                return <BagsList key={list.id} {...list} />;
+            {items.map((list: CatalogProps, index: number): React.ReactNode => {
+                return <BagsList key={index} {...list} />;
             })}
         </ul>
     );

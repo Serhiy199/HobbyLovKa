@@ -1,7 +1,7 @@
 // import { Link, useLocation } from 'react-router-dom';тзь кгт вум
 import React from 'react';
 
-// import { IoMdHeartEmpty } from 'react-icons/io';
+import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
@@ -50,21 +50,26 @@ export default function CampersList({
                 className={css.img}
                 src={galleryImage ? `${galleryImage}` : defaultImg}
                 alt="poster"
+                priority={true}
             />
             <div className={css.info}>
                 <div className={css.title}>
                     <h2 className={css.name}>{name}</h2>
                     <div className={css.infoPrice}>
                         <h2 className={css.price}>€ {price}.00</h2>
-                        {/* <button className={buttonLike}>
-                <IoMdHeartEmpty className={iconLike} />
-              </button> */}
+                        <button
+                            type="button"
+                            aria-label="Додати в улюблені"
+                            className={css.buttonLike}
+                        >
+                            <IoMdHeartEmpty className={css.iconLike} />
+                        </button>
                     </div>
                 </div>
                 {/* <InfoLocation camper={camper} /> */}
                 <p className={css.textEllipsis}>{description}</p>
                 <div></div>
-                <Link href={`/campers/${id}`}> {<Button>Show more</Button>}</Link>
+                <Link href={`/campers/${id}`}> {<Button>Переглянути зараз</Button>}</Link>
             </div>
         </li>
     );
