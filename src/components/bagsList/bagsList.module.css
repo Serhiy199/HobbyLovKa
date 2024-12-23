@@ -11,8 +11,6 @@
 
 .img {
     display: block;
-    height: 320px;
-    width: 292px;
     object-fit: cover;
     border-radius: 10px;
 }

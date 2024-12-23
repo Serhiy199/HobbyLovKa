@@ -1,15 +1,16 @@
+import React from 'react';
 import css from './page.module.css';
 import BagsList from '../../../components/bagsList/bagsList';
-import {  getCatalog, dataProps } from '../../../lib/api';
-
+import { getCatalog, dataProps, CatalogProps } from '../../../lib/api';
 
 export default async function Catalog() {
-    const data :dataProps = await getCatalog();
+    const { items }: dataProps = await getCatalog();
 
     return (
-        <div className={css.catalog}>
-
-            <BagsList bagsData={data} />
-        </div>
+        <ul className={css.catalog}>
+            {items.map((list: CatalogProps): React.ReactNode => {
+                return <BagsList key={list.id} {...list} />;
+            })}
+        </ul>
     );
 }
