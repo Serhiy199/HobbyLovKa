@@ -43,10 +43,14 @@ export interface dataProps {
     items: CatalogProps[];
 }
 
-// const buildUrl = (...paths: string[]) =>
-//     `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
+const buildUrl = (...paths: string[]) =>
+    `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/${paths.join('/')}`;
+// const ur = (...paths: string[]) => `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/${paths.join('/')}`;
 
-const buildUrl: string = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
+// const uur = ur('campers', '2');
+// console.log(uur);
+
+// const buildUrl: string = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
 
 // enum API {buildUrl = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io'}
 
@@ -63,5 +67,9 @@ const sendRequest = async <T>(url: string, init?: RequestInit): Promise<T> => {
 };
 
 export const getCatalog = (init?: RequestInit): Promise<dataProps> => {
-    return sendRequest<dataProps>(`${buildUrl}/campers`, init);
+    return sendRequest<dataProps>(buildUrl('campers'), init);
+};
+
+export const getBagDetailInfo = (id: string, init?: RequestInit) => {
+    return sendRequest(buildUrl('campers', id), init);
 };
