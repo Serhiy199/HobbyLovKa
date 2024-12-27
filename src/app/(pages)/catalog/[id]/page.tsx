@@ -6,22 +6,21 @@ import { useState, useEffect } from 'react';
 
 import css from './page.module.css';
 
-export default function Page({ params }: { params: Promise<{ id: string }> }) {
+export default function Page({ params }: { params: Promise<{ id: string }> }): React.ReactNode {
     const { id } = use(params);
 
-    const [bagData, setBagData] = useState<CatalogProps>({});
+    const [bagData, setBagData] = useState<Partial<CatalogProps>>({});
 
     useEffect(() => {
-        async function getBag() {
+        async function getBagInfo() {
             if (!id) return;
 
-            const data = await getBagDetailInfo(id);
+            const data: CatalogProps = await getBagDetailInfo(id);
 
             setBagData(data);
         }
-        getBag();
+        getBagInfo();
     }, [id]);
-    console.log(bagData);
 
     return (
         <div className={css.container}>

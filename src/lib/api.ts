@@ -10,7 +10,6 @@ type ReviewerProps = {
 };
 
 export interface CatalogProps {
-    // [key: string]: boolean | string | number | ReviewerProps[] | GalleryProps[];
     AC: boolean;
     TV: boolean;
     bathroom: boolean;
