@@ -1,0 +1,53 @@
+.container {
+    margin-top: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+    padding-bottom: 80px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.link {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.ratingCamper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.ratingText {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.iconStar {
+    width: 16px;
+    height: 16px;
+    fill: #ffc531;
+}
+
+.iconLocation {
+    width: 16px;
+    height: 16px;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 16px;
+}
+
+.text {
+    color: #475467;
+    margin-top: 28px;
+}

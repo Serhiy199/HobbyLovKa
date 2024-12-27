@@ -69,7 +69,7 @@ export default function CampersList({
                 {/* <InfoLocation camper={camper} /> */}
                 <p className={css.textEllipsis}>{description}</p>
                 <div></div>
-                <Link href={`/campers/${id}`}> {<Button>Переглянути зараз</Button>}</Link>
+                <Link href={`/catalog/${id}`}> {<Button>Переглянути зараз</Button>}</Link>
             </div>
         </li>
     );

@@ -45,17 +45,6 @@ export interface dataProps {
 
 const buildUrl = (...paths: string[]) =>
     `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/${paths.join('/')}`;
-// const ur = (...paths: string[]) => `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/${paths.join('/')}`;
-
-// const uur = ur('campers', '2');
-// console.log(uur);
-
-// const buildUrl: string = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
-
-// enum API {buildUrl = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io'}
-
-// const stringifyQueryParams = (params: Record<string, string>) =>
-//   new URLSearchParams(params).toString();
 
 const sendRequest = async <T>(url: string, init?: RequestInit): Promise<T> => {
     const res: Response = await fetch(url, init);
@@ -70,6 +59,6 @@ export const getCatalog = (init?: RequestInit): Promise<dataProps> => {
     return sendRequest<dataProps>(buildUrl('campers'), init);
 };
 
-export const getBagDetailInfo = (id: string, init?: RequestInit) => {
-    return sendRequest(buildUrl('campers', id), init);
+export const getBagDetailInfo = (id: string, init?: RequestInit): Promise<CatalogProps> => {
+    return sendRequest<CatalogProps>(buildUrl('campers', id), init);
 };

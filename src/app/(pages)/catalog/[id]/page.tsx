@@ -1,40 +1,46 @@
 'use client';
-
-import React from 'react';
-import { getBagDetailInfo } from '../../../../lib/api';
+import Link from 'next/link';
+import { use } from 'react';
+import { getBagDetailInfo, CatalogProps } from '../../../../lib/api';
 import { useState, useEffect } from 'react';
-export interface PageProps {
-    params: { id: string };
-}
 
-export default function Page({ params }: PageProps) {
-    console.log(params);
+import css from './page.module.css';
 
-    const id = params.id;
-    // console.log(id);
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = use(params);
 
-    // const [bagData, setBagData] = useState([]);
+    const [bagData, setBagData] = useState<CatalogProps>({});
 
-    // useEffect(() => {
-    //     async function getCamper() {
-    //         if (!id) return;
+    useEffect(() => {
+        async function getBag() {
+            if (!id) return;
 
-    //         const res: Response = await getBagDetailInfo(id);
-    //         const data = await res.json();
+            const data = await getBagDetailInfo(id);
 
-    //         setBagData(data);
-
-    //         // setMovieGenres(data.genres);
-    //     }
-    //     getCamper();
-    // }, [id]);
-    // console.log(bagData);
+            setBagData(data);
+        }
+        getBag();
+    }, [id]);
+    console.log(bagData);
 
     return (
-        <>
-            <div>
-                <p>{`Information about company (${id})`}</p>
-            </div>
-        </>
+        <div className={css.container}>
+            <section>
+                <h2 className={css.name}>{bagData.name}</h2>
+                {/* <InfoLocation camper={bagData} /> */}
+                <h2 className={css.price}>€ {bagData.price}.00</h2>
+            </section>
+            <section>
+                <p className={css.text}>{bagData.description}</p>
+            </section>
+            {/* <section>
+                <Link className={css.link} href={'features'}>
+                    Features
+                </Link>
+                <Link className={css.link} href={'reviews'}>
+                    Reviews
+                </Link>
+            </section> */}
+        </div>
     );
 }
