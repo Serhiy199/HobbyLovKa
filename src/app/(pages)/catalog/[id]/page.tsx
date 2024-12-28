@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { use } from 'react';
 import { getBagDetailInfo, CatalogProps } from '../../../../lib/api';
 import { useState, useEffect } from 'react';
+import InfoLocation from '../../../../components/InfoLocation/InfoLocation';
 
 import css from './page.module.css';
 
@@ -26,7 +27,7 @@ export default function Page({ params }: { params: Promise<{ id: string }> }): R
         <div className={css.container}>
             <section>
                 <h2 className={css.name}>{bagData.name}</h2>
-                {/* <InfoLocation camper={bagData} /> */}
+                <InfoLocation bag={bagData} />
                 <h2 className={css.price}>€ {bagData.price}.00</h2>
             </section>
             <section>

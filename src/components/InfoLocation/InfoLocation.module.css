@@ -1,0 +1,23 @@
+.ratingCamper {
+    display: flex;
+    gap: 16px;
+    /* margin-bottom: 24px; */
+    align-items: center;
+}
+
+.ratingText {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.iconStar {
+    width: 16px;
+    height: 16px;
+    fill: #ffc531;
+}
+
+.iconLocation {
+    width: 16px;
+    height: 16px;
+}
