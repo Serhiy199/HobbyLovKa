@@ -3,7 +3,7 @@ type GalleryProps = {
     original: string;
 };
 
-type ReviewerProps = {
+export type ReviewerProps = {
     reviewer_name: string;
     reviewer_rating: number;
     comment: string;

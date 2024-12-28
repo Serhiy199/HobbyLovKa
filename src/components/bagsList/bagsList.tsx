@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
 import { CatalogProps } from '../../lib/api';
-// import InfoLocation from '../InfoLocation/InfoLocation';
+import InfoLocation from '../InfoLocation/InfoLocation';
 import css from './bagsList.module.css';
 
 export default function CampersList({
@@ -66,7 +66,7 @@ export default function CampersList({
                         </button>
                     </div>
                 </div>
-                {/* <InfoLocation camper={camper} /> */}
+                <InfoLocation bag={{ rating, location, reviews }} />
                 <p className={css.textEllipsis}>{description}</p>
                 <div></div>
                 <Link href={`/catalog/${id}`}> {<Button>Переглянути зараз</Button>}</Link>
