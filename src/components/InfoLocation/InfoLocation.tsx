@@ -4,7 +4,17 @@ import { GrMapLocation } from 'react-icons/gr';
 import css from './InfoLocation.module.css';
 import { CatalogProps, ReviewerProps } from '../../lib/api';
 
-export default function InfoLocation({ rating, location, reviews }: CatalogProps): React.ReactNode {
+type InfoLocationProps = {
+    rating: number;
+    location: string;
+    reviews: ReviewerProps[];
+};
+
+export default function InfoLocation({
+    rating,
+    location,
+    reviews,
+}: InfoLocationProps): React.ReactNode {
     const bagReviews: ReviewerProps[] = reviews ? reviews : [];
 
     return (
