@@ -1,25 +1,9 @@
-import HandBags from '../models/handBags';
-// import { isValidObjectId } from 'mongoose';
-
-import { Document, model, Schema } from 'mongoose';
-import { ObjectId } from 'mongodb';
-
-// Типізація властивостей каталогу
-export interface CatalogProps {
-    _id: ObjectId;
-    name: string;
-    email: string;
-    password: string;
-}
-
-// Інтерфейс для документа Mongoose
-// export interface CatalogDocument extends CatalogProps, Document {}
+import { HandBagModel, HandBagProps } from '../models/handBags';
 
 // Асинхронна функція для отримання всіх сумок
-export const getAllHandBags = async (): Promise<CatalogProps[]> => {
+export const getAllHandBags = async (): Promise<HandBagProps[]> => {
     try {
-        const handbags = await HandBags.find().lean(); // Використання `lean` для повернення звичайних об'єктів
-        return handbags as CatalogProps[];
+        return await HandBagModel.find(); // Використання `lean` для повернення звичайних об'єктів
     } catch (error) {
         console.error('Error fetching handbags:', error);
         throw error; // Прокидування помилки для обробки в місці виклику
