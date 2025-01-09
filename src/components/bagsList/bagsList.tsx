@@ -5,72 +5,81 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
-import { CatalogProps } from '../../lib/api';
+import { HandBagProps } from '../../lib/mongoDB/models/handBags';
 import InfoLocation from '../InfoLocation/InfoLocation';
 import css from './bagsList.module.css';
+import ListProducts from '../ListProducts/ListProducts';
+// import { css } from '../ListProducts/ListProducts.module.css';
 
-export default function CampersList({
-    AC,
-    TV,
-    bathroom,
-    consumption,
-    description,
-    engine,
-    form,
-    gallery,
-    gas,
-    height,
-    id,
-    kitchen,
-    length,
-    location,
-    microwave,
-    name,
-    price,
-    radio,
-    rating,
-    refrigerator,
-    reviews,
-    tank,
-    transmission,
-    water,
-    width,
-}: CatalogProps): React.ReactNode {
-    const galleryImage: string = gallery[0].original;
+export default function BagsList({ listBags }: { listBags: HandBagProps }): React.ReactNode {
+    // const galleryImage: string = listBags.images[0];
     // const location = useLocation();
 
-    const defaultImg =
-        'https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg';
+    // const defaultImg = 'https://i.postimg.cc/jjBSrfnQ/poster1-img.jpg';
 
     return (
-        <li className={css.listCamper}>
-            <Image
-                width={292}
-                height={320}
-                className={css.img}
-                src={galleryImage ? `${galleryImage}` : defaultImg}
-                alt="poster"
-                priority={true}
-            />
-            <div className={css.info}>
-                <div className={css.title}>
-                    <h2 className={css.name}>{name}</h2>
-                    <div className={css.infoPrice}>
-                        <h2 className={css.price}>€ {price}.00</h2>
-                        <button
-                            type="button"
-                            aria-label="Додати в улюблені"
-                            className={css.buttonLike}
-                        >
-                            <IoMdHeartEmpty className={css.iconLike} />
-                        </button>
-                    </div>
-                </div>
-                <InfoLocation bag={{ rating, location, reviews }} />
-                <p className={css.textEllipsis}>{description}</p>
-                <div></div>
-                <Link href={`/catalog/${id}`}> {<Button>Переглянути зараз</Button>}</Link>
+        <div className={css.card}>
+            <div className={css.poster}>
+                <Image
+                    width={292}
+                    height={320}
+                    src="https://i.postimg.cc/jjBSrfnQ/poster1-img.jpg"
+                    alt="Location Unknown"
+                />
             </div>
-        </li>
+            <div className={css.details}>
+                <h1>Location Unknown</h1>
+                <h2>2021 • PG • 1hr 38min</h2>
+                <div className={css.rating}>
+                    <i className={css.fas}></i>
+                    <i className={css.fas}></i>
+                    <i className={css.fas}></i>
+                    <i className={css.fas}></i>
+                    <i className={css.far}></i>
+                    <span>4.2/5</span>
+                </div>
+                <div className={css.tags}>
+                    <span className={css.tag}>Italian</span>
+                    <span className={css.tag}>Drama</span>
+                    <span className={css.tag}>{listBags.model}</span>
+                </div>
+                <p className={css.desc}>
+                    Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey
+                    in search for meaning.
+                </p>
+                <div className={css.cast}>
+                    <h3>Cast</h3>
+                    <ul>
+                        <li>
+                            <Image
+                                width={292}
+                                height={320}
+                                src="https://i.postimg.cc/jqgkqhSb/cast-11.jpg"
+                                alt="Marco Andrews"
+                                title="Marco Andrews"
+                            />
+                        </li>
+                        <li>
+                            <Image
+                                width={292}
+                                height={320}
+                                src="https://i.postimg.cc/8P7X7r7r/cast-12.jpg"
+                                alt="Rebecca Floyd"
+                                title="Rebecca Floyd"
+                            />
+                        </li>
+                        <li>
+                            <Image
+                                width={292}
+                                height={320}
+                                src="https://i.postimg.cc/2SvHwRFk/cast-13.jpg"
+                                alt="Antonio Herrera"
+                                title="Antonio Herrera"
+                            />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     );
 }
