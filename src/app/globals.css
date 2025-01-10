@@ -2,64 +2,66 @@
 
 html,
 body {
-  line-height: 1.5;
-  font-weight: 400;
-  font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 16px;
 
-  color-scheme: light;
-  color: #101828;
-  background-color: #ffffff;
+    color-scheme: light;
+    color: #101828;
+    background-color: #ffffff;
 
-  font-synthesis: none;
+    font-synthesis: none;
 
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  max-width: 1440px;
-  margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 button {
-  cursor: pointer;
-  text-transform: none;
-  overflow: visible;
+    cursor: pointer;
+    text-transform: none;
+    overflow: visible;
 }
 
 img {
-  display: block;
+    display: block;
 }
 
 .link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .list {
-  list-style-type: none;
+    list-style-type: none;
+}
+
+.layoutMain {
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .loader {
-  color: red;
+    color: red;
 }

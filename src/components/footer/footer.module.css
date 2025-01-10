@@ -1,0 +1,226 @@
+.navigationLogo {
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    color: var(--title-text-color);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+}
+
+.navigationLogoLink {
+    color: rgb(33, 150, 243);
+}
+
+.footerLayout {
+    background-color: #000a;
+    font-style: normal;
+    text-align: center;
+}
+
+.footerLink {
+    color: #ffffff;
+}
+
+.footerLogo {
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.16;
+}
+
+.footerAddress {
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ffffff;
+}
+
+.footerList:not(:first-child) {
+    margin-top: 8px;
+}
+
+.addressMail,
+.addressTel {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: Roboto;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.6);
+}
+.addressMail:focus,
+.address-mail:hover,
+.addressTel:focus,
+.addressTel:hover {
+    color: var(--accent-color);
+}
+
+.footerContainerList {
+    margin-bottom: 60px;
+}
+
+.footerIconLink {
+    width: 206px;
+    height: 80px;
+    margin: auto;
+}
+
+.footerTitle {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #ffffff;
+}
+
+.footerIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.footerSocialLink {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.footerSocialLink:hover,
+.footerSocialLink:focus {
+    background-color: var(--accent-color);
+}
+
+.form-footer {
+    max-width: 450px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-email {
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #ffffff;
+}
+
+.model-footer-email {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-email {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background: transparent;
+    padding-left: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.modal-icon-foter {
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 480px) {
+    .footer-email {
+        max-width: 450px;
+    }
+    .model-footer-email {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 768px) {
+    .footerContainer {
+        max-width: 768px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    .footer-icon-link {
+        margin: 5px 0px 0px auto;
+    }
+    .form-footer {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-email {
+        max-width: 450px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .footer-container {
+        max-width: 1170px;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: baseline;
+    }
+    .footerLogo {
+        font-size: 26px;
+        line-height: 1.19;
+    }
+    .footer-container-list {
+        margin-bottom: 0px;
+        text-align: left;
+    }
+    .footerIconLink {
+        margin-left: 70px;
+    }
+    .footer-list:not(:first-child) {
+        margin-top: 9px;
+    }
+    .footer-title {
+        text-align: left;
+    }
+    .footer-email {
+        width: 358px;
+        margin-right: 12px;
+        margin-bottom: 0px;
+    }
+    .form-title {
+        text-align: left;
+    }
+    .form-footer {
+        margin-left: 93px;
+    }
+    .model-footer-email {
+        width: 570px;
+        display: flex;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .footerContainer {
+        flex-wrap: wrap;
+        text-align: center;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

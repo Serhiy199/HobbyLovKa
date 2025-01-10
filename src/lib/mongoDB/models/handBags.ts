@@ -73,4 +73,6 @@ const HandBagSchema = new mongoose.Schema<HandBagProps>({
 });
 
 // export default mongoose.model<HandBagProps>('HandBag', HandBagSchema); //users -> collection name;
-export const HandBagModel = mongoose.model<HandBagProps>('Bag', HandBagSchema); //bags -> collection name;
+export const HandBagModel =
+    mongoose.models.Bag || mongoose.model<HandBagProps>('Bag', HandBagSchema); //bags -> collection name;
+// export const HandBagModel =  model<HandBagProps>('Bag', HandBagSchema);
