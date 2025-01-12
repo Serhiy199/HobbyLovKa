@@ -1,0 +1,10 @@
+.section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    align-items: center;
+    display: flex;
+    gap: calc(5%);
+    row-gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

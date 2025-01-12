@@ -3,6 +3,8 @@
     padding-left: 64px;
     padding-right: 64px;
     padding-bottom: 80px;
+    display: flex;
+    gap: 12px;
 }
 
 .name {

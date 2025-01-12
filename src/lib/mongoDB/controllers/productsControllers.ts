@@ -6,10 +6,10 @@ export interface allProductsProps {
     totalPage: number;
 }
 
-// Асинхронна функція для отримання всіх сумок
+// Асинхронна функція для отримання всіх товарів
 export const getAllProducts = async (page: number): Promise<allProductsProps> => {
     try {
-        const pageSize: number = 3; // сторінка з кількістю карток товарів, яка показує першу сторінку
+        const pageSize: number = 4; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
 
         const count: number = await HandBagModel.find().countDocuments();
@@ -21,13 +21,18 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
         const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
 
         return { data, totalPage } as { data: HandBagProps[]; totalPage: number };
-    } catch (error: { error: { message: string } }) {
-        console.error('Error fetching handbags:', error);
-
-        throw new Error(`Error fetching handbags:${error.message}`); // Прокидування помилки для обробки в місці виклику
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error('Error fetching handbags:', error.message);
+            throw new Error(`Error fetching handbags: ${error.message}`);
+        } else {
+            console.error('Unexpected error:', error);
+            throw new Error('Unexpected error occurred while fetching products.');
+        } // посилає помилку для обробки в місці виклику
     }
 };
 
+// Асинхронна функція для отримання одного товару
 export const getOneProduct = async (id: string): Promise<HandBagProps> => {
     try {
         const productById: HandBagProps | null = await HandBagModel.findById(id);
@@ -36,10 +41,14 @@ export const getOneProduct = async (id: string): Promise<HandBagProps> => {
             throw new Error();
         }
         return productById;
-    } catch (error: { error: { message: string } }) {
-        console.error('Error fetching handbags:', error);
-
-        throw new Error(`Error fetching handbags:${error.message}`); // Прокидування помилки для обробки в місці виклику
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error('Error fetching product by ID:', error.message);
+            throw new Error(`Error fetching product: ${error.message}`);
+        }
+        // Якщо помилка не є об'єктом Error
+        console.error('Unexpected error:', error);
+        throw new Error('Unexpected error occurred while fetching product.'); // Посилає помилку для обробки в місці виклику
     }
 };
 

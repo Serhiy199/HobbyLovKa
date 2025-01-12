@@ -1,10 +1,10 @@
 // import { Link, useLocation } from 'react-router-dom';тзь кгт вум
 import React from 'react';
 
-import { IoMdHeartEmpty } from 'react-icons/io';
+// import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
-import Button from '../button/button';
+// import Button from '../button/button';
 import { HandBagProps } from '../../lib/mongoDB/models/handBags';
 import clsx from 'clsx';
 import css from '../cardProducts/cardProducts.module.css';
@@ -34,9 +34,9 @@ export default function CardProducts({
             <Link href={`/catalog/${listProducts._id}`}>
                 <div className={css.poster}>
                     <Image
-                        width={292}
-                        height={320}
-                        src="https://i.postimg.cc/jjBSrfnQ/poster1-img.jpg"
+                        layout="fill"
+                        objectFit="cover"
+                        src="/photo_шопер_котик.jpg"
                         alt={listProducts.title}
                     />
                 </div>

@@ -1,26 +1,26 @@
 .hero {
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #2e2f42;
-  padding-top: 260px;
-  padding-bottom: 260px;
-  padding-left: 64px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url('../assets/image/picture.jpeg');
-  background-size: cover;
-  color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2e2f42;
+    padding-top: 260px;
+    padding-bottom: 260px;
+    padding-left: 64px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('../assets/image/picture.jpeg');
+    background-size: cover;
+    color: #f7f7f7;
 }
 
 .heroTitle {
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 1;
-  margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 16px;
 }
 
 .heroText {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1;
-  margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 40px;
 }
