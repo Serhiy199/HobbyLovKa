@@ -8,7 +8,7 @@ import Button from '../button/button';
 import { HandBagProps } from '../../lib/mongoDB/models/handBags';
 import InfoLocation from '../InfoLocation/InfoLocation';
 import css from './bagsList.module.css';
-import ListProducts from '../ListProducts/ListProducts';
+import ListProducts from '../cardProducts/cardProducts';
 import clsx from 'clsx';
 // import { css } from '../ListProducts/ListProducts.module.css';
 

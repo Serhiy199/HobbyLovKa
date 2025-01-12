@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './page.module.css';
-import ListProducts from '../../../components/ListProducts/ListProducts';
+import CardProducts from '../../../components/cardProducts/cardProducts';
 import {
     getAllProducts,
     allProductsProps,
@@ -19,7 +19,7 @@ export default async function Catalog({ searchParams }: { searchParams: { page: 
         <div>
             <ul className={css.wrapper}>
                 {data.map((list: HandBagProps) => {
-                    return <ListProducts key={list._id} listBags={list} />;
+                    return <CardProducts key={list._id} listProducts={list} />;
                 })}
             </ul>
             <ServerPagination totalPages={totalPage} currentPage={currentPage} />

@@ -1,37 +1,22 @@
-'use client';
 import Link from 'next/link';
-import { use } from 'react';
 import { getBagDetailInfo, CatalogProps } from '../../../../lib/api';
-import { useState, useEffect } from 'react';
-import InfoLocation from '../../../../components/InfoLocation/InfoLocation';
-
+import { getOneProduct } from '../../../../lib//mongoDB/controllers/productsControllers';
+import { HandBagProps } from '../../../../lib/mongoDB/models/handBags';
 import css from './page.module.css';
 
-export default function Page({ params }: { params: Promise<{ id: string }> }): React.ReactNode {
-    const { id } = use(params);
+export default async function Page({ params }: { params: { id: string } }) {
 
-    const [bagData, setBagData] = useState<Partial<CatalogProps>>({});
-
-    useEffect(() => {
-        async function getBagInfo() {
-            if (!id) return;
-
-            const data: CatalogProps = await getBagDetailInfo(id);
-
-            setBagData(data);
-        }
-        getBagInfo();
-    }, [id]);
+    const data: HandBagProps = await getOneProduct(params.id);
 
     return (
         <div className={css.container}>
             <section>
-                <h2 className={css.name}>{bagData.name}</h2>
-                <InfoLocation bag={bagData} />
-                <h2 className={css.price}>€ {bagData.price}.00</h2>
+                <h2 className={css.name}>{data.title}</h2>
+                {/* <InfoLocation bag={bagData} /> */}
+                <h2 className={css.price}>€ {data.price}.00</h2>
             </section>
             <section>
-                <p className={css.text}>{bagData.description}</p>
+                <p className={css.text}>{data.description}</p>
             </section>
             {/* <section>
                 <Link className={css.link} href={'features'}>

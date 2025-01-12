@@ -14,7 +14,7 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
 
         const count: number = await HandBagModel.find().countDocuments();
 
-        const data: HandBagProps[] = await HandBagModel.find({})
+        const data: HandBagProps[] = await HandBagModel.find()
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
 
@@ -28,21 +28,20 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
     }
 };
 
-// export const getOneContact = async (req, res, next) => {
-//     try {
-//         const { id } = req.params;
-//         if (!isValidObjectId(id)) {
-//             throw HttpError(400, `${id} is not valid id`);
-//         }
-//         const contactById = await Contact.findById(id);
-//         if (!contactById) {
-//             throw HttpError(404);
-//         }
-//         res.json(contactById);
-//     } catch (error) {
-//         next(error);
-//     }
-// };
+export const getOneProduct = async (id: string): Promise<HandBagProps> => {
+    try {
+        const productById: HandBagProps | null = await HandBagModel.findById(id);
+
+        if (!productById) {
+            throw new Error();
+        }
+        return productById;
+    } catch (error: { error: { message: string } }) {
+        console.error('Error fetching handbags:', error);
+
+        throw new Error(`Error fetching handbags:${error.message}`); // Прокидування помилки для обробки в місці виклику
+    }
+};
 
 // export const deleteContact = async (req, res, next) => {
 //     try {
