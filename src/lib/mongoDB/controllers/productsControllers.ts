@@ -1,12 +1,30 @@
 import { HandBagModel, HandBagProps } from '../models/handBags';
+import '../mongodb';
+
+export interface allProductsProps {
+    data: HandBagProps[];
+    totalPage: number;
+}
 
 // Асинхронна функція для отримання всіх сумок
-export const getAllHandBags = async (): Promise<HandBagProps[]> => {
+export const getAllProducts = async (page: number): Promise<allProductsProps> => {
     try {
-        return await HandBagModel.find(); // Використання `lean` для повернення звичайних об'єктів
-    } catch (error) {
+        const pageSize: number = 3; // сторінка з кількістю карток товарів, яка показує першу сторінку
+        const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
+
+        const count: number = await HandBagModel.find().countDocuments();
+
+        const data: HandBagProps[] = await HandBagModel.find({})
+            .limit(pageSize)
+            .skip((pageNumber - 1) * pageSize);
+
+        const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
+
+        return { data, totalPage } as { data: HandBagProps[]; totalPage: number };
+    } catch (error: { error: { message: string } }) {
         console.error('Error fetching handbags:', error);
-        throw error; // Прокидування помилки для обробки в місці виклику
+
+        throw new Error(`Error fetching handbags:${error.message}`); // Прокидування помилки для обробки в місці виклику
     }
 };
 

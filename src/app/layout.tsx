@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${interSans.className}`}>
+            <body className={`${interSans.className}`} suppressHydrationWarning={true}>
                 <Header />
                 <main className="layoutMain">{children}</main>
                 <Footer />

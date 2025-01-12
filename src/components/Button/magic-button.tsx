@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 // import Button, { ButtonProps } from '@/app/components/button';
+import ErrorButton from '../errorButton/errorButton';
 
 export default function MagicButton() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    if (count > 2) {
-      throw new Error('Unexpected error');
-    }
-  }, [count]);
+    useEffect(() => {
+        if (count > 2) {
+            throw new Error('Unexpected error');
+        }
+    }, [count]);
 
-  return <button onClick={() => setCount(count + 1)}>Magic button</button>;
+    return <ErrorButton onClick={() => setCount(count + 1)}>Magic button</ErrorButton>;
 }
