@@ -15,7 +15,7 @@ export default function Navigation() {
             </Link>
             <Link
                 href="/catalog?page=1"
-                className={clsx(css.link, pathname === '/catalog?page=1' && css.isActive)}
+                className={clsx(css.link, pathname === '/catalog' && css.isActive)}
             >
                 Catalog
             </Link>

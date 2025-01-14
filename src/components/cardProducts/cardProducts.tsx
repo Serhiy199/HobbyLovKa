@@ -53,7 +53,7 @@ export default function CardProducts({
                     </div>
                     <div className={css.tags}>
                         {tags.map((listTag: string, i: number) => (
-                            <span key={listProducts[i]} className={css.tag}>
+                            <span key={i} className={css.tag}>
                                 {listTag}
                             </span>
                         ))}

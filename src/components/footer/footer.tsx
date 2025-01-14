@@ -36,32 +36,68 @@ export default function Footer(): React.ReactNode {
                     <h3 className={css.footerTitle}>ПРИЄДНУЙСЯ</h3>
                     <ul className={css.footerIcon}>
                         <li>
-                            <a className={css.footerSocialLink} href="">
-                                <svg className={css.footerIcon} width="20" height="20">
-                                    <use href="../../../public/svg/icons.svg#instagram"></use>
+                            <Link
+                                className={css.footerSocialLink}
+                                href=""
+                                aria-label="Перейти на сторінку Instagram"
+                            >
+                                <svg
+                                    className={css.footerIcon}
+                                    width="20"
+                                    height="20"
+                                    aria-hidden="true"
+                                >
+                                    <use href="/icons.svg#instagram"></use>
                                 </svg>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className={css.footerSocialLink} href="">
-                                <svg className={css.footerIcon} width="20" height="20">
-                                    <use href="../../../public/svg/icons.svg#twitter"></use>
+                            <Link
+                                className={css.footerSocialLink}
+                                href=""
+                                aria-label="Перейти на сторінку Twitter"
+                            >
+                                <svg
+                                    className={css.footerIcon}
+                                    width="20"
+                                    height="20"
+                                    aria-hidden="true"
+                                >
+                                    <use href="/icons.svg#twitter"></use>
                                 </svg>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className={css.footerSocialLink} href="">
-                                <svg className={css.footerIcon} width="20" height="20">
-                                    <use href="../../../public/svg/icons.svg#facebook"></use>
+                            <Link
+                                className={css.footerSocialLink}
+                                href=""
+                                aria-label="Перейти на сторінку Facebook"
+                            >
+                                <svg
+                                    className={css.footerIcon}
+                                    width="20"
+                                    height="20"
+                                    aria-hidden="true"
+                                >
+                                    <use href="/icons.svg#facebook"></use>
                                 </svg>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a className={css.footerSocialLink} href="">
-                                <svg className={css.footerIcon} width="20" height="20">
-                                    <use href="../../../public/svg/icons.svg#linkedin"></use>
+                            <Link
+                                className={css.footerSocialLink}
+                                href=""
+                                aria-label="Перейти на сторінку Linkedin"
+                            >
+                                <svg
+                                    className={css.footerIcon}
+                                    width="20"
+                                    height="20"
+                                    aria-hidden="true"
+                                >
+                                    <use href="/icons.svg#linkedin"></use>
                                 </svg>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
