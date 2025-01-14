@@ -4,12 +4,9 @@ import Link from 'next/link';
 import css from './header.module.css';
 
 export default function Header() {
-  return (
-    <header className={css.head}>
-      <Link href="/" className={css.link}>
-        Bag<span className={css.logo}>Charm</span>
-      </Link>
-      <Navigation />
-    </header>
-  );
+    return (
+        <header className={css.head}>
+            <Navigation />
+        </header>
+    );
 }

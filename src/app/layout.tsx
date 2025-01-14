@@ -20,7 +20,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="uk">
             <body className={`${interSans.className}`} suppressHydrationWarning={true}>
                 <Header />
                 <main className="layoutMain">{children}</main>

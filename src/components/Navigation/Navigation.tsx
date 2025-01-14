@@ -9,16 +9,27 @@ export default function Navigation() {
     const pathname: string = usePathname();
 
     return (
-        <nav className={css.navigation}>
-            <Link href="/" className={clsx(css.link, pathname === '/' && css.isActive)}>
-                Home
-            </Link>
-            <Link
-                href="/catalog?page=1"
-                className={clsx(css.link, pathname === '/catalog' && css.isActive)}
-            >
-                Catalog
-            </Link>
+        <nav>
+            <ul className={css.navigation}>
+                <li>
+                    <Link href="/" lang="en" className={css.link}>
+                        <span className={css.logo}>Bag</span>Charm
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/" className={clsx(css.link, pathname === '/' && css.isActive)}>
+                        Головна
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        href="/catalog?page=1"
+                        className={clsx(css.link, pathname === '/catalog' && css.isActive)}
+                    >
+                        Каталог товарів
+                    </Link>
+                </li>
+            </ul>
         </nav>
     );
 }

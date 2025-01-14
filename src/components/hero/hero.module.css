@@ -1,0 +1,43 @@
+.hero {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2e2f42;
+    padding-top: 260px;
+    padding-bottom: 260px;
+    padding-left: 64px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('/photo_шопер_котик.jpg');
+    background-size: contain;
+    color: #f7f7f7;
+}
+
+.navLink {
+    padding: 16px 60px;
+    border-radius: 200px;
+    border: transparent;
+    background-color: rgb(33, 150, 243);
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
+    word-wrap: break-word;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:focus,
+.navLink:hover {
+    background-color: #188ce8;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.text {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 40px;
+}

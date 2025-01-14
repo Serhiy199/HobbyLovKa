@@ -1,20 +1,18 @@
-import Link from 'next/link';
-import Button from '../components/button/button';
-import css from './page.module.css';
+// import Link from 'next/link';
+// import Button from '../components/button/button';
+// import css from './page.module.css';
 import Categories from '../components/categories/categories';
+import TopSellers from '../components/topSellers/topSellers';
+import NewGoods from '../components/newGoods/newGoods';
+import HeroPage from '../components/hero/hero';
 
 export default function Home() {
-    // const page: number = 1;
     return (
-        <div>
-            <div className={css.hero}>
-                <h1 className={css.heroTitle}>Bags of your dreams</h1>
-                <h2 className={css.heroText}>У нашому каталозі ви знайдете все, що забажаєте</h2>
-                <Link href="/catalog?page=1">
-                    <Button>Переглянути зараз</Button>
-                </Link>
-            </div>
+        <>
+            <HeroPage />
+            <TopSellers />
+            <NewGoods />
             <Categories />
-        </div>
+        </>
     );
 }

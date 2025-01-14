@@ -4,7 +4,7 @@ import CardCategory from '../cardCategory/cardCategory';
 
 export default function Categories() {
     return (
-        <div>
+        <section>
             <h2>Категорії</h2>
             <div className={css.section}>
                 <Link href={'/catalog?page=1'}>
@@ -62,6 +62,6 @@ export default function Categories() {
                     />
                 </Link>
             </div>
-        </div>
+        </section>
     );
 }

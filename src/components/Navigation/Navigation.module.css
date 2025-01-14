@@ -5,6 +5,15 @@
 }
 
 .link {
+    font-weight: 800;
+    color: #101828;
+}
+
+.logo {
+    color: rgb(33, 150, 243);
+}
+
+.link {
     color: #101828;
     font-weight: 500;
 }
