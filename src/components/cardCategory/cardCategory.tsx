@@ -12,7 +12,7 @@ export default function CardCategory({
     description: string;
 }) {
     return (
-        <section className={css.cardSection}>
+        <div className={css.cardSection}>
             <div className={css.card}>
                 <div className={css.flipCard}>
                     <div className={css.flipCardContainer}>
@@ -27,7 +27,7 @@ export default function CardCategory({
                             </div>
 
                             <div className={css.cardFrontBt}>
-                                <h2 className={css.cardFrontTextView}>{title}</h2>
+                                <h3 className={css.cardFrontTextView}>{title}</h3>
                             </div>
                         </div>
                         <div className={css.cardBack}>
@@ -46,7 +46,7 @@ export default function CardCategory({
 
                 <div className={css.insidePage}>
                     <div className={css.insidePageContainer}>
-                        <h3 className={css.insidePageHeadingCity}>For urban lovers</h3>
+                        <h4 className={css.insidePageHeadingCity}>For urban lovers</h4>
                         <p className={css.insidePageText}>{description}</p>
                         <button type="button" className={css.insidePageBtn}>
                             Переглянути
@@ -54,6 +54,6 @@ export default function CardCategory({
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

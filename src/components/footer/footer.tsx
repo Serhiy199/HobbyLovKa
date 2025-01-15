@@ -11,29 +11,36 @@ export default function Footer(): React.ReactNode {
                         <span className={css.navigationLogoLink}>Web</span>
                         <span className={css.footerLink}>Studio</span>
                     </Link>
-                    <address className={css.address}>
-                        <ul>
-                            <li className={css.footerList}>
-                                <p className={css.footerAddress}>
-                                    м.Бориспіль, вул. Віктора Йови 3
-                                </p>
-                            </li>
-                            <li className={css.footerList}>
-                                <a href="maria.horog.89@gmail.com" className={css.addressMail}>
-                                    maria.horog.89@gmail.com
-                                </a>
-                                <br />
-                            </li>
-                            <li className={css.footerList}>
-                                <a href="tel:+380961050086" className={css.addressTel}>
-                                    +38 096 105 00 86
-                                </a>
-                            </li>
-                        </ul>
-                    </address>
+                    <h2>Bags of your dreams</h2>
+                    <div>
+                        <h3 className={css.footerTitle}>Контактна інформація</h3>
+                        <address className={css.address}>
+                            <ul>
+                                <li className={css.footerList}>
+                                    <p className={css.footerAddress}>
+                                        м.Бориспіль, вул. Віктора Йови 3
+                                    </p>
+                                </li>
+                                <li className={css.footerList}>
+                                    <Link
+                                        href="mailto:maria.horog.89@gmail.com"
+                                        className={css.addressMail}
+                                    >
+                                        maria.horog.89@gmail.com
+                                    </Link>
+                                    <br />
+                                </li>
+                                <li className={css.footerList}>
+                                    <Link href="tel:+380961050086" className={css.addressTel}>
+                                        +38 096 105 00 86
+                                    </Link>
+                                </li>
+                            </ul>
+                        </address>
+                    </div>
                 </div>
                 <div className={css.footerIconLink}>
-                    <h3 className={css.footerTitle}>ПРИЄДНУЙСЯ</h3>
+                    <h3 className={css.footerTitle}>Приєднуйся до наших соціальних мереж</h3>
                     <ul className={css.footerIcon}>
                         <li>
                             <Link
