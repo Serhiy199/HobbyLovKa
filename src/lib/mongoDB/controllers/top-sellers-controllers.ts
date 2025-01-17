@@ -1,4 +1,4 @@
-import { TopSellersModel, TopSellersProps } from '../models/top-sellers';
+import { TopSellersModel, TopSellersProps } from '../models/top-sellers-models';
 import '../mongodb';
 
 // Асинхронна функція для отримання всіх товарів

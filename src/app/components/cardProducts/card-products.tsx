@@ -5,7 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import Button from '../button/button';
-import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags-models';
 import clsx from 'clsx';
 import css from '../cardProducts/card-products.module.css';
 

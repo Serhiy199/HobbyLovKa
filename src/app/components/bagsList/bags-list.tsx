@@ -5,7 +5,7 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
-import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags-models';
 import InfoLocation from '../InfoLocation/InfoLocation';
 import css from './bagsList.module.css';
 import ListProducts from '../cardProducts/card-products';

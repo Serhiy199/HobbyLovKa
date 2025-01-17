@@ -1,6 +1,6 @@
 // import React from 'react';
 import type { Metadata } from 'next';
-import { inter } from '../styles/fonts';
+import { inter } from './styles/fonts';
 import './globals.css';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';

@@ -5,7 +5,7 @@ import {
     getAllProducts,
     allProductsProps,
 } from '../../../lib/mongoDB/controllers/products-controllers';
-import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags-models';
 import ServerPagination from '../../components/serverPagination/server-pagination';
 
 export default async function Catalog({ searchParams }: { searchParams: { page: string } }) {

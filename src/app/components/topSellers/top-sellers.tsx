@@ -1,6 +1,6 @@
 import css from './top-sellers.module.css';
 import CardProducts from '../cardProducts/card-products';
-import { TopSellersProps } from '../../../lib/mongoDB/models/top-sellers';
+import { TopSellersProps } from '../../../lib/mongoDB/models/top-sellers-models';
 import { getAllTopSellers } from '../../../lib/mongoDB/controllers/top-sellers-controllers';
 
 export default async function TopSellers() {
@@ -8,7 +8,7 @@ export default async function TopSellers() {
 
     return (
         <section className={css.list}>
-            <h2>Лідери продажів</h2>
+            <h2 className={css.title}>Лідери продажів</h2>
             <ul className={css.wrapper}>
                 {data.map((list: TopSellersProps) => {
                     return <CardProducts key={list._id} listProducts={list} />;
