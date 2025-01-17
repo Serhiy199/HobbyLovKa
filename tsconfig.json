@@ -28,7 +28,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "src/lib/mongoDB/models/handBags.ts"
+        "src/lib/mongoDB/models/hand-bags.ts"
     ],
     "exclude": ["node_modules"]
 }

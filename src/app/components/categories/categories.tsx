@@ -1,6 +1,6 @@
 import css from './categories.module.css';
 import Link from 'next/link';
-import CardCategory from '../cardCategory/cardCategory';
+import CardCategory from '../cardCategory/card-category';
 
 export default function Categories() {
     return (

@@ -5,10 +5,10 @@ import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
-import { HandBagProps } from '../../lib/mongoDB/models/handBags';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
 import InfoLocation from '../InfoLocation/InfoLocation';
 import css from './bagsList.module.css';
-import ListProducts from '../cardProducts/cardProducts';
+import ListProducts from '../cardProducts/card-products';
 import clsx from 'clsx';
 // import { css } from '../ListProducts/ListProducts.module.css';
 

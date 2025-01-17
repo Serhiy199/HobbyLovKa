@@ -5,9 +5,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import Button from '../button/button';
-import { HandBagProps } from '../../lib/mongoDB/models/handBags';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
 import clsx from 'clsx';
-import css from '../cardProducts/cardProducts.module.css';
+import css from '../cardProducts/card-products.module.css';
 
 function truncateText(text: string, wordLimit: number): string {
     const words = text.split(' '); // Розділяємо текст на слова

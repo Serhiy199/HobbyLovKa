@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import css from '../styles/not-found.module.css';
-import Button from '../components/button/button';
+import Button from './components/button/button';
 
 export default function NotFoundPage() {
     return (

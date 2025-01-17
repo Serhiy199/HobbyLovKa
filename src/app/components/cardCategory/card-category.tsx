@@ -1,4 +1,4 @@
-import css from './cardCategory.module.css';
+import css from './card-category.module.css';
 import clsx from 'clsx';
 import Image from 'next/image';
 

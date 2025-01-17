@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import css from './serverPagination.module.css';
 
 export default function ServerPagination({
     totalPages,
@@ -9,7 +10,7 @@ export default function ServerPagination({
     currentPage: number;
 }) {
     return (
-        <div aria-label="Page navigation" className="flex justify-center flex-wrap mt-16 mb-10">
+        <div className={css.list}>
             <Link
                 href={`/catalog/?page=${currentPage - 1}`}
                 className={`${

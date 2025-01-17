@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 // import '../../../lib/mongoDB/mongodb';
-import User from '../../../../lib/mongoDB/models/handBags';
+import User from '../../../../lib/mongoDB/models/hand-bags';
 
 export async function GET(req: NextApiRequest, res: NextApiResponse) {
     try {

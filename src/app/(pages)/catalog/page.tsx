@@ -1,12 +1,12 @@
-import React from 'react';
+// import React from 'react';
 import css from './page.module.css';
-import CardProducts from '../../../components/cardProducts/cardProducts';
+import CardProducts from '../../components/cardProducts/card-products';
 import {
     getAllProducts,
     allProductsProps,
-} from '../../../lib/mongoDB/controllers/productsControllers';
-import { HandBagProps } from '../../../lib/mongoDB/models/handBags';
-import ServerPagination from '../../../components/serverPagination/serverPagination';
+} from '../../../lib/mongoDB/controllers/products-controllers';
+import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
+import ServerPagination from '../../components/serverPagination/serverPagination';
 
 export default async function Catalog({ searchParams }: { searchParams: { page: string } }) {
     const { page }: { page: string } = await searchParams;
@@ -16,13 +16,13 @@ export default async function Catalog({ searchParams }: { searchParams: { page: 
     const { data, totalPage }: allProductsProps = await getAllProducts(currentPage);
 
     return (
-        <div>
+        <section>
             <ul className={css.wrapper}>
                 {data.map((list: HandBagProps) => {
                     return <CardProducts key={list._id} listProducts={list} />;
                 })}
             </ul>
             <ServerPagination totalPages={totalPage} currentPage={currentPage} />
-        </div>
+        </section>
     );
 }

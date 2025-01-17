@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './errorButton.module.css';
+import css from './error-button.module.css';
 
 interface ErrorButtonProps {
     children: React.ReactNode; // Вміст кнопки

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 // import Button, { ButtonProps } from '@/app/components/button';
-import ErrorButton from '../errorButton/errorButton';
+import ErrorButton from '../errorButton/error-button';
 
 export default function MagicButton() {
     const [count, setCount] = useState(0);

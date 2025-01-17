@@ -1,5 +1,5 @@
 'use client'; // Error boundaries must be Client Components
-import ErrorButton from '../components/errorButton/errorButton';
+import ErrorButton from './components/errorButton/error-button';
 
 export default function GlobalError({
     error,

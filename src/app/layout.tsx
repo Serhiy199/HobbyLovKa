@@ -1,9 +1,9 @@
 // import React from 'react';
 import type { Metadata } from 'next';
-import { inter } from './ui/fonts';
+import { inter } from '../styles/fonts';
 import './globals.css';
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 export const metadata: Metadata = {
     title: 'Bag Charm',

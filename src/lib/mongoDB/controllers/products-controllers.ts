@@ -1,4 +1,4 @@
-import { HandBagModel, HandBagProps } from '../models/handBags';
+import { HandBagModel, HandBagProps } from '../models/hand-bags';
 import '../mongodb';
 
 export interface allProductsProps {

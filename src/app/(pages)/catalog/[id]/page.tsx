@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getBagDetailInfo, CatalogProps } from '../../../../lib/api';
-import { getOneProduct } from '../../../../lib//mongoDB/controllers/productsControllers';
-import { HandBagProps } from '../../../../lib/mongoDB/models/handBags';
+import { getOneProduct } from '../../../../lib/mongoDB/controllers/products-controllers';
+import { HandBagProps } from '../../../../lib/mongoDB/models/hand-bags';
 import css from './page.module.css';
 
 export default async function Page({ params }: { params: { id: string } }) {
