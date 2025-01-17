@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import css from './serverPagination.module.css';
+import css from './server-pagination.module.css';
 
 export default function ServerPagination({
     totalPages,

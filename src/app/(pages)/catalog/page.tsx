@@ -6,7 +6,7 @@ import {
     allProductsProps,
 } from '../../../lib/mongoDB/controllers/products-controllers';
 import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags';
-import ServerPagination from '../../components/serverPagination/serverPagination';
+import ServerPagination from '../../components/serverPagination/server-pagination';
 
 export default async function Catalog({ searchParams }: { searchParams: { page: string } }) {
     const { page }: { page: string } = await searchParams;

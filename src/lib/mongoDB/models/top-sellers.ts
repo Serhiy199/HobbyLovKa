@@ -74,5 +74,5 @@ const TopSellersSchema = new mongoose.Schema<TopSellersProps>({
 
 // export default mongoose.model<HandBagProps>('HandBag', HandBagSchema); //users -> collection name;
 export const TopSellersModel =
-    mongoose.models.Bag || mongoose.model<TopSellersProps>('TopSellers', TopSellersSchema); //bags -> collection name;
+    mongoose.models.TopSellers || mongoose.model<TopSellersProps>('TopSellers', TopSellersSchema); //bags -> collection name;
 // export const HandBagModel =  model<HandBagProps>('Bag', HandBagSchema);
