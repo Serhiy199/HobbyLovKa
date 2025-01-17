@@ -1,13 +1,9 @@
 // import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { inter } from './ui/fonts';
 import './globals.css';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
-
-const interSans = Inter({
-    subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
     title: 'Bag Charm',
@@ -21,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="uk">
-            <body className={`${interSans.className}`} suppressHydrationWarning={true}>
+            <body className={`${inter.className}`} suppressHydrationWarning={true}>
                 <Header />
                 <main className="layoutMain">{children}</main>
                 <Footer />
