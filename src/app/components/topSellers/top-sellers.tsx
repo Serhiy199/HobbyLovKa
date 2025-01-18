@@ -7,7 +7,7 @@ export default async function TopSellers() {
     const data: TopSellersProps[] = await getAllTopSellers();
 
     return (
-        <section className={css.list}>
+        <section className={css.block}>
             <h2 className={css.title}>Лідери продажів</h2>
             <ul className={css.wrapper}>
                 {data.map((list: TopSellersProps) => {

@@ -1,23 +1,25 @@
-.navigation {
+.menu {
     display: inline-flex;
     gap: 32px;
     margin-left: 450px;
+    margin-right: 200px;
 }
 
-.link {
-    font-weight: 800;
-    color: #101828;
+.menuItem {
 }
 
-.logo {
-    color: rgb(33, 150, 243);
-}
-
-.link {
-    color: #101828;
+.menuLink {
+    color: var(--title-text-color);
     font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.menuLink:focus,
+.menuLink:hover {
+    color: var(--accent-color);
 }
 
 .isActive {
-    color: rgb(33, 150, 243);
+    color: var(--accent-color);
 }

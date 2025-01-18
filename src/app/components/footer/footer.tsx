@@ -1,39 +1,32 @@
 import React from 'react';
 import css from './footer.module.css';
 import Link from 'next/link';
+import { raleway } from '../../styles/fonts';
+import clsx from 'clsx';
 
 export default function Footer(): React.ReactNode {
     return (
         <footer className={css.footerLayout}>
             <div className={css.footerContainer}>
                 <div className={css.footerContainerList}>
-                    <Link href="/" lang="en" className={css.footerLogo}>
-                        <span className={css.navigationLogoLink}>Web</span>
-                        <span className={css.footerLink}>Studio</span>
+                    <Link href="/" lang="en" className={clsx(raleway.className, css.footerLogo)}>
+                        <span className={css.footerLogoLink}>Web</span>Studio
                     </Link>
-                    <h2>Bags of your dreams</h2>
                     <div>
                         <h3 className={css.footerTitle}>Контактна інформація</h3>
                         <address className={css.address}>
-                            <ul>
-                                <li className={css.footerList}>
-                                    <p className={css.footerAddress}>
-                                        м.Бориспіль, вул. Віктора Йови 3
-                                    </p>
+                            <ul className={css.contact}>
+                                <li className={css.contactItem}>
+                                    <Link href={''}>м.Бориспіль, вул. Віктора Йови 3</Link>
                                 </li>
-                                <li className={css.footerList}>
-                                    <Link
-                                        href="mailto:maria.horog.89@gmail.com"
-                                        className={css.addressMail}
-                                    >
+                                <li className={css.contactItem}>
+                                    <Link href="mailto:maria.horog.89@gmail.com">
                                         maria.horog.89@gmail.com
                                     </Link>
                                     <br />
                                 </li>
-                                <li className={css.footerList}>
-                                    <Link href="tel:+380961050086" className={css.addressTel}>
-                                        +38 096 105 00 86
-                                    </Link>
+                                <li className={css.contactItem}>
+                                    <Link href="tel:+380961050086">+38 096 105 00 86</Link>
                                 </li>
                             </ul>
                         </address>

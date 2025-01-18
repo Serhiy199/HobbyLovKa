@@ -40,9 +40,10 @@ export default function CardProducts({
                         alt={listProducts.title}
                     />
                 </div>
+
                 <div className={css.details}>
-                    <h1>{listProducts.title}</h1>
-                    <h2>{listProducts.model}</h2>
+                    <h3 className={css.productTitle}>{listProducts.title}</h3>
+                    <p className={css.productModel}>{listProducts.model}</p>
                     <div className={css.rating}>
                         <i className={clsx(css.fas && css.faStar)}>★</i>
                         <i className={clsx(css.fas && css.faStar)}>★</i>
@@ -58,7 +59,10 @@ export default function CardProducts({
                             </span>
                         ))}
                     </div>
-                    <p className={css.desc}>{truncateText(listProducts.description, 9)}</p>
+                    <p className={css.desc}>{truncateText(listProducts.description, 10)}</p>
+                    <button type="button" className={css.btn}>
+                        Замовити
+                    </button>
                 </div>
             </Link>
         </li>

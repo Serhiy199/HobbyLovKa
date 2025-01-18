@@ -10,21 +10,16 @@ export default function Navigation() {
 
     return (
         <nav>
-            <ul className={css.navigation}>
-                <li>
-                    <Link href="/" lang="en" className={css.link}>
-                        <span className={css.logo}>Bag</span>Charm
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/" className={clsx(css.link, pathname === '/' && css.isActive)}>
+            <ul className={css.menu}>
+                <li className={css.menuItem}>
+                    <Link href="/" className={clsx(css.menuLink, pathname === '/' && css.isActive)}>
                         Головна
                     </Link>
                 </li>
-                <li>
+                <li className={css.menuItem}>
                     <Link
                         href="/catalog?page=1"
-                        className={clsx(css.link, pathname === '/catalog' && css.isActive)}
+                        className={clsx(css.menuLink, pathname === '/catalog' && css.isActive)}
                     >
                         Каталог товарів
                     </Link>

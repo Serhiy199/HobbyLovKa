@@ -1,25 +1,19 @@
-.navigationLogo {
-    text-decoration: none;
+.footerLogo {
     font-family: Raleway, sans-serif;
-    color: var(--title-text-color);
-    font-weight: bold;
+    color: #ffffff;
     font-size: 24px;
     line-height: 1.16;
     letter-spacing: 0.03em;
 }
 
-.navigationLogoLink {
-    color: rgb(33, 150, 243);
+.footerLogoLink {
+    color: var(--accent-color);
 }
 
 .footerLayout {
-    background-color: #000a;
-    font-style: normal;
-    text-align: center;
-}
-
-.footerLink {
-    color: #ffffff;
+    background-color: #2f303a;
+    /* font-style: normal;
+    text-align: center; */
 }
 
 .footerLogo {
@@ -31,23 +25,21 @@
     line-height: 1.16;
 }
 
-.footerList:not(:first-child) {
+.footerItem:not(:first-child) {
     margin-top: 8px;
 }
 
-.addressMail,
-.addressTel {
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    font-family: Roboto;
-    font-style: normal;
-    text-decoration: none;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.6);
+.contact {
+    text-align: left;
 }
-.addressMail:focus,
-.address-mail:hover,
-.addressTel:focus,
-.addressTel:hover {
+
+.contactItem,
+.contactItem {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #fff;
+}
+.contactItem:focus,
+.contactItem:hover {
     color: var(--accent-color);
 }
 
@@ -62,11 +54,12 @@
 }
 
 .footerTitle {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1.14;
     color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.18;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .footerIcon {

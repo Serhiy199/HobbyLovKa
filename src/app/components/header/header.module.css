@@ -1,5 +1,34 @@
 .head {
     padding: 24px 64px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #f7f7f7;
     border-bottom: 1px solid #dadde1;
+    display: flex;
+}
+
+.logoType {
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--title-text-color);
+}
+
+.logo {
+    color: var(--accent-color);
+}
+
+.contact {
+}
+
+.contactItem {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+}
+
+.contactItem:focus,
+.contactItem:hover {
+    color: var(--accent-color);
 }

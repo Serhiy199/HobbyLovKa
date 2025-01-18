@@ -1,6 +1,17 @@
-.section {
+.block {
     padding-top: 64px;
     padding-bottom: 64px;
+}
+
+.title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+}
+
+.list {
     align-items: center;
     display: flex;
     gap: calc(5%);

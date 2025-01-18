@@ -1,14 +1,29 @@
-/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+/*Стилі index.html*/
+
+/* колір основного тексту #757575 */
+/* другорядний колір тексту #212121 */
+/* акцент #2196F3 */
+/* головний колір фону #FFFFFF */
+/* другорядний колір фону #F5F4FA */
+/* колір фону героя #2F303A */
+
+@import 'modern-normalize';
+
+:root {
+    --primary-text-color: #757575;
+    --title-text-color: #212121;
+    --accent-color: #2196f3;
+}
 
 html,
 body {
-    line-height: 1.5;
-    font-weight: 400;
-    font-size: 16px;
-
+    font-family: sans-serif;
     color-scheme: light;
-    color: #101828;
+    color: var(--primary-text-color);
     background-color: #ffffff;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    line-height: 1.71;
 
     font-synthesis: none;
 
@@ -49,19 +64,7 @@ img {
     display: block;
 }
 
-.link {
-    text-decoration: none;
-}
-
-.list {
-    list-style-type: none;
-}
-
 .layoutMain {
     max-width: 1440px;
     margin: 0 auto;
-}
-
-.loader {
-    color: red;
 }

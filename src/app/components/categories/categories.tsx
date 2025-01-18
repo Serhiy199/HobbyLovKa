@@ -4,9 +4,9 @@ import CardCategory from '../cardCategory/card-category';
 
 export default function Categories() {
     return (
-        <section id="category">
-            <h2>Категорії</h2>
-            <ul className={css.section}>
+        <section id="category" className={css.block}>
+            <h2 className={css.title}>Категорії</h2>
+            <ul className={css.list}>
                 <li>
                     <Link href={'/catalog?page=1'}>
                         <CardCategory

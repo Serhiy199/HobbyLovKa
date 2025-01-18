@@ -3,7 +3,7 @@
 // import css from './page.module.css';
 import Categories from './components/categories/categories';
 import TopSellers from './components/topSellers/top-sellers';
-import NewGoods from './components/newGoods/newGoods';
+import NewProducts from './components/newProducts/new-products';
 import HeroPage from './components/hero/hero';
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
         <>
             <HeroPage />
             <TopSellers />
-            <NewGoods />
+            <NewProducts />
             <Categories />
         </>
     );
