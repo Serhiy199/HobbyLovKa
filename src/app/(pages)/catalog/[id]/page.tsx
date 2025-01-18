@@ -1,12 +1,12 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { getBagDetailInfo, CatalogProps } from '../../../../lib/api';
+
 import { getOneProduct } from '../../../../lib/mongoDB/controllers/products-controllers';
 import { HandBagProps } from '../../../../lib/mongoDB/models/hand-bags-models';
 import css from './page.module.css';
 
-export default async function Page({ params }: { params: { id: string } }) {
-    const data: HandBagProps = await getOneProduct(params.id);
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const data: HandBagProps = await getOneProduct(id);
 
     return (
         <div className={css.container}>

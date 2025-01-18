@@ -8,8 +8,8 @@ import {
 import { HandBagProps } from '../../../lib/mongoDB/models/hand-bags-models';
 import ServerPagination from '../../components/serverPagination/server-pagination';
 
-export default async function Catalog({ searchParams }: { searchParams: { page: string } }) {
-    const { page }: { page: string } = await searchParams;
+export default async function Catalog({ params }: { params: Promise<{ page: string }> }) {
+    const { page } = await params;
 
     const currentPage: number = parseInt(page);
 
