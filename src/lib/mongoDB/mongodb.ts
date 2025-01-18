@@ -11,7 +11,9 @@ if (!DB_URI) {
 // const DB_URI = process.env.DB_URI;
 
 mongoose
-    .connect(DB_URI)
+    .connect(DB_URI, {
+        serverSelectionTimeoutMS: 50000, // Збільшуємо тайм-аут на 50 секунд
+    })
     .then(() => {
         console.log('Database connection successful');
     })
