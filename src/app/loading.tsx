@@ -6,7 +6,6 @@ export default function Loader() {
             <div className={css.ring}></div>
             <div className={css.ring}></div>
             <div className={css.ring}></div>
-            <p>Loading...</p>
         </div>
     );
 }

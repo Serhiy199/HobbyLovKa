@@ -11,8 +11,8 @@ export const getAllTopSellers = async (): Promise<TopSellersProps[]> => {
             console.error('Error fetching handbags:', error.message);
             throw new Error(`Error fetching handbags: ${error.message}`);
         } else {
-            console.error('Unexpected error:', error);
-            throw new Error('Unexpected error occurred while fetching products.');
+            console.error('Database Error:', error);
+            throw new Error('Failed to fetch the latest invoices.');
         } // посилає помилку для обробки в місці виклику
     }
 };
