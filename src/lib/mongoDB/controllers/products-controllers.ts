@@ -12,7 +12,7 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
         const pageSize: number = 4; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
 
-        const count: number = await HandBagModel.find().countDocuments();
+        const count: number = await HandBagModel.find().countDocuments().wtimeout(15000);
 
         const data: HandBagProps[] = await HandBagModel.find()
             .limit(pageSize)
