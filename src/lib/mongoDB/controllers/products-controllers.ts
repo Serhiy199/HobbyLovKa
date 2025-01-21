@@ -12,17 +12,13 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
         const pageSize: number = 4; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
 
-        // const count: number = await HandBagModel.find().countDocuments();
-        const countLength: HandBagProps[] = await HandBagModel.find();
-
-        const length: number = countLength.length;
-        console.log(length);
+        const count: number = await HandBagModel.find().countDocuments();
 
         const data: HandBagProps[] = await HandBagModel.find()
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
 
-        const totalPage: number = Math.ceil(length / pageSize); // це загальна кількість сторінок товару
+        const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
 
         return { data, totalPage } as { data: HandBagProps[]; totalPage: number };
     } catch (error) {

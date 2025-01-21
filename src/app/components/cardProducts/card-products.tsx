@@ -30,39 +30,47 @@ export default function CardProducts({
     const tags = listProducts.tags;
 
     return (
-        <li className={css.card}>
-            <Link href={`/catalog/${listProducts._id}`}>
+        <li className={css.item}>
+            <Link className={css.card} href={`/catalog/${listProducts._id}`}>
                 <div className={css.poster}>
-                    <Image
-                        layout="fill"
-                        objectFit="cover"
-                        src="/photo_шопер_котик.jpg"
-                        alt={listProducts.title}
-                    />
+                    <div className={css.cardImg}>
+                        <Image
+                            className={css.img}
+                            // width={325}
+                            // height={300}
+                            layout="fill"
+                            objectFit="cover"
+                            src="/photo_шопер_котик.jpg"
+                            alt={listProducts.title}
+                        />
+                    </div>
+
+                    <div className={css.details}>
+                        <div className={css.rating}>
+                            <i className={clsx(css.fas && css.faStar)}>★</i>
+                            <i className={clsx(css.fas && css.faStar)}>★</i>
+                            <i className={clsx(css.fas && css.faStar)}>★</i>
+                            <i className={clsx(css.fas && css.faStar)}>★</i>
+                            <i className={clsx(css.fas && css.faStar)}>★</i>
+                            <span>{listProducts.ratings.average}</span>
+                        </div>
+                        <div className={css.tags}>
+                            {tags.map((listTag: string, i: number) => (
+                                <span key={i} className={css.tag}>
+                                    {listTag}
+                                </span>
+                            ))}
+                        </div>
+                        <p className={css.desc}>{truncateText(listProducts.description, 10)}</p>
+                        <button type="button" className={css.btn}>
+                            Замовити
+                        </button>
+                    </div>
                 </div>
 
-                <div className={css.details}>
-                    <h3 className={css.productTitle}>{listProducts.title}</h3>
+                <div className={css.imgText}>
+                    <h2 className={css.productTitle}>{listProducts.title}</h2>
                     <p className={css.productModel}>{listProducts.model}</p>
-                    <div className={css.rating}>
-                        <i className={clsx(css.fas && css.faStar)}>★</i>
-                        <i className={clsx(css.fas && css.faStar)}>★</i>
-                        <i className={clsx(css.fas && css.faStar)}>★</i>
-                        <i className={clsx(css.fas && css.faStar)}>★</i>
-                        <i className={clsx(css.fas && css.faStar)}>★</i>
-                        <span>{listProducts.ratings.average}</span>
-                    </div>
-                    <div className={css.tags}>
-                        {tags.map((listTag: string, i: number) => (
-                            <span key={i} className={css.tag}>
-                                {listTag}
-                            </span>
-                        ))}
-                    </div>
-                    <p className={css.desc}>{truncateText(listProducts.description, 10)}</p>
-                    <button type="button" className={css.btn}>
-                        Замовити
-                    </button>
                 </div>
             </Link>
         </li>

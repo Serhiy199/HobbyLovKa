@@ -10,7 +10,7 @@ export default function Footer(): React.ReactNode {
             <div className={css.footerContainer}>
                 <div className={css.footerContainerList}>
                     <Link href="/" lang="en" className={clsx(raleway.className, css.footerLogo)}>
-                        <span className={css.footerLogoLink}>Web</span>Studio
+                        <span className={css.footerLogoLink}>Bag</span>Charm
                     </Link>
                     <div>
                         <h3 className={css.footerTitle}>Контактна інформація</h3>

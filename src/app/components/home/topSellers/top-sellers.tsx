@@ -1,7 +1,7 @@
 import css from './top-sellers.module.css';
-import CardProducts from '../cardProducts/card-products';
-import { TopSellersProps } from '../../../lib/mongoDB/models/top-sellers-models';
-import { getAllTopSellers } from '../../../lib/mongoDB/controllers/top-sellers-controllers';
+import CardProducts from '../../cardProducts/card-products';
+import { TopSellersProps } from '../../../../lib/mongoDB/models/top-sellers-models';
+import { getAllTopSellers } from '../../../../lib/mongoDB/controllers/top-sellers-controllers';
 
 export default async function TopSellers() {
     const data: TopSellersProps[] = await getAllTopSellers();

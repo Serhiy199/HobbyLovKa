@@ -1,14 +1,14 @@
 .hero {
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
     background-color: #2f303a;
-    /* padding-top: 260px;
-    padding-bottom: 260px; */
-    /* padding-left: 64px; */
+    padding-top: 260px;
+    padding-bottom: 260px;
+    padding-left: 64px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url('/photo_шопер_котик.jpg');
-    background-size: contain;
-    /* color: #f7f7f7; */
+        url('/DALLE-HERO.webp');
+    background-size: cover;
+    color: #f7f7f7;
 }
 
 .title {

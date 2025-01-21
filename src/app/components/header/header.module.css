@@ -32,3 +32,8 @@
 .contactItem:hover {
     color: var(--accent-color);
 }
+
+.contactsContMail {
+    margin-right: 10px;
+    fill: currentColor;
+}

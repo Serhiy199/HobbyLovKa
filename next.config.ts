@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'i.postimg.cc',
             },
+            {
+                protocol: 'https',
+                hostname: 'res.cloudinary.com',
+                pathname: '/bagcharm/**', // Додатково вказуйте ваш підкаталог, якщо потрібно
+            },
         ],
     },
 };
