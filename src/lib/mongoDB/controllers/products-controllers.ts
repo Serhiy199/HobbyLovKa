@@ -9,7 +9,7 @@ export interface allProductsProps {
 // Асинхронна функція для отримання всіх товарів
 export const getAllProducts = async (page: number): Promise<allProductsProps> => {
     try {
-        const pageSize: number = 4; // сторінка з кількістю карток товарів, яка показує першу сторінку
+        const pageSize: number = 12; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
 
         const count: number = await HandBagModel.find().countDocuments();

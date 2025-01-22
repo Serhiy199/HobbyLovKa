@@ -12,10 +12,13 @@
 }
 
 .list {
+    margin-top: 30px;
     align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
     display: flex;
-    gap: calc(5%);
+    gap: 140px;
     row-gap: 24px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }

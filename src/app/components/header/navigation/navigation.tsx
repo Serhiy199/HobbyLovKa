@@ -16,6 +16,11 @@ export default function Navigation() {
                         Головна
                     </Link>
                 </li>
+                <li>
+                    <Link href="/#category" className={css.menuLinkCategory}>
+                        Категорій
+                    </Link>
+                </li>
                 <li className={css.menuItem}>
                     <Link
                         href="/catalog?page=1"

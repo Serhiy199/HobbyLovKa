@@ -19,19 +19,22 @@ function truncateText(text: string, wordLimit: number): string {
 
 export default function CardProducts({
     listProducts,
+    getRequest,
 }: {
     listProducts: HandBagProps;
+    getRequest: string;
 }): React.ReactNode {
     // const galleryImage: string = listProducts.images[0];
     // const location = useLocation();
 
     // const defaultImg = 'https://i.postimg.cc/jjBSrfnQ/poster1-img.jpg';
+    console.log(getRequest);
 
     const tags = listProducts.tags;
 
     return (
         <li className={css.item}>
-            <Link className={css.card} href={`/catalog/${listProducts._id}`}>
+            <Link className={css.card} href={`/catalog/${getRequest}/${listProducts._id}`}>
                 <div className={css.poster}>
                     <div className={css.cardImg}>
                         <Image

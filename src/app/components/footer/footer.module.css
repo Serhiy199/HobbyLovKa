@@ -126,6 +126,14 @@
     margin-left: 10px;
 }
 
+.footerText {
+    color: #fff;
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
 @media screen and (min-width: 480px) {
     .footer-email {
         max-width: 450px;
@@ -159,7 +167,7 @@
 }
 @media screen and (min-width: 1200px) {
     .footer-container {
-        max-width: 1170px;
+        /* max-width: 1170px; */
         display: flex;
         justify-content: flex-start;
         flex-wrap: nowrap;
@@ -203,7 +211,5 @@
         flex-wrap: wrap;
         text-align: center;
         max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }

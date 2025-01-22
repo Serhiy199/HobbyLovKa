@@ -22,7 +22,7 @@ export default function CardCategory({
                                     layout="fill"
                                     objectFit="cover"
                                     src={photo}
-                                    alt="Вироби з натуральної шкіри"
+                                    alt={description}
                                 />
                             </div>
 
@@ -34,7 +34,7 @@ export default function CardCategory({
                             <Image
                                 layout="fill"
                                 src="/photo_шопер_котик.jpg"
-                                alt="Вироби з натуральної шкіри"
+                                alt={description}
                                 className={css.videoContainer}
                             />
                             {/* <video className={"video__container"} autoplay muted loop>
@@ -46,7 +46,7 @@ export default function CardCategory({
 
                 <div className={css.insidePage}>
                     <div className={css.insidePageContainer}>
-                        <h4 className={css.insidePageHeadingCity}>For urban lovers</h4>
+                        <h4 className={css.insidePageHeadingCity}>Опис</h4>
                         <p className={css.insidePageText}>{description}</p>
                         <button type="button" className={css.insidePageBtn}>
                             Переглянути

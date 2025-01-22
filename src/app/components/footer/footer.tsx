@@ -3,14 +3,15 @@ import css from './footer.module.css';
 import Link from 'next/link';
 import { raleway } from '../../styles/fonts';
 import clsx from 'clsx';
+import '../../globals.css';
 
 export default function Footer(): React.ReactNode {
     return (
-        <footer className={css.footerLayout}>
-            <div className={css.footerContainer}>
+        <footer className={`${css.footerLayout} section`}>
+            <div className={`${css.footerContainer} container`}>
                 <div className={css.footerContainerList}>
                     <Link href="/" lang="en" className={clsx(raleway.className, css.footerLogo)}>
-                        <span className={css.footerLogoLink}>Bag</span>Charm
+                        <span className={css.footerLogoLink}>Hobby</span>LovKa
                     </Link>
                     <div>
                         <h3 className={css.footerTitle}>Контактна інформація</h3>
@@ -114,6 +115,8 @@ export default function Footer(): React.ReactNode {
                 </form>
             </div> */}
             </div>
+
+            <p className={css.footerText}>&copy; 2025 Created SH</p>
         </footer>
     );
 }

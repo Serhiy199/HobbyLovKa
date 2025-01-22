@@ -1,13 +1,15 @@
 .head {
-    padding: 24px 64px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
     background-color: #f7f7f7;
     border-bottom: 1px solid #dadde1;
-    display: flex;
 }
 
+.headContainer {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    align-items: center;
+    /* padding: 24px 64px; */
+}
 .logoType {
     font-size: 26px;
     line-height: 1.2;
@@ -19,6 +21,9 @@
 }
 
 .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .contactItem {

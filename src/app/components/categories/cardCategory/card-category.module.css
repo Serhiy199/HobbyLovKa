@@ -21,7 +21,7 @@
 }
 
 .insidePageHeadingCity {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 0.2rem;
     color: rgb(33, 150, 243);
@@ -89,6 +89,7 @@
     z-index: 10;
     border-color: rgb(33, 150, 243);
     color: rgb(33, 150, 243);
+    bottom: 10px;
 }
 
 .insidePageBtn::before {
@@ -150,14 +151,14 @@
 
 /* Layout Structure=========================================*/
 
-.main {
+/* .main {
     background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
     width: 100%;
-}
+} */
 
 /* Card ============================================*/
 
@@ -167,30 +168,30 @@
     display: flex;
     height: 100%;
     justify-content: center;
-    /*   width: 100%; */
+    /* width: 100%; */
 }
 
 /* A container to hold the flip card and the inside page */
 .card {
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-    height: 15rem;
+    height: 242px;
     position: relative;
     transition: all 1s ease;
-    width: 15rem;
+    width: 242px;
 }
 
 /* Flip card - covering both the front and inside front page */
 
 /* An outer container to hold the flip card. This excludes the inside page */
 .flipCard {
-    height: 15rem;
+    height: 242px;
     perspective: 100rem;
     position: absolute;
     right: 0;
     transition: all 1s ease;
     visibility: hidden;
-    width: 15rem;
+    width: 242px;
     z-index: 100;
 }
 
@@ -226,8 +227,8 @@
 /* container for the front side */
 .cardFront {
     background-color: #fafbfa;
-    height: 15rem;
-    width: 15rem;
+    height: 242px;
+    width: 242px;
 }
 
 /* Front side's top section */
@@ -236,7 +237,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
     display: flex;
     flex-direction: column;
-    height: 12rem;
+    height: 200px;
     justify-content: center;
     padding: 0.75rem;
 }
@@ -260,8 +261,8 @@
 /* Front card's bottom section */
 .cardFrontBt {
     align-items: center;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 /* Styling for the back side of the flip card */
@@ -291,7 +292,7 @@
     position: absolute;
     right: 0;
     transition: all 1s ease;
-    width: 15rem;
+    width: 242px;
     z-index: 1;
 }
 
@@ -309,7 +310,7 @@
 /* This is to keep the card centered (within its container) when opened */
 .card:hover {
     box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
-    width: 30rem;
+    width: 242px;
 }
 
 /* When the card is hovered, the flip card container will rotate */
