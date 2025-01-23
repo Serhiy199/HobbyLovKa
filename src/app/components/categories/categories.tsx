@@ -43,7 +43,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog/bags?page=1'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Сумки'}

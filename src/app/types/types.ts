@@ -11,10 +11,9 @@ export interface productsProps {
     novelty: boolean; // Новий товар чи ні
     title: string; // Назва
     decorationMaterial: string; // Матеріал декору
-    machinery: string; // техніка вишивання
     type: string; // тип
     handle: number; // довжина ручки
-    сountryOfMmanufacture: string; // країна виробник
+    сountryOfManufacture: string; // країна виробник
     typeClasp: string; // тип застібки
     appointment: string; // призначення сумки
     subject: string; // тематика
@@ -32,8 +31,6 @@ export interface productsProps {
         count: number; // Кількість оцінок
     }; // Рейтинги
     tags: string[]; // Теги, наприклад ["класика", "шкіра"]
-    createdAt: string; // Дата створення запису
-    updatedAt: string; // Дата останнього оновлення
 }
 
 export const productsSchema = new mongoose.Schema<productsProps>({
@@ -47,10 +44,9 @@ export const productsSchema = new mongoose.Schema<productsProps>({
     novelty: { type: Boolean, required: true },
     title: { type: String, required: true },
     decorationMaterial: { type: String, required: false },
-    machinery: { type: String, required: false },
     type: { type: String, required: true },
     handle: { type: Number, required: false },
-    сountryOfMmanufacture: { type: String, required: true },
+    сountryOfManufacture: { type: String, required: true },
     typeClasp: { type: String, required: false },
     appointment: { type: String, required: false },
     subject: { type: String, required: false },
@@ -68,6 +64,9 @@ export const productsSchema = new mongoose.Schema<productsProps>({
         count: { type: Number, required: false },
     },
     tags: { type: [String], required: false },
-    createdAt: { type: String, required: false },
-    updatedAt: { type: String, required: false },
 });
+
+export interface allProductsProps {
+    data: productsProps[];
+    totalPage: number;
+}

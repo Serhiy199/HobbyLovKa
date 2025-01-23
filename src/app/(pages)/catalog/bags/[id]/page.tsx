@@ -1,13 +1,13 @@
 import Image from 'next/image';
 
-import { getOneProduct } from '../../../../lib/mongoDB/controllers/products-controllers';
-import { HandBagProps } from '../../../../lib/mongoDB/models/hand-bags-models';
+import { getOneBag } from '../../../../../lib/mongoDB/controllers/bags-controllers';
+import { productsProps } from '../../../../types/types';
 import css from './page.module.css';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     // const { getRequest } = await params;
-    const data: HandBagProps = await getOneProduct(id);
+    const data: productsProps = await getOneBag(id);
 
     return (
         <div className={css.container}>

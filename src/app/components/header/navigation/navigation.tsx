@@ -24,7 +24,7 @@ export default function Navigation() {
                 <li className={css.menuItem}>
                     <Link
                         href="/catalog?page=1"
-                        className={clsx(css.menuLink, pathname === '/catalog' && css.isActive)}
+                        className={clsx(css.menuLink, pathname === '/catalog/bags' && css.isActive)}
                     >
                         Каталог товарів
                     </Link>
