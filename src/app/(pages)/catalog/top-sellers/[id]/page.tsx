@@ -1,13 +1,14 @@
 import Image from 'next/image';
 
-import { getOneNewProducts } from '../../../../../lib/mongoDB/controllers/new-products-controllers';
+import { getOneTopSellers } from '../../../../../lib/mongoDB/controllers/top-sellers-controllers';
 import { productsProps } from '../../../../types/types';
 import css from './page.module.css';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
+
     // const { getRequest } = await params;
-    const data: productsProps = await getOneNewProducts(id);
+    const data: productsProps = await getOneTopSellers(id);
 
     return (
         <div className={css.container}>
@@ -16,7 +17,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             <div>
                 <h2 className={css.name}>{data.title}</h2>
                 {/* <InfoLocation bag={bagData} /> */}
-                <h2 className={css.price}>€ {data.price}.00</h2>
+                <h2 className={css.price}>₴ {data.price}.00 грн</h2>
                 <p className={css.text}>{data.description}</p>
             </div>
             {/* <section>

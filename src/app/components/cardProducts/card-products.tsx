@@ -43,7 +43,7 @@ export default function CardProducts({
                             // height={300}
                             layout="fill"
                             objectFit="cover"
-                            src="/photo_шопер_котик.jpg"
+                            src={listProducts.images[0]}
                             alt={listProducts.title}
                         />
                     </div>
@@ -64,7 +64,7 @@ export default function CardProducts({
                                 </span>
                             ))}
                         </div>
-                        <p className={css.desc}>{truncateText(listProducts.description, 10)}</p>
+                        <p className={css.desc}>{truncateText(listProducts.description, 13)}</p>
                         <button type="button" className={css.btn}>
                             Замовити
                         </button>
@@ -73,7 +73,10 @@ export default function CardProducts({
 
                 <div className={css.imgText}>
                     <h2 className={css.productTitle}>{listProducts.title}</h2>
-                    <p className={css.productModel}>{listProducts.model}</p>
+                    <div className={css.price}>
+                        <p className={css.productModel}>{listProducts.model}</p>
+                        <p className={css.productModel}>₴ {listProducts.price} грн</p>
+                    </div>
                 </div>
             </Link>
         </li>

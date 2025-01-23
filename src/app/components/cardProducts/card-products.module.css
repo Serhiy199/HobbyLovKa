@@ -155,3 +155,9 @@
 .btn:hover {
     background-color: #188ce8;
 }
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

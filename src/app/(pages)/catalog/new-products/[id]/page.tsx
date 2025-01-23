@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             <div>
                 <h2 className={css.name}>{data.title}</h2>
                 {/* <InfoLocation bag={bagData} /> */}
-                <h2 className={css.price}>€ {data.price}.00</h2>
+                <h2 className={css.price}>₴ {data.price}.00</h2>
                 <p className={css.text}>{data.description}</p>
             </div>
             {/* <section>
