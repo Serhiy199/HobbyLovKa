@@ -1,8 +1,9 @@
-import { HandBagModel, HandBagProps } from '../models/bags-models';
+import { BagModel } from '../models/bags-models';
+import { productsProps } from '../../../app/types/types';
 import '../mongodb';
 
 export interface allProductsProps {
-    data: HandBagProps[];
+    data: productsProps[];
     totalPage: number;
 }
 
@@ -12,15 +13,15 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
         const pageSize: number = 12; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
 
-        const count: number = await HandBagModel.find().countDocuments();
+        const count: number = await BagModel.find().countDocuments();
 
-        const data: HandBagProps[] = await HandBagModel.find()
+        const data: productsProps[] = await BagModel.find()
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
 
         const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
 
-        return { data, totalPage } as { data: HandBagProps[]; totalPage: number };
+        return { data, totalPage } as { data: productsProps[]; totalPage: number };
     } catch (error) {
         if (error instanceof Error) {
             console.error('Error fetching handbags:', error.message);
@@ -33,9 +34,9 @@ export const getAllProducts = async (page: number): Promise<allProductsProps> =>
 };
 
 // Асинхронна функція для отримання одного товару
-export const getOneProduct = async (id: string): Promise<HandBagProps> => {
+export const getOneProduct = async (id: string): Promise<productsProps> => {
     try {
-        const productById: HandBagProps | null = await HandBagModel.findById(id);
+        const productById: productsProps | null = await BagModel.findById(id);
 
         if (!productById) {
             throw new Error();

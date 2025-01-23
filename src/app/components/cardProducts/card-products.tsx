@@ -5,7 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import Button from '../button/button';
-import { HandBagProps } from '../../../lib/mongoDB/models/bags-models';
+import { productsProps } from '../../types/types';
 import clsx from 'clsx';
 import css from '../cardProducts/card-products.module.css';
 
@@ -21,8 +21,8 @@ export default function CardProducts({
     listProducts,
     getRequest,
 }: {
-    listProducts: HandBagProps;
-    getRequest: string;
+    listProducts: productsProps;
+    getRequest?: string;
 }): React.ReactNode {
     // const galleryImage: string = listProducts.images[0];
     // const location = useLocation();
