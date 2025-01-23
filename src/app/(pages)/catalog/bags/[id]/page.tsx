@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
     return (
         <div className={css.container}>
-            <Image width={320} height={360} src="/photo_шопер_котик.jpg" alt={data.title} />
+            <Image width={500} height={500} src={data.images[0]} alt={data.title} />
             <div>
                 <h2 className={css.name}>{data.title}</h2>
                 {/* <InfoLocation bag={bagData} /> */}

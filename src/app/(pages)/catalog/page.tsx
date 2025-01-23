@@ -22,11 +22,7 @@ export default async function Catalog({ params }: { params: Promise<{ page: stri
                 <ul className={css.wrapper}>
                     {data.map((list: productsProps) => {
                         return (
-                            <CardProducts
-                                // getRequest={'top-sellers'}
-                                key={list._id}
-                                listProducts={list}
-                            />
+                            <CardProducts getRequest={'bags'} key={list._id} listProducts={list} />
                         );
                     })}
                 </ul>
