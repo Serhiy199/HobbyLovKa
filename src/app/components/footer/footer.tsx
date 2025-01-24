@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { raleway } from '../../styles/fonts';
 import clsx from 'clsx';
 import '../../globals.css';
+import Information from './Information/Information';
 
 export default function Footer(): React.ReactNode {
     return (
@@ -29,6 +30,9 @@ export default function Footer(): React.ReactNode {
                                 <li className={css.contactItem}>
                                     <Link href="tel:+380961050086">+38 096 105 00 86</Link>
                                 </li>
+                                <li className={css.contactItem}>
+                                    <Link href="tel:+380669016927">+38 066 901 69 27</Link>
+                                </li>
                             </ul>
                         </address>
                     </div>
@@ -52,7 +56,7 @@ export default function Footer(): React.ReactNode {
                                 </svg>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
                                 className={css.footerSocialLink}
                                 href=""
@@ -67,7 +71,7 @@ export default function Footer(): React.ReactNode {
                                     <use href="/icons.svg#twitter"></use>
                                 </svg>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link
                                 className={css.footerSocialLink}
@@ -84,7 +88,7 @@ export default function Footer(): React.ReactNode {
                                 </svg>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
                                 className={css.footerSocialLink}
                                 href=""
@@ -99,9 +103,10 @@ export default function Footer(): React.ReactNode {
                                     <use href="/icons.svg#linkedin"></use>
                                 </svg>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
+                <Information />
                 {/* <div className={"form-footer">
                 <form className={"form-email">
                     <h3 className={"form-title">ПІДПИШИСЬ НА СПОВІЩЕННЯ</h3>

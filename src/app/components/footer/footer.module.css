@@ -50,7 +50,7 @@
 .footerIconLink {
     width: 206px;
     height: 80px;
-    margin: auto;
+    /* margin: auto; */
 }
 
 .footerTitle {
@@ -64,7 +64,8 @@
 
 .footerIcon {
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
     align-items: baseline;
 }
 
