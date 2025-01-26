@@ -4,8 +4,8 @@ import { getOneBag } from '../../../../../lib/mongoDB/controllers/bags-controlle
 import { productsProps } from '../../../../types/types';
 import css from './page.module.css';
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = await params;
+export default async function Page({ params }: { params: { id: string } }) {
+    const { id } = params;
     // const { getRequest } = await params;
     const data: productsProps = await getOneBag(id);
 

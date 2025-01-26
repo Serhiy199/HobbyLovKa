@@ -28,7 +28,6 @@ export default function CardProducts({
     // const location = useLocation();
 
     // const defaultImg = 'https://i.postimg.cc/jjBSrfnQ/poster1-img.jpg';
-    console.log(getRequest);
 
     const tags = listProducts.tags;
 

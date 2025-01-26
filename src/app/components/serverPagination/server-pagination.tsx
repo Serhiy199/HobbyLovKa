@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import css from './server-pagination.module.css';
+import clsx from 'clsx';
 
 export default function ServerPagination({
     totalPages,
@@ -9,43 +10,36 @@ export default function ServerPagination({
     totalPages: number;
     currentPage: number;
 }) {
+    // console.log(totalPages);
+    // console.log(currentPage);
     return (
-        <div className={css.list}>
-            <Link
-                href={`/catalog/?page=${currentPage - 1}`}
-                className={`${
-                    currentPage === 1
-                        ? 'hidden'
-                        : 'flex items-center justify-center dark:bg-dark dark:text-light px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700'
-                }`}
-            >
-                Previous
-            </Link>
+        <ul className={css.list}>
+            <li>
+                <Link
+                    href={`/catalog/${currentPage - 1}`}
+                    className={clsx(css.button, currentPage === 1 && css.disabled)}
+                >
+                    Previous
+                </Link>
+            </li>
             {Array.from({ length: totalPages }, (_, index) => (
-                <div key={index}>
+                <li key={index}>
                     <Link
-                        href={`/catalog/?page=${index + 1}`}
-                        className={`flex items-center justify-center px-3 h-8 leading-tight border ${
-                            currentPage === index + 1
-                                ? 'bg-blue-500 text-white'
-                                : 'bg-white text-gray-500 border-gray-300 dark:bg-dark dark:text-light hover:bg-gray-100 hover:text-gray-700'
-                        }`}
+                        href={`/catalog/${index + 1}`}
+                        className={clsx(css.button, currentPage === index + 1 && css.isActive)}
                     >
                         {index + 1}
                     </Link>
-                </div>
+                </li>
             ))}
-            <Link
-                href={`/catalog/?page=${currentPage + 1}`}
-                className={`${
-                    totalPages === currentPage
-                        ? 'hidden'
-                        : 'flex items-center justify-center dark:bg-dark dark:text-light px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700'
-                }
-        `}
-            >
-                Next
-            </Link>
-        </div>
+            <li>
+                <Link
+                    href={`/catalog/${currentPage + 1}`}
+                    className={clsx(css.button, currentPage === totalPages && css.disabled)}
+                >
+                    Next
+                </Link>
+            </li>
+        </ul>
     );
 }

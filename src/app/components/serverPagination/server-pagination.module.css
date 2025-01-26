@@ -1,6 +1,35 @@
 .list {
+    margin-top: 32px;
     display: flex;
     gap: 12px;
     align-content: center;
     justify-content: center;
+}
+
+.disabled {
+    pointer-events: none; /* Забороняє будь-яку взаємодію з кнопкою */
+    opacity: 0.5; /* Зменшує прозорість для візуального ефекту */
+    cursor: not-allowed; /* Змінює курсор на "не дозволено" */
+}
+
+.button {
+    color: var(--title-text-color);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding: 5px 10px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* border: 1px solid; */
+    /* border-radius: 50%; */
+}
+
+.button:focus,
+.button:hover {
+    color: var(--accent-color);
+}
+
+.isActive {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
 }

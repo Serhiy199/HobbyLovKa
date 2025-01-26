@@ -1,18 +1,20 @@
 import React from 'react';
 import css from './page.module.css';
 import './page.module.css';
-import CardProducts from '../../components/cardProducts/card-products';
+import CardProducts from '../../../components/cardProducts/card-products';
 import {
     getAllProducts,
     allProductsProps,
-} from '../../../lib/mongoDB/controllers/products-controllers';
-import { productsProps } from '../../types/types';
-import ServerPagination from '../../components/serverPagination/server-pagination';
+} from '../../../../lib/mongoDB/controllers/products-controllers';
+import { productsProps } from '../../../types/types';
+import ServerPagination from '../../../components/serverPagination/server-pagination';
 
 export default async function Catalog({ params }: { params: Promise<{ page: string }> }) {
     const { page } = await params;
+    console.log(page);
 
     const currentPage: number = parseInt(page);
+    // console.log(currentPage);
 
     const { data, totalPage }: allProductsProps = await getAllProducts(currentPage);
 
