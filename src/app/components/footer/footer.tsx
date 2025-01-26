@@ -1,26 +1,25 @@
 import React from 'react';
 import css from './footer.module.css';
 import Link from 'next/link';
-import { raleway } from '../../styles/fonts';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import '../../globals.css';
 import Information from './Information/Information';
+import Logo from '../logo/logo';
+import SocialLink from '../socialLink/social-link';
 
-export default function Footer(): React.ReactNode {
+export default function Footer() {
     return (
         <footer className={`${css.footerLayout} section`}>
             <div className={`${css.footerContainer} container`}>
                 <div className={css.footerContainerList}>
-                    <Link href="/" lang="en" className={clsx(raleway.className, css.footerLogo)}>
-                        <span className={css.footerLogoLink}>Hobby</span>LovKa
-                    </Link>
+                    <Logo textColor="footer" />
                     <div>
-                        <h3 className={css.footerTitle}>Контактна інформація</h3>
+                        <h3 className={css.title}>Контактна інформація</h3>
                         <address className={css.address}>
                             <ul className={css.contact}>
-                                <li className={css.contactItem}>
-                                    <Link href={''}>м.Бориспіль, вул. Віктора Йови 3</Link>
-                                </li>
+                                {/* <li className={css.contactItem}>
+                                    <Link href={''}>м.Бориспіль, вул.Віктора Йови 3</Link>
+                                </li> */}
                                 <li className={css.contactItem}>
                                     <Link href="mailto:maria.horog.89@gmail.com">
                                         maria.horog.89@gmail.com
@@ -37,74 +36,9 @@ export default function Footer(): React.ReactNode {
                         </address>
                     </div>
                 </div>
-                <div className={css.footerIconLink}>
-                    <h3 className={css.footerTitle}>Приєднуйся до наших соціальних мереж</h3>
-                    <ul className={css.footerIcon}>
-                        <li>
-                            <Link
-                                className={css.footerSocialLink}
-                                href=""
-                                aria-label="Перейти на сторінку Instagram"
-                            >
-                                <svg
-                                    className={css.footerIcon}
-                                    width="20"
-                                    height="20"
-                                    aria-hidden="true"
-                                >
-                                    <use href="/icons.svg#instagram"></use>
-                                </svg>
-                            </Link>
-                        </li>
-                        {/* <li>
-                            <Link
-                                className={css.footerSocialLink}
-                                href=""
-                                aria-label="Перейти на сторінку Twitter"
-                            >
-                                <svg
-                                    className={css.footerIcon}
-                                    width="20"
-                                    height="20"
-                                    aria-hidden="true"
-                                >
-                                    <use href="/icons.svg#twitter"></use>
-                                </svg>
-                            </Link>
-                        </li> */}
-                        <li>
-                            <Link
-                                className={css.footerSocialLink}
-                                href=""
-                                aria-label="Перейти на сторінку Facebook"
-                            >
-                                <svg
-                                    className={css.footerIcon}
-                                    width="20"
-                                    height="20"
-                                    aria-hidden="true"
-                                >
-                                    <use href="/icons.svg#facebook"></use>
-                                </svg>
-                            </Link>
-                        </li>
-                        {/* <li>
-                            <Link
-                                className={css.footerSocialLink}
-                                href=""
-                                aria-label="Перейти на сторінку Linkedin"
-                            >
-                                <svg
-                                    className={css.footerIcon}
-                                    width="20"
-                                    height="20"
-                                    aria-hidden="true"
-                                >
-                                    <use href="/icons.svg#linkedin"></use>
-                                </svg>
-                            </Link>
-                        </li> */}
-                    </ul>
+                <div className={css.iconLink}>
+                    <h3 className={css.title}>Приєднуйся до наших соціальних мереж</h3>
+                    <SocialLink />
                 </div>
                 <Information />
                 {/* <div className={"form-footer">

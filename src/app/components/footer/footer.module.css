@@ -1,28 +1,7 @@
-.footerLogo {
-    font-family: Raleway, sans-serif;
-    color: #ffffff;
-    font-size: 24px;
-    line-height: 1.16;
-    letter-spacing: 0.03em;
-}
-
-.footerLogoLink {
-    color: var(--accent-color);
-}
-
 .footerLayout {
     background-color: #2f303a;
     /* font-style: normal;
     text-align: center; */
-}
-
-.footerLogo {
-    text-decoration: none;
-    font-family: Raleway, sans-serif;
-
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 1.16;
 }
 
 .footerItem:not(:first-child) {
@@ -47,42 +26,20 @@
     margin-bottom: 60px;
 }
 
-.footerIconLink {
+.iconLink {
     width: 206px;
     height: 80px;
+    text-align: center;
     /* margin: auto; */
 }
 
-.footerTitle {
+.title {
     color: #ffffff;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.18;
     margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-.footerIcon {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: baseline;
-}
-
-.footerSocialLink {
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    fill: #ffffff;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-.footerSocialLink:hover,
-.footerSocialLink:focus {
-    background-color: var(--accent-color);
+    margin-bottom: 15px;
 }
 
 .form-footer {
@@ -151,10 +108,10 @@
         max-width: 768px;
         display: flex;
         justify-content: space-between;
-        text-align: center;
+        /* text-align: center; */
         flex-wrap: wrap;
     }
-    .footer-icon-link {
+    .iconLink {
         margin: 5px 0px 0px auto;
     }
     .form-footer {
@@ -182,7 +139,7 @@
         margin-bottom: 0px;
         text-align: left;
     }
-    .footerIconLink {
+    .iconLink {
         margin-left: 70px;
     }
     .footer-list:not(:first-child) {
@@ -210,7 +167,7 @@
 @media screen and (min-width: 1200px) {
     .footerContainer {
         flex-wrap: wrap;
-        text-align: center;
+        /* text-align: center; */
         max-width: 1400px;
     }
 }

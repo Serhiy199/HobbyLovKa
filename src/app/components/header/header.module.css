@@ -10,15 +10,6 @@
     align-items: center;
     /* padding: 24px 64px; */
 }
-.logoType {
-    font-size: 26px;
-    line-height: 1.2;
-    color: var(--title-text-color);
-}
-
-.logo {
-    color: var(--accent-color);
-}
 
 .contact {
     display: flex;

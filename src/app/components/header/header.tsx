@@ -2,23 +2,15 @@
 import Navigation from './navigation/navigation';
 import Link from 'next/link';
 import css from './header.module.css';
-import { raleway } from '../../styles/fonts';
 import '../../globals.css';
-import clsx from 'clsx';
+import Logo from '../logo/logo';
 
 export default function Header() {
     return (
         <header className={css.head}>
             <div className={`${css.headContainer} container`}>
                 {' '}
-                <Link
-                    href="/"
-                    lang="en"
-                    className={clsx(raleway.className, css.logoType)}
-                    title="До головної сторінки"
-                >
-                    <span className={css.logo}>Hobby</span>LovKa
-                </Link>
+                <Logo />
                 <Navigation />
                 <ul className={css.contact}>
                     <li className={css.contactItem}>
