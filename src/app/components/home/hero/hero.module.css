@@ -39,8 +39,15 @@
     /* margin-bottom: 40px; */
 }
 
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* justify-content: center; */
+}
+
 .socialLink {
-    padding: 34px 15px 15px;
+    padding: 20px 15px;
     width: 380px;
     background-color: #f5f4fa;
     text-align: center;
