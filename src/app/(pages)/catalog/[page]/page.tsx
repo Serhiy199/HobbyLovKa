@@ -11,7 +11,6 @@ import ServerPagination from '../../../components/serverPagination/server-pagina
 
 export default async function Catalog({ params }: { params: Promise<{ page: string }> }) {
     const { page } = await params;
-    console.log(page);
 
     const currentPage: number = parseInt(page);
     // console.log(currentPage);
@@ -19,17 +18,15 @@ export default async function Catalog({ params }: { params: Promise<{ page: stri
     const { data, totalPage }: allProductsProps = await getAllProducts(currentPage);
 
     return (
-        <section className="section">
-            <div className="container">
-                <ul className={css.wrapper}>
-                    {data.map((list: productsProps) => {
-                        return (
-                            <CardProducts getRequest={'bags'} key={list._id} listProducts={list} />
-                        );
-                    })}
-                </ul>
-                <ServerPagination totalPages={totalPage} currentPage={currentPage} />
-            </div>
-        </section>
+        // <section className="section">
+        <div className="container">
+            <ul className={css.wrapper}>
+                {data.map((list: productsProps) => {
+                    return <CardProducts getRequest={'bags'} key={list._id} listProducts={list} />;
+                })}
+            </ul>
+            <ServerPagination totalPages={totalPage} currentPage={currentPage} />
+        </div>
+        // </section>
     );
 }
