@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-import { PiTowelFill } from 'react-icons/pi';
-
 export default function NavBar() {
     const pathname: string = usePathname();
 
@@ -17,18 +15,17 @@ export default function NavBar() {
             <ul className={css.navbarNav}>
                 <li className={css.item}>
                     <Link className={css.link} href="/catalog/1">
-                        <PiTowelFill className={css.fas} />
-                        Рушники
+                        🎁&nbsp;Готові вироби
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        🖼️ Схеми для вишивки бісером
+                        🖼️&nbsp;Схеми для вишивки бісером
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        🪡 Інструменти для рукоділля
+                        ✂️&nbsp;Інструменти для рукоділля
                     </Link>
                 </li>
                 <li className={css.item}>
@@ -36,22 +33,22 @@ export default function NavBar() {
                         className={clsx(css.link, pathname === `/catalog/bags` && css.isActive)}
                         href="/catalog/bags?page=1"
                     >
-                        👜 Сумки
+                        👜&nbsp;Сумки
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        🧷 Аксесуари
+                        🧷&nbsp;Аксесуари
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        📿 Бісер PRECIOSA
+                        🟡&nbsp;Бісер PRECIOSA
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        👝 Біжутерія
+                        📿&nbsp;Біжутерія
                     </Link>
                 </li>
             </ul>
