@@ -6,7 +6,12 @@ export default function SocialLink() {
     return (
         <ul className={css.list}>
             <li>
-                <Link href="" aria-label="Перейти на сторінку Instagram">
+                <Link
+                    href="https://www.instagram.com/mariia_gorodetskaia"
+                    aria-label="Перейти на сторінку Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Image
                         src="/instagram.png"
                         className={css.icon}
@@ -19,7 +24,12 @@ export default function SocialLink() {
             </li>
             <li>
                 {' '}
-                <Link href="" aria-label="Перейти на сторінку Facebook">
+                <Link
+                    href="https://www.facebook.com/share/14kZPUeCCo/"
+                    aria-label="Перейти на сторінку Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Image
                         src="/facebook.png"
                         className={css.icon}

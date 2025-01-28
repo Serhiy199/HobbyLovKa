@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-import { FaBagShopping } from 'react-icons/fa6';
-import { GiPrayerBeads } from 'react-icons/gi';
 import { PiTowelFill } from 'react-icons/pi';
 
 export default function NavBar() {
