@@ -36,11 +36,12 @@ export default function Footer() {
                         </address>
                     </div>
                 </div>
+                <Information />
                 <div className={css.iconLink}>
                     <h3 className={css.title}>Приєднуйся до наших соціальних мереж</h3>
                     <SocialLink />
                 </div>
-                <Information />
+
                 {/* <div className={"form-footer">
                 <form className={"form-email">
                     <h3 className={"form-title">ПІДПИШИСЬ НА СПОВІЩЕННЯ</h3>

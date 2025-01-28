@@ -1,5 +1,7 @@
 'use client';
 
+// import { URLSearchParams } from 'react';
+
 import css from './nav-bar.module.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,49 +17,40 @@ export default function NavBar() {
             <ul className={css.navbarNav}>
                 <li className={css.item}>
                     <Link className={css.link} href="/catalog/1">
-                        {/* <i className={css.fas}></i> */}
                         <PiTowelFill className={css.fas} />
                         Рушники
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        {/* <i className={css.fas}></i> */}
                         🖼️ Схеми для вишивки бісером
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        {/* <i className={css.fas}></i> */}
                         🪡 Інструменти для рукоділля
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link
-                        className={clsx(css.link, pathname === '/catalog/1' && css.isActive)}
-                        href=""
+                        className={clsx(css.link, pathname === `/catalog/bags` && css.isActive)}
+                        href="/catalog/bags?page=1"
                     >
-                        {/* <i className={css.fas}></i> */}
-                        {/* <FaBagShopping className={css.fas} /> */}
                         👜 Сумки
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        {/* <i className={css.fas}></i> */}
                         🧷 Аксесуари
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        {/* <i className={css.fas}></i> */}
-                        {/* <GiPrayerBeads className={css.fas} /> */}
                         📿 Бісер PRECIOSA
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
-                        {/* <i className={css.fas}></i> */}
                         👝 Біжутерія
                     </Link>
                 </li>

@@ -13,10 +13,8 @@ export default function Categories() {
                         <Link href={'/catalog?page=1'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
-                                title={'Рушники'}
-                                description={
-                                    'Широкий вибір якісних рушників під вишивку бісером за найкращими цінами!'
-                                }
+                                title={'Готові вироби'}
+                                description={'Широкий вибір готових виробів за найкращими цінами!'}
                             />
                         </Link>
                     </li>

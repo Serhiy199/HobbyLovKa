@@ -7,25 +7,23 @@ import { productsProps, allProductsProps } from '../../../types/types';
 // import { HandBagProps } from '../../../../lib/mongoDB/models/bags-models';
 import ServerPagination from '../../../components/serverPagination/server-pagination';
 
-export default async function Bags({ params }: { params: Promise<{ page: string }> }) {
-    const { page } = await params;
+export default async function Bags({ searchParams }: { searchParams: Promise<{ page: string }> }) {
+    const { page } = await searchParams;
 
     const currentPage: number = parseInt(page);
 
     const { data, totalPage }: allProductsProps = await getAllBags(currentPage);
 
     return (
-        <section className="section">
-            <div className="container">
-                <ul className={css.wrapper}>
-                    {data.map((list: productsProps) => {
-                        return (
-                            <CardProducts key={list._id} listProducts={list} getRequest={'bags'} />
-                        );
-                    })}
-                </ul>
-                <ServerPagination totalPages={totalPage} currentPage={currentPage} />
-            </div>
-        </section>
+        // <section className="section">
+        <div className="container">
+            <ul className={css.wrapper}>
+                {data.map((list: productsProps) => {
+                    return <CardProducts key={list._id} listProducts={list} getRequest={'bags'} />;
+                })}
+            </ul>
+            <ServerPagination totalPages={totalPage} currentPage={currentPage} />
+        </div>
+        // </section>
     );
 }
