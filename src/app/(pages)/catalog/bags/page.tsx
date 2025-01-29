@@ -22,7 +22,7 @@ export default async function Bags({ searchParams }: { searchParams: Promise<{ p
                     return <CardProducts key={list._id} listProducts={list} getRequest={'bags'} />;
                 })}
             </ul>
-            <ServerPagination totalPages={totalPage} currentPage={currentPage} />
+            <ServerPagination collection="bags" totalPages={totalPage} currentPage={currentPage} />
         </div>
         // </section>
     );
