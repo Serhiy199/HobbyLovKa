@@ -2,7 +2,7 @@ import css from './top-sellers.module.css';
 import CardProducts from '../../cardProducts/card-products';
 import { productsProps } from '../../../types/types';
 import { getAllTopSellers } from '../../../../lib/mongoDB/controllers/top-sellers-controllers';
-import '../../../globals.css';
+import '../../../styles/globals.css';
 
 export default async function TopSellers() {
     const data: productsProps[] = await getAllTopSellers();

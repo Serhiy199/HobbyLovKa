@@ -1,7 +1,7 @@
-import '../app/styles/globals.css';
+import '../../../../app/styles/globals.css';
 import Link from 'next/link';
-import css from '../app/styles/not-found.module.css';
-import Button from './components/button/button';
+import css from '../../../../app/styles/not-found.module.css';
+import Button from '../../../components/button/button';
 import clsx from 'clsx';
 
 export default function NotFoundPage() {

@@ -2,10 +2,11 @@ import React from 'react';
 import css from './footer.module.css';
 import Link from 'next/link';
 // import clsx from 'clsx';
-import '../../globals.css';
-import Information from './Information/Information';
+import '../../styles/globals.css';
+import Information from './information/Information';
 import Logo from '../logo/logo';
 import SocialLink from '../socialLink/social-link';
+import Exclusive from './exclusive/exclusive';
 
 export default function Footer() {
     return (
@@ -37,6 +38,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <Information />
+                <Exclusive />
                 <div className={css.iconLink}>
                     <h3 className={css.title}>Приєднуйся до наших соціальних мереж</h3>
                     <SocialLink />

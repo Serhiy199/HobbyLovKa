@@ -1,4 +1,4 @@
-import '../../globals.css';
+import '../../styles/globals.css';
 import css from './categories.module.css';
 import Link from 'next/link';
 import CardCategory from './cardCategory/card-category';

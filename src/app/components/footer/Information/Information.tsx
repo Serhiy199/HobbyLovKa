@@ -7,29 +7,26 @@ export default function Information() {
             <h3 className={css.title}>Інформація для клієнтів</h3>
             <ul>
                 <li>
-                    {' '}
-                    <Link className={css.link} href={'/manufacturers'}>
-                        Виробники
+                    <Link className={css.link} href={'/return-products'}>
+                        Повернення товару
                     </Link>
                 </li>
+
                 <li>
                     <Link className={css.link} href={'/payment'}>
                         Оплата та доставка
                     </Link>
                 </li>
-                <li>
-                    <Link className={css.link} href={'/actions'}>
-                        Акції
-                    </Link>
-                </li>
+
                 <li>
                     <Link className={css.link} href={'/feedback'}>
                         Зворотній зв&apos;язок
                     </Link>
                 </li>
                 <li>
-                    <Link className={css.link} href={'/returnOfProducts'}>
-                        Повернення товару
+                    {' '}
+                    <Link className={css.link} href={'/manufacturers'}>
+                        Виробники
                     </Link>
                 </li>
                 <li>

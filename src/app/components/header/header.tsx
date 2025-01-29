@@ -2,7 +2,7 @@
 import Navigation from './navigation/navigation';
 import Link from 'next/link';
 import css from './header.module.css';
-import '../../globals.css';
+import '../../styles/globals.css';
 import Logo from '../logo/logo';
 
 export default function Header() {

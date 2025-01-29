@@ -1,0 +1,17 @@
+.title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.18;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.link {
+    color: #ffffff;
+}
+
+.link:hover,
+.link:focus {
+    color: var(--accent-color);
+}
