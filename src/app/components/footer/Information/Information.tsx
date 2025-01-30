@@ -30,7 +30,7 @@ export default function Information() {
                     </Link>
                 </li>
                 <li>
-                    <Link className={css.link} href={'aboutUs'}>
+                    <Link className={css.link} href={'about-us'}>
                         Про нас
                     </Link>
                 </li>

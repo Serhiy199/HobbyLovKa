@@ -7,13 +7,13 @@ export default function Exclusive() {
             <h3 className={css.title}>Ексклюзивні пропозиції</h3>
             <ul>
                 <li>
-                    <Link className={css.link} href={'/payment'}>
-                        Подарунковi сертифiкати
+                    <Link className={css.link} href={'/gift-certificates'}>
+                        Подарункові сертифікати
                     </Link>
                 </li>
 
                 <li>
-                    <Link className={css.link} href={'/actions'}>
+                    <Link className={css.link} href={'/products-discount'}>
                         Товари iз знижкою
                     </Link>
                 </li>

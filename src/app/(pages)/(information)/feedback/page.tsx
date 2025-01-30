@@ -1,4 +1,4 @@
-export default function Manufacturers() {
+export default function Feedback() {
     return (
         <section>
             <h1>Feedback page</h1>

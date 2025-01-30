@@ -1,4 +1,4 @@
-export default function Manufacturers() {
+export default function AboutUs() {
     return (
         <section>
             <h1>About us</h1>
