@@ -7,7 +7,7 @@ import '../../styles/globals.css';
 import Logo from '../logo/logo';
 import SocialLink from '../socialLink/social-link';
 import Exclusive from './exclusive/exclusive';
-import Information from './information/information';
+import Information from '../../components/footer/information/information';
 
 export default function Footer() {
     return (
