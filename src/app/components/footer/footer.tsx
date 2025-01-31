@@ -3,10 +3,11 @@ import css from './footer.module.css';
 import Link from 'next/link';
 // import clsx from 'clsx';
 import '../../styles/globals.css';
-import Information from './information/information';
+
 import Logo from '../logo/logo';
 import SocialLink from '../socialLink/social-link';
 import Exclusive from './exclusive/exclusive';
+import Information from './information/information';
 
 export default function Footer() {
     return (
