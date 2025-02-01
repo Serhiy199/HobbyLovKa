@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import css from './information.module.css';
+import css from './inform.module.css';
 
 export default function Information() {
     return (
