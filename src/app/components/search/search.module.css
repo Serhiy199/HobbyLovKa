@@ -1,0 +1,46 @@
+.container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.label {
+    display: none;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 3px solid #e5e7eb;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 2.5rem;
+    font-size: 0.875rem;
+    outline-width: 2px;
+}
+
+.input::placeholder {
+    color: #6b7280;
+}
+
+.input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.icon {
+    position: absolute;
+    left: 0.75rem; /* 3 units in Tailwind (1 unit = 0.25rem) */
+    top: 50%;
+    height: 18px;
+    width: 18px;
+    transform: translateY(-50%);
+    color: #6b7280; /* text-gray-500 */
+}
+
+.icon:focus {
+    color: #1f2937; /* text-gray-900 */
+}

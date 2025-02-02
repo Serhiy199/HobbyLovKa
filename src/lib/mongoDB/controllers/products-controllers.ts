@@ -7,15 +7,21 @@ export interface allProductsProps {
     totalPage: number;
 }
 
+type searchCriteriaProps = { title?: { $regex: string; $options: string } };
+
 // Асинхронна функція для отримання всіх товарів
-export const getAllProducts = async (page: number): Promise<allProductsProps> => {
+export const getAllProducts = async (query: string, page: number): Promise<allProductsProps> => {
+    const pageSize: number = 12; // сторінка з кількістю карток товарів, яка показує першу сторінку
+    const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
+    const searchCriteria: searchCriteriaProps = {
+        title: { $regex: `${query}`, $options: 'i' },
+    };
+
     try {
-        const pageSize: number = 12; // сторінка з кількістю карток товарів, яка показує першу сторінку
-        const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
+        const count: number = await BagModel.find(searchCriteria).countDocuments();
 
-        const count: number = await BagModel.find().countDocuments();
-
-        const data: productsProps[] = await BagModel.find()
+        // Пошук товарів за критеріями
+        const data: productsProps[] = await BagModel.find(searchCriteria)
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
 
