@@ -17,8 +17,6 @@ export default function ServerPagination({
     totalPages: number;
 }) {
     const pathname = usePathname();
-    console.log('pathname:', pathname);
-
     const searchParams = useSearchParams();
     const currentPage = Number(searchParams.get('page')) || 1;
 

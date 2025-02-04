@@ -1,7 +1,7 @@
 import css from './layout.module.css';
 import NavBar from '@/app/components/catalog/navBar/nav-bar';
 
-export default function RootLayout({
+export default function CatalogLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;

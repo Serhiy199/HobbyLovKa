@@ -1,11 +1,6 @@
 import { BagModel } from '../models/bags-models';
-import { productsProps } from '../../../app/types/types';
+import { productsProps, allProductsProps } from '../../../app/types/types';
 import '../mongodb';
-
-export interface allProductsProps {
-    data: productsProps[];
-    totalPage: number;
-}
 
 type searchCriteriaProps = { title?: { $regex: string; $options: string } };
 

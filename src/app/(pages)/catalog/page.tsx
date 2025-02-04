@@ -2,13 +2,10 @@ import React from 'react';
 import css from './page.module.css';
 import '../../styles/globals.css';
 import CardProducts from '../../components/cardProducts/card-products';
-import {
-    getAllProducts,
-    allProductsProps,
-} from '../../../lib/mongoDB/controllers/products-controllers';
-import { productsProps } from '../../types/types';
+import { getAllProducts } from '../../../lib/mongoDB/controllers/products-controllers';
+import { productsProps, allProductsProps } from '../../types/types';
 import ServerPagination from '../../components/serverPagination/server-pagination';
-import Search from '@/app/components/search/search';
+import Search from '../../components/search/search';
 
 export default async function Catalog(props: {
     searchParams?: Promise<{

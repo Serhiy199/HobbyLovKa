@@ -2,15 +2,20 @@ import { BagModel } from '../models/bags-models';
 import { productsProps, allProductsProps } from '../../../app/types/types';
 import '../mongodb';
 
+type searchCriteriaProps = { title?: { $regex: string; $options: string } };
+
 // Асинхронна функція для отримання всіх товарів
-export const getAllBags = async (page: number): Promise<allProductsProps> => {
+export const getAllBags = async (query: string, page: number): Promise<allProductsProps> => {
     try {
         const pageSize: number = 12; // сторінка з кількістю карток товарів, яка показує першу сторінку
         const pageNumber: number = page || 1; // параметри пошуку або номер сторінки
+        const searchCriteria: searchCriteriaProps = {
+            title: { $regex: `${query}`, $options: 'i' },
+        };
 
-        const count: number = await BagModel.find().countDocuments();
+        const count: number = await BagModel.find(searchCriteria).countDocuments();
 
-        const data: productsProps[] = await BagModel.find()
+        const data: productsProps[] = await BagModel.find(searchCriteria)
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
 
