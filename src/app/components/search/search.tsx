@@ -4,19 +4,18 @@ import css from './search.module.css';
 import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
-import MagnifyingGlassIcon from '../../../../public/search-icon/MagnifyingGlassIcon';
+import MagnifyingGlassIcon from '../../../../public/MagnifyingGlassIcon';
 
 export default function Search({ placeholder }: { placeholder: string }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
-    // console.log('pathname', pathname);
 
     const { replace } = useRouter();
 
     const handleSearch = useDebouncedCallback(term => {
-        console.log(`Searching... ${term}`);
-
         const params = new URLSearchParams(searchParams);
+        params.set('page', '1');
+
         if (term) {
             params.set('query', term);
         } else {

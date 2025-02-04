@@ -19,13 +19,12 @@ export const getAllProducts = async (query: string, page: number): Promise<allPr
 
     try {
         const count: number = await BagModel.find(searchCriteria).countDocuments();
+        const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
 
         // Пошук товарів за критеріями
         const data: productsProps[] = await BagModel.find(searchCriteria)
             .limit(pageSize)
             .skip((pageNumber - 1) * pageSize);
-
-        const totalPage: number = Math.ceil(count / pageSize); // це загальна кількість сторінок товару
 
         return { data, totalPage } as { data: productsProps[]; totalPage: number };
     } catch (error) {

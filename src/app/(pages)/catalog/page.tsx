@@ -24,6 +24,21 @@ export default async function Catalog(props: {
 
     const { data, totalPage }: allProductsProps = await getAllProducts(query, currentPage);
 
+    if (!data || data.length === 0) {
+        return (
+            <div className="container">
+                <div className={css.search}>
+                    <Search placeholder="Search for products..." />
+                </div>
+                <p>
+                    Шановний клієнте, на жаль такого товару не знайдемо, але в нас широкий вибір
+                    асортиментів, ми впевнені що Ви знайдете потрібний!!!
+                </p>
+                <ServerPagination totalPages={totalPage} />
+            </div>
+        );
+    }
+
     return (
         // <section className="section">
         <div className="container">
@@ -35,7 +50,7 @@ export default async function Catalog(props: {
                     return <CardProducts getRequest={'bags'} key={list._id} listProducts={list} />;
                 })}
             </ul>
-            <ServerPagination totalPages={totalPage} currentPage={currentPage} />
+            <ServerPagination totalPages={totalPage} />
         </div>
         // </section>
     );
