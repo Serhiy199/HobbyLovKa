@@ -4,7 +4,7 @@ import '../../styles/globals.css';
 import CardProducts from '../../components/cardProducts/card-products';
 import { getAllProducts } from '../../../lib/mongoDB/controllers/products-controllers';
 import { productsProps, allProductsProps } from '../../types/types';
-import ServerPagination from '../../components/serverPagination/server-pagination';
+import ServerPagination from '../../components/pagination/pagination';
 import Search from '../../components/search/search';
 
 export default async function Catalog(props: {
@@ -16,8 +16,6 @@ export default async function Catalog(props: {
     const searchParams = await props.searchParams;
     const query = searchParams?.query || '';
     const currentPage = Number(searchParams?.page) || 1;
-
-    // const { page } = await searchParams;
 
     const { data, totalPage }: allProductsProps = await getAllProducts(query, currentPage);
 

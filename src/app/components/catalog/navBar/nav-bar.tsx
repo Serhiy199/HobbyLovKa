@@ -14,7 +14,7 @@ export default function NavBar() {
         <nav className={`${css.navbar} container`}>
             <ul className={css.navbarNav}>
                 <li className={css.item}>
-                    <Link className={css.link} href="/catalog?page=1">
+                    <Link className={css.link} href="/catalog">
                         🎁&nbsp;Готові вироби
                     </Link>
                 </li>
@@ -31,7 +31,7 @@ export default function NavBar() {
                 <li className={css.item}>
                     <Link
                         className={clsx(css.link, pathname === `/catalog/bags` && css.isActive)}
-                        href="/catalog/bags?page=1"
+                        href="/catalog/bags"
                     >
                         👜&nbsp;Сумки
                     </Link>

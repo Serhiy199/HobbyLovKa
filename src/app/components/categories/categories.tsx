@@ -10,7 +10,7 @@ export default function Categories() {
                 <h2 className={css.title}>Категорії</h2>
                 <ul className={css.list}>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Готові вироби'}
@@ -19,7 +19,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Схеми для вишивки бісером'}
@@ -30,7 +30,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Інструменти для рукоділля'}
@@ -41,7 +41,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog/bags?page=1'}>
+                        <Link href={'/catalog/bags'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Сумки'}
@@ -52,7 +52,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Аксесуари'}
@@ -63,7 +63,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Бісер PRECIOSA'}
@@ -74,7 +74,7 @@ export default function Categories() {
                         </Link>
                     </li>
                     <li>
-                        <Link href={'/catalog?page=1'}>
+                        <Link href={'/catalog'}>
                             <CardCategory
                                 photo={'/photo_шопер_котик.jpg'}
                                 title={'Біжутерія'}

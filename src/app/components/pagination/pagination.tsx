@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import css from './server-pagination.module.css';
+import css from './pagination.module.css';
 import clsx from 'clsx';
 import ArrowLeftIcon from '../../../../public/ArrowLeftIcon';
 import ArrowRightIcon from '../../../../public/ArrowRightIcon';

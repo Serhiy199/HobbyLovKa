@@ -23,7 +23,7 @@ export default function Navigation() {
                 </li>
                 <li className={css.menuItem}>
                     <Link
-                        href="/catalog?page=1"
+                        href="/catalog"
                         className={clsx(css.menuLink, pathname === '/catalog' && css.isActive)}
                     >
                         Каталог всіх товарів

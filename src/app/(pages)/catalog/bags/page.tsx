@@ -5,7 +5,7 @@ import CardProducts from '../../../components/cardProducts/card-products';
 import { getAllBags } from '../../../../lib/mongoDB/controllers/bags-controllers';
 import { productsProps, allProductsProps } from '../../../types/types';
 // import { HandBagProps } from '../../../../lib/mongoDB/models/bags-models';
-import ServerPagination from '../../../components/serverPagination/server-pagination';
+import ServerPagination from '../../../components/pagination/pagination';
 import Search from '../../../components/search/search';
 
 export default async function Bags(props: {
