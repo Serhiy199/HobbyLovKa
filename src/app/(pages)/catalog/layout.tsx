@@ -9,6 +9,9 @@ export default function CatalogLayout({
     return (
         <section className={css.section}>
             <NavBar />
+            <div className={css.search}>
+                <Search placeholder="Search for products..." />
+            </div>
             <section>{children}</section>
         </section>
     );
