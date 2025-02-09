@@ -19,8 +19,10 @@ export default function CardCategory({
                         <div className={css.cardFront}>
                             <div className={clsx(css.cardFrontTp, css.cardFrontTpCity)}>
                                 <Image
-                                    layout="fill"
-                                    objectFit="cover"
+                                    // layout="fill"
+                                    fill={true}
+                                    style={{ objectFit: 'cover' }}
+                                    // objectFit="cover"
                                     src={photo}
                                     alt={description}
                                 />
@@ -32,7 +34,9 @@ export default function CardCategory({
                         </div>
                         <div className={css.cardBack}>
                             <Image
-                                layout="fill"
+                                // layout="fill"
+                                fill={true}
+                                style={{ objectFit: 'cover' }}
                                 src="/photo_шопер_котик.jpg"
                                 alt={description}
                                 className={css.videoContainer}

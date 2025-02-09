@@ -46,6 +46,7 @@
 
 .cardFrontTp {
     color: #fafbfa;
+    /* position: relative; */
 }
 
 /* For pricing text on card front cover */
@@ -270,6 +271,7 @@
 .cardBack {
     background-color: #fafbfa;
     transform: rotateY(180deg);
+    position: relative;
 }
 
 /* Specifically targeting the <video> element */

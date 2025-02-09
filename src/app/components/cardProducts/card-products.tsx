@@ -38,10 +38,10 @@ export default function CardProducts({
                     <div className={css.cardImg}>
                         <Image
                             className={css.img}
-                            // width={325}
-                            // height={300}
-                            layout="fill"
-                            objectFit="cover"
+                            width={325}
+                            height={350}
+                            // layout="fill"
+                            style={{ objectFit: 'cover' }}
                             src={listProducts.images[0]}
                             alt={listProducts.title}
                         />
