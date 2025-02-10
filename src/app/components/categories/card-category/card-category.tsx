@@ -36,6 +36,8 @@ export default function CardCategory({
                             <Image
                                 // layout="fill"
                                 fill={true}
+                                // width={242}
+                                // height={242}
                                 style={{ objectFit: 'cover' }}
                                 src="/photo_шопер_котик.jpg"
                                 alt={description}

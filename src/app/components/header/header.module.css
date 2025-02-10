@@ -8,6 +8,7 @@
     padding-top: 24px;
     padding-bottom: 24px;
     align-items: center;
+    justify-content: space-between;
     /* padding: 24px 64px; */
 }
 
