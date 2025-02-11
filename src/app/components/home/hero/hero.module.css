@@ -16,8 +16,9 @@
     padding-left: 44px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
         url('/DALLE-HERO.webp');
+    background-repeat: no-repeat;
 
-    background-size: contain;
+    background-size: cover;
     color: #f7f7f7;
 }
 
