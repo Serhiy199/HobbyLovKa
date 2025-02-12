@@ -49,6 +49,8 @@ ol {
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -62,7 +64,7 @@ button {
     overflow: visible;
 }
 
-.section {
+/* .section {
     padding-top: 64px;
     padding-bottom: 64px;
 }
@@ -73,4 +75,4 @@ button {
     margin-right: auto;
     padding-left: 10px;
     padding-right: 10px;
-}
+} */

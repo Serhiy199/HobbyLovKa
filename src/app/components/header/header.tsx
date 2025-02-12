@@ -4,12 +4,14 @@ import Link from 'next/link';
 import css from './header.module.css';
 import '../../styles/globals.css';
 import Logo from '../logo/logo';
+import BurgerMenu from './burger-menu/burger-menu';
 
 export default function Header() {
     return (
         <header className={css.head}>
             <div className={`${css.headContainer} container`}>
                 {' '}
+                <BurgerMenu />
                 <Logo />
                 <Navigation />
                 <ul className={css.contact}>

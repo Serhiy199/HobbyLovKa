@@ -1,8 +1,7 @@
-.menu {
+/* .menu {
     display: inline-flex;
     gap: 32px;
-    /* margin-left: 450px; */
-    /* margin-right: 200px; */
+
 }
 
 .menuItem {
@@ -33,4 +32,4 @@
 
 .menuLinkCategory:hover {
     color: var(--accent-color);
-}
+} */

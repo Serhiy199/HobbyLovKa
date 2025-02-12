@@ -1,0 +1,14 @@
+.burger {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.icon {
+    fill: #000000;
+}
+.icon:hover,
+.icon:focus {
+    fill: var(--accent-color);
+}
