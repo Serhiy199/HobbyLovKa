@@ -15,7 +15,7 @@ export default function Footer() {
             <div className={`${css.footerContainer} container`}>
                 <Logo textColor="footer" />
                 <div className={css.footerContainerList}>
-                    <div>
+                    <div className={css.footerContainerContact}>
                         <h3 className={css.title}>Контактна інформація</h3>
                         <address className={css.address}>
                             <ul className={css.contact}>
@@ -44,19 +44,6 @@ export default function Footer() {
                         <SocialLink />
                     </div>
                 </div>
-
-                {/* <div className={"form-footer">
-                <form className={"form-email">
-                    <h3 className={"form-title">ПІДПИШИСЬ НА СПОВІЩЕННЯ</h3>
-                    <div className={"model-footer-email">
-                        <input type="email" name="email" className={"footer-email" placeholder="E-mail"/>
-                        <button type="submit" className={"button footer-but">Підписатися
-                            <svg className={"modal-icon-foter" width="24" height="24">
-                                <use href="./images/icons.svg.svg#icon-icon-send"></use>
-                        </button>
-                    </div>
-                </form>
-            </div> */}
             </div>
 
             <p className={css.footerText}>&copy; 2025 Created SH</p>

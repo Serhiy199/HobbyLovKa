@@ -3,7 +3,7 @@ import css from './inform.module.css';
 
 export default function Information() {
     return (
-        <div>
+        <div className={css.container}>
             <h3 className={css.title}>Інформація для клієнтів</h3>
             <ul>
                 <li>

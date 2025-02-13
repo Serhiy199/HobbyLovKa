@@ -3,7 +3,7 @@ import css from './exclusive.module.css';
 
 export default function Exclusive() {
     return (
-        <div>
+        <div className={css.container}>
             <h3 className={css.title}>Ексклюзивні пропозиції</h3>
             <ul>
                 <li>

@@ -13,12 +13,6 @@
     color: white;
 }
 
-/* @media screen and (min-width: 768px) {
-    .footer-logo {
-        text-align: left;
-    }
-} */
-
 @media screen and (min-width: 1200px) {
     .footer-logo {
         font-size: 26px;
