@@ -13,8 +13,8 @@ export default function Footer() {
     return (
         <footer className={`${css.footerLayout} section`}>
             <div className={`${css.footerContainer} container`}>
+                <Logo textColor="footer" />
                 <div className={css.footerContainerList}>
-                    <Logo textColor="footer" />
                     <div>
                         <h3 className={css.title}>Контактна інформація</h3>
                         <address className={css.address}>
@@ -26,7 +26,7 @@ export default function Footer() {
                                     <Link href="mailto:maria.horog.89@gmail.com">
                                         maria.horog.89@gmail.com
                                     </Link>
-                                    <br />
+                                    {/* <br /> */}
                                 </li>
                                 <li className={css.contactItem}>
                                     <Link href="tel:+380961050086">+38 096 105 00 86</Link>
@@ -37,12 +37,12 @@ export default function Footer() {
                             </ul>
                         </address>
                     </div>
-                </div>
-                <Information />
-                <Exclusive />
-                <div className={css.iconLink}>
-                    <h3 className={css.title}>Приєднуйся до наших соціальних мереж</h3>
-                    <SocialLink />
+                    <Information />
+                    <Exclusive />
+                    <div className={css.iconLink}>
+                        <h3 className={css.title}>Приєднуйся до наших соціальних мереж</h3>
+                        <SocialLink />
+                    </div>
                 </div>
 
                 {/* <div className={"form-footer">

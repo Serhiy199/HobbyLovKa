@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { inter } from './styles/fonts';
 import './styles/globals.css';
 import Header from './components/header/header';
-// import Footer from './components/footer/footer';
+import Footer from './components/footer/footer';
 
 export const metadata: Metadata = {
     title: 'HobbyLovKa',
@@ -21,8 +21,8 @@ export default function RootLayout(
         <html lang="uk">
             <body className={`${inter.className}`} suppressHydrationWarning={true}>
                 <Header />
-                {/* <main>{children}</main>
-                <Footer /> */}
+                {/* <main>{children}</main> */}
+                <Footer />
             </body>
         </html>
     );
