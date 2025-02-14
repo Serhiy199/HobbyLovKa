@@ -19,14 +19,10 @@ export default function Footer() {
                         <h3 className={css.title}>Контактна інформація</h3>
                         <address className={css.address}>
                             <ul className={css.contact}>
-                                {/* <li className={css.contactItem}>
-                                    <Link href={''}>м.Бориспіль, вул.Віктора Йови 3</Link>
-                                </li> */}
                                 <li className={css.contactItem}>
                                     <Link href="mailto:maria.horog.89@gmail.com">
                                         maria.horog.89@gmail.com
                                     </Link>
-                                    {/* <br /> */}
                                 </li>
                                 <li className={css.contactItem}>
                                     <Link href="tel:+380961050086">+38 096 105 00 86</Link>
