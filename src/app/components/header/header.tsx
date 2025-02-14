@@ -28,6 +28,7 @@ export default function Header() {
                         <Link href="tel:+380961050086"> +38 096 105 00 86</Link>
                     </li>
                 </ul>
+                <div className={css.cartShopping}>🛒</div>
             </div>
         </header>
     );

@@ -9,7 +9,7 @@ export default function Navigation() {
     const pathname: string = usePathname();
 
     return (
-        <nav>
+        <nav className={css.navigation}>
             <ul className={css.menu}>
                 <li className={css.menuItem}>
                     <Link href="/" className={clsx(css.menuLink, pathname === '/' && css.isActive)}>
@@ -26,7 +26,7 @@ export default function Navigation() {
                         href="/catalog"
                         className={clsx(css.menuLink, pathname === '/catalog' && css.isActive)}
                     >
-                        Каталог всіх товарів
+                        Каталог товарів
                     </Link>
                 </li>
             </ul>

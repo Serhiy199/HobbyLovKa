@@ -1,36 +1,71 @@
-/* .head {
+.contact {
+    display: none;
+}
+
+.head {
     background-color: #f7f7f7;
     border-bottom: 1px solid #dadde1;
 }
 
 .headContainer {
     display: flex;
-    padding-top: 24px;
-    padding-bottom: 24px;
     align-items: center;
     justify-content: space-between;
-   
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+.cartShopping {
+    font-size: 24px; /* Розмір іконки */
+    color: #333; /* Колір */
+    cursor: pointer; /* Вказівник при наведенні */
+    transition: color 0.3s ease;
 }
 
-.contactItem {
-    color: var(--primary-text-color);
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
+.cartShopping:hover,
+.cartShopping:focus {
+    color: var(--accent-color); /* Колір при наведенні */
 }
 
-.contactItem:focus,
-.contactItem:hover {
-    color: var(--accent-color);
+@media screen and (min-width: 768px) {
+    .headContainer {
+        padding-top: 19px;
+        padding-bottom: 19px;
+        /* max-width: 768px; */
+    }
 }
 
-.contactsContMail {
-    margin-right: 10px;
-    fill: currentColor;
-} */
+@media screen and (min-width: 1168px) {
+    .headContainer {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .contactItem {
+        color: var(--primary-text-color);
+        font-weight: 500;
+        line-height: 1.14;
+        letter-spacing: 0.02em;
+        align-items: center;
+        transition:
+            color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contactItem:focus,
+    .contactItem:hover {
+        color: var(--accent-color);
+        fill: currentColor;
+    }
+
+    .contactsContMail {
+        margin-right: 10px;
+        fill: currentColor;
+    }
+}
