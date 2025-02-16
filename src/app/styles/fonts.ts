@@ -1,4 +1,4 @@
-import { Inter, Raleway } from 'next/font/google';
+import { Inter as interFont, Raleway as ralewayFont } from 'next/font/google';
 
-export const inter = Inter({ subsets: ['latin'] });
-export const raleway = Raleway({ subsets: ['latin'], weight: ['700'] });
+export const inter = interFont({ subsets: ['latin'] });
+export const raleway = ralewayFont({ subsets: ['latin'], weight: ['700'] });
