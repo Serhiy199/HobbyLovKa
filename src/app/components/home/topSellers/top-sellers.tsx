@@ -10,7 +10,7 @@ export default async function TopSellers() {
     return (
         <section className="section">
             <div className="container">
-                <h2 className={css.title}>Лідери продажів</h2>
+                <h2 className="sectionTitle">Лідери продажів</h2>
                 <ul className={css.wrapper}>
                     {data.map((list: productsProps) => {
                         return (

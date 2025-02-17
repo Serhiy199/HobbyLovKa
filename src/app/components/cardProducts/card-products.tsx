@@ -38,10 +38,10 @@ export default function CardProducts({
                     <div className={css.cardImg}>
                         <Image
                             className={css.img}
-                            width={325}
-                            height={350}
+                            width={884}
+                            height={1280}
                             // layout="fill"
-                            style={{ objectFit: 'cover' }}
+                            style={{ objectFit: 'scale-down' }}
                             src={listProducts.images[0]}
                             alt={listProducts.title}
                         />
@@ -64,14 +64,20 @@ export default function CardProducts({
                             ))}
                         </div>
                         <p className={css.desc}>{truncateText(listProducts.description, 13)}</p>
-                        <button type="button" className={css.btn}>
+                        {/* <button type="button" className={css.btn}>
                             Замовити
-                        </button>
+                        </button> */}
                     </div>
                 </div>
 
                 <div className={css.imgText}>
-                    <h2 className={css.productTitle}>{listProducts.title}</h2>
+                    <div className={css.imgTextTitle}>
+                        <h2 className={css.productTitle}>{listProducts.title}</h2>
+                        <button type="button" className={css.btn}>
+                            🛒
+                        </button>
+                    </div>
+
                     <div className={css.price}>
                         <p className={css.productModel}>{listProducts.model}</p>
                         <p className={css.productModel}>₴ {listProducts.price} грн</p>

@@ -10,7 +10,7 @@ export default async function NewProducts() {
     return (
         <section className={`${css.section} section`}>
             <div className="container">
-                <h2 className={css.title}>Новинки</h2>
+                <h2 className="sectionTitle">Новинки</h2>
                 <ul className={css.wrapper}>
                     {data.map((list: productsProps) => {
                         return (

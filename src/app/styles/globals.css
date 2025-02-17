@@ -65,8 +65,8 @@ button {
 }
 
 .section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .container {
@@ -74,7 +74,17 @@ button {
     /* margin-right: auto; */
     padding-left: 15px;
     padding-right: 15px;
+    margin: 0px auto;
     /* width: 100%; */
+}
+
+.sectionTitle {
+    margin-bottom: 30px;
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    text-align: center;
 }
 
 @media screen and (min-width: 480px) {
@@ -103,20 +113,8 @@ button {
         padding-right: 20px;
         max-width: 1440px;
     }
-}
 
-/* .section-title {
-    margin-bottom: 30px;
-
-    color: var(--title-text-color);
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 1.17;
-    text-align: center;
-}
-
-@media screen and (min-width: 1200px) {
-    .section-title {
+    .sectionTitle {
         font-size: 36px;
     }
-} */
+}
