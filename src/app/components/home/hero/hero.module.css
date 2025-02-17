@@ -1,23 +1,23 @@
 .hero {
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1440px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
 }
 
 .container {
     background-color: #733f07;
-    width: 1040px;
-    height: 594px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 
-    padding-top: 227px;
-    padding-left: 44px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
         url('/DALLE-HERO.webp');
     background-repeat: no-repeat;
-
+    background-position: center;
     background-size: cover;
     color: #f7f7f7;
 }
@@ -25,54 +25,92 @@
 .title {
     color: #ffffff;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+
+    font-size: 26px;
+    line-height: 1.61;
+
     letter-spacing: 0.06em;
     text-transform: uppercase;
+
     margin-bottom: 16px;
 }
 
 .text {
     color: #ffffff;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1;
-    /* margin-bottom: 40px; */
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.9;
+    letter-spacing: 0.09em;
 }
 
 .box {
     display: none;
-    /* display: flex;
-    flex-direction: column;
-    gap: 20px; */
-    /* justify-content: center; */
-}
-
-.socialLink {
-    padding: 20px 15px;
-    width: 380px;
-    background-color: #f5f4fa;
-    text-align: center;
-}
-
-.socialLinkTitle {
-    color: var(--title-text-color);
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.36;
-    /* letter-spacing: 0.06em;
-    text-transform: uppercase; */
-    margin-bottom: 16px;
-    /* font-weight: 500;
-    font-size: 18px;
-    line-height: 1.18; */
 }
 
 @media screen and (min-width: 768px) {
+    .container {
+        padding-left: 44px;
+        padding-top: 180px;
+        padding-bottom: 180px;
+        text-align: left;
+    }
+
     .box {
         display: flex;
-        flex-direction: column;
         gap: 20px;
         justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .socialLink {
+        padding: 20px 15px;
+        width: 380px;
+        background-color: #f5f4fa;
+        text-align: center;
+    }
+
+    .socialLinkTitle {
+        color: var(--title-text-color);
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.36;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 44px;
+        line-height: 1.36;
+    }
+
+    .text {
+        font-size: 24px;
+        line-height: 1.9;
+        letter-spacing: 0.06em;
+    }
+
+    .socialLinkTitle {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 1168px) {
+    .hero {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .container {
+        width: 1200px;
+        height: 600px;
+        padding-top: 227px;
+    }
+
+    .box {
+        flex-direction: column;
+        justify-content: start;
     }
 }
