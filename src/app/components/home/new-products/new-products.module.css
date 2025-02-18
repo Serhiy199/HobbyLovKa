@@ -1,0 +1,20 @@
+.section {
+    background-color: #f5f4fa;
+}
+
+.title {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}

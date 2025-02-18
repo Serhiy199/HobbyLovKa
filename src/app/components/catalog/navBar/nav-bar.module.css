@@ -25,8 +25,14 @@
 }
 
 .item {
-    list-style-type: none;
+    /* list-style-type: none; */
     float: left;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.item:hover {
+    color: var(--accent-color);
+    background-color: #fff;
 }
 
 .link {
@@ -34,13 +40,6 @@
     padding: 10px 10px;
     display: flex;
     align-items: center;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover {
-    color: var(--accent-color);
-    background-color: #fff;
 }
 
 .isActive {
