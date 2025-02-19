@@ -40,8 +40,8 @@ export default function CardProducts({
                         height={1280}
                         style={{
                             width: '100%',
-                            minHeight: '350px',
-                            maxHeight: '350px',
+                            height: '350px',
+                            // maxHeight: '350px',
                             objectFit: 'cover',
                         }}
                         src={listProducts.images[0]}

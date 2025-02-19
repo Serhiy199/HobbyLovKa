@@ -70,12 +70,10 @@ button {
 }
 
 .container {
-    /* margin-left: auto; */
-    /* margin-right: auto; */
     padding-left: 15px;
     padding-right: 15px;
-    margin: 0px auto;
-    /* width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sectionTitle {
@@ -90,8 +88,6 @@ button {
 @media screen and (min-width: 480px) {
     .container {
         max-width: 450px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 

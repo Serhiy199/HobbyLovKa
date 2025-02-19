@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './page.module.css';
 import '../../styles/globals.css';
-import CardProducts from '../../components/cardProducts/card-products';
+import CardProducts from '../../components/card-products/card-products';
 import { getAllProducts } from '../../../lib/mongoDB/controllers/products-controllers';
 import { productsProps, allProductsProps } from '../../types/types';
 import ServerPagination from '../../components/pagination/pagination';

@@ -1,5 +1,5 @@
 import css from './new-products.module.css';
-import CardProducts from '../../cardProducts/card-products';
+import CardProducts from '../../card-products/card-products';
 import { productsProps } from '../../../types/types';
 import { getAllNewProducts } from '../../../../lib/mongoDB/controllers/new-products-controllers';
 import '../../../styles/globals.css';

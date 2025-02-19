@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './page.module.css';
 import '../../../styles/globals.css';
-import CardProducts from '../../../components/cardProducts/card-products';
+import CardProducts from '../../../components/card-products/card-products';
 import { getAllBags } from '../../../../lib/mongoDB/controllers/bags-controllers';
 import { productsProps, allProductsProps } from '../../../types/types';
 // import { HandBagProps } from '../../../../lib/mongoDB/models/bags-models';

@@ -19,11 +19,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: #f7f7f7;
+    color: rgb(250, 250, 250);
 }
 
 .title {
-    color: #ffffff;
+    /* color: #ffffff; */
     font-weight: 900;
 
     font-size: 26px;
@@ -36,7 +36,7 @@
 }
 
 .text {
-    color: #ffffff;
+    /* color: #ffffff; */
     font-weight: 700;
     font-size: 20px;
     line-height: 1.9;
