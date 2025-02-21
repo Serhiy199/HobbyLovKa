@@ -7,8 +7,8 @@ export default function Categories() {
     return (
         <section id="category" className="section">
             <div className="container">
-                <h2 className={css.title}>Категорії</h2>
-                <ul className={css.list}>
+                <h2 className="sectionTitle">Категорії</h2>
+                <ul className={css.wrapper}>
                     <li>
                         <Link href={'/catalog'}>
                             <CardCategory

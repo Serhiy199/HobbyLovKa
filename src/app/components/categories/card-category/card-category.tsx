@@ -12,7 +12,7 @@ export default function CardCategory({
     description: string;
 }) {
     return (
-        <div className={css.cardSection}>
+        <li className={css.cardSection}>
             <div className={css.card}>
                 <div className={css.flipCard}>
                     <div className={css.flipCardContainer}>
@@ -60,6 +60,6 @@ export default function CardCategory({
                     </div>
                 </div>
             </div>
-        </div>
+        </li>
     );
 }
