@@ -15,7 +15,10 @@
         display: flex;
         text-align: center;
         flex-wrap: wrap;
-        gap: 30px;
+        column-gap: 60px;
+        row-gap: 30px;
+        /* column-gap: 140px;
+        row-gap: 24px; */
         /* padding-left: 120px; */
     }
 }

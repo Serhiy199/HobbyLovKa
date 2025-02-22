@@ -9,79 +9,62 @@ export default function Categories() {
             <div className="container">
                 <h2 className="sectionTitle">Категорії</h2>
                 <ul className={css.wrapper}>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Готові вироби'}
-                                description={'Широкий вибір готових виробів за найкращими цінами!'}
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Схеми для вишивки бісером'}
-                                description={
-                                    'Широкий вибір якісних схем під вишивку бісером за найкращими цінами!'
-                                }
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Інструменти для рукоділля'}
-                                description={
-                                    'Широкий асортимент інструментів для рукоділля за найкращими цінами!'
-                                }
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog/bags'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Сумки'}
-                                description={
-                                    'Всі вироби це ручна робота виготовлена з якісної італійської шкіри!'
-                                }
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Аксесуари'}
-                                description={
-                                    'Тут Ви можете знайти різноманітні аксесуари для творчості!'
-                                }
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Бісер PRECIOSA'}
-                                description={
-                                    'Широкий вибір якісного бісеру PRECIOSA з великою гаммою кольорів за найкращими цінами!'
-                                }
-                            />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/catalog'}>
-                            <CardCategory
-                                photo={'/photo_шопер_котик.jpg'}
-                                title={'Біжутерія'}
-                                description={'Ручні вироби прикрас!'}
-                            />
-                        </Link>
-                    </li>
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Готові вироби'}
+                        description={'Широкий вибір готових виробів за найкращими цінами!'}
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Схеми для вишивки бісером'}
+                        description={
+                            'Широкий вибір якісних схем під вишивку бісером за найкращими цінами!'
+                        }
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Інструменти для рукоділля'}
+                        description={
+                            'Широкий асортимент інструментів для рукоділля за найкращими цінами!'
+                        }
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog/bags'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Сумки'}
+                        description={
+                            'Всі вироби це ручна робота виготовлена з якісної італійської шкіри!'
+                        }
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Аксесуари'}
+                        description={'Тут Ви можете знайти різноманітні аксесуари для творчості!'}
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Бісер PRECIOSA'}
+                        description={
+                            'Широкий вибір якісного бісеру PRECIOSA з великою гаммою кольорів за найкращими цінами!'
+                        }
+                    />
+
+                    <CardCategory
+                        propHref={'/catalog'}
+                        photo={'/photo_шопер_котик.jpg'}
+                        title={'Біжутерія'}
+                        description={'Ручні вироби прикрас!'}
+                    />
                 </ul>
             </div>
         </section>
