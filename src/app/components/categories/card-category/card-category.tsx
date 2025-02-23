@@ -28,9 +28,11 @@ export default function CardCategory({
                                     // fill={true}
                                     style={{
                                         width: '100%',
+                                        // height: 'auto',
                                         maxHeight: '350px',
                                         // maxHeight: '350px',
-                                        objectFit: 'cover',
+                                        // objectFit: 'fill',
+                                        fill: 'true',
                                     }}
                                     // objectFit="cover"
                                     src={photo}
@@ -44,18 +46,26 @@ export default function CardCategory({
                         </div>
                         <div className={css.back}>
                             <Image
-                                // layout="fill"
-                                width={884}
-                                height={1280}
-                                // fill={true}
+                                layout="fill"
+                                // width={884}
+                                // height={1280}
+                                fill={true}
                                 // width={242}
                                 // height={242}
-                                style={{
-                                    width: '100%',
-                                    height: '242px',
-                                    // maxHeight: '350px',
-                                    objectFit: 'cover',
-                                }}
+                                style={
+                                    {
+                                        // clipPath:
+                                        //     'polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%)',
+                                        // height: 'auto',
+                                        // minHeight: '100%',
+                                        // objectFit: 'cover',
+                                        // width: '100%',
+                                        // width: '100%',
+                                        // // height: '242px',
+                                        // maxHeight: '350px',
+                                        // objectFit: 'cover',
+                                    }
+                                }
                                 src="/photo_шопер_котик.jpg"
                                 alt={description}
                                 className={css.videoContainer}

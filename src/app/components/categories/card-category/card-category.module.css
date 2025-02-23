@@ -29,13 +29,7 @@
 }
 
 .cardFront {
-    /* align-items: center; */
     clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
-    display: flex;
-    flex-direction: column;
-    /* height: 200px; */
-    justify-content: center;
-    /* padding: 0.75rem; */
 }
 
 .FrontTitle {
@@ -85,7 +79,9 @@
         align-items: center;
         justify-content: center;
         background-color: #ffffff;
-        width: calc((100% - 180px) / 4);
+        /* width: calc((100% - 180px) / 4); */
+        width: 242px;
+        height: 242px;
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
         /* height: 544px; */
     }
@@ -96,12 +92,13 @@
         height: 242px;
         position: relative;
         transition: all 1s ease;
-        width: calc((100% - 180px) / 4);
+        width: 242px;
+        /* width: calc((100% - 180px) / 4); */
     }
 
     .link:hover {
         box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
-        width: calc((100% - 180px) / 4);
+        /* width: calc((100% - 180px) / 4); */
     }
 
     .card {
@@ -112,7 +109,7 @@
         transition: all 1s ease;
         visibility: hidden;
         /* width: calc((100% - 180px) / 4); */
-        width: 305px;
+        width: 242px;
         z-index: 100;
     }
 
@@ -121,13 +118,13 @@
     }
 
     .container {
-        /* height: 100%; */
+        height: 100%;
         position: absolute;
         right: 0;
         transform-origin: left;
         transform-style: preserve-3d;
         transition: all 1s ease;
-        /* width: 100%; */
+        width: 100%;
     }
 
     .link:hover .container {
@@ -141,25 +138,30 @@
         position: absolute;
         top: 0;
         width: 100%;
+        background-color: #fafbfa;
     }
 
     .cardFront {
-        background-color: #fafbfa;
-        height: 200px;
+        height: 170px;
+
         /* width: calc((100% - 180px) / 4); */
         position: relative;
-        width: 305px;
+        /* width: 242px; */
     }
 
     .back {
-        display: block;
         background-color: #fafbfa;
         transform: rotateY(180deg);
-        position: relative;
+        backface-visibility: hidden;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 
     .videoContainer {
-        position: relative;
+        /* position: relative; */
         clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
         height: auto;
         min-height: 100%;

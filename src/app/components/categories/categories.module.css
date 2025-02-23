@@ -12,6 +12,8 @@
 
 @media screen and (min-width: 768px) {
     .wrapper {
+        /* margin-left: auto;
+        margin-right: auto; */
         display: flex;
         text-align: center;
         flex-wrap: wrap;
