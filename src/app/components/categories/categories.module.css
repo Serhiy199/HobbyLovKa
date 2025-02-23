@@ -12,15 +12,14 @@
 
 @media screen and (min-width: 768px) {
     .wrapper {
-        /* margin-left: auto;
-        margin-right: auto; */
+        max-width: 1125px;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
         text-align: center;
         flex-wrap: wrap;
-        column-gap: 60px;
+        column-gap: 30px;
         row-gap: 30px;
-        /* column-gap: 140px;
-        row-gap: 24px; */
-        /* padding-left: 120px; */
+        justify-content: center;
     }
 }

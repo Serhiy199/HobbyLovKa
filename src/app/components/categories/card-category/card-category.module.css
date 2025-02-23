@@ -1,12 +1,5 @@
 .item {
-    /* align-items: center; */
-    /* display: flex; */
-    /* height: 100%; */
-    /* justify-content: center; */
-    /* width: 100%; */
-
     width: 100%;
-    /* background-color: #ffffff; */
     box-shadow:
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -18,25 +11,11 @@
 }
 
 .cardFront {
-    /* color: #fafbfa; */
-    /* position: relative; */
-}
-
-.cardFront {
-    /* background-color: #fafbfa;
-    height: 242px;
-    width: 242px; */
-}
-
-.cardFront {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
 }
 
 .FrontTitle {
-    /* align-items: center; */
-    /* display: flex; */
-    /* justify-content: center; */
-    padding: 15px 16px;
+    padding: 6px 12px;
 }
 
 .title {
@@ -69,7 +48,7 @@
         margin-bottom: 0px;
     }
     .cardFront {
-        max-height: 242px;
+        max-height: 225px;
     }
 }
 
@@ -80,8 +59,8 @@
         justify-content: center;
         background-color: #ffffff;
         /* width: calc((100% - 180px) / 4); */
-        width: 242px;
-        height: 242px;
+        width: 225px;
+        height: 225px;
         transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
         /* height: 544px; */
     }
@@ -89,10 +68,10 @@
     .link {
         background-color: rgba(0, 0, 0, 0.05);
         box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-        height: 242px;
+        height: 225px;
         position: relative;
         transition: all 1s ease;
-        width: 242px;
+        width: 225px;
         /* width: calc((100% - 180px) / 4); */
     }
 
@@ -102,14 +81,14 @@
     }
 
     .card {
-        height: 242px;
+        height: 225px;
         perspective: 100rem;
         position: absolute;
         right: 0;
         transition: all 1s ease;
         visibility: hidden;
         /* width: calc((100% - 180px) / 4); */
-        width: 242px;
+        width: 225px;
         z-index: 100;
     }
 
@@ -142,7 +121,7 @@
     }
 
     .cardFront {
-        height: 170px;
+        height: 159px;
 
         /* width: calc((100% - 180px) / 4); */
         position: relative;
@@ -150,6 +129,7 @@
     }
 
     .back {
+        display: block;
         background-color: #fafbfa;
         transform: rotateY(180deg);
         backface-visibility: hidden;
@@ -174,11 +154,11 @@
         background-color: #fafbfa;
         box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
         height: 100%;
-        padding: 1rem;
+        padding: 10px;
         position: absolute;
         right: 0;
         transition: all 1s ease;
-        width: 242px;
+        width: 100%;
         z-index: 1;
     }
 
