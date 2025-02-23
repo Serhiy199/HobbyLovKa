@@ -1,6 +1,6 @@
 import '../../styles/globals.css';
 import css from './categories.module.css';
-import Link from 'next/link';
+// import Link from 'next/link';
 import CardCategory from './card-category/card-category';
 
 export default function Categories() {

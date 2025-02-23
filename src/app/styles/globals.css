@@ -64,6 +64,9 @@ button {
     overflow: visible;
 }
 
+.main {
+    margin-top: 62px;
+}
 .section {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -86,6 +89,9 @@ button {
 }
 
 @media screen and (min-width: 480px) {
+    .main {
+        margin-top: 80px;
+    }
     .container {
         max-width: 450px;
     }
@@ -98,6 +104,10 @@ button {
 }
 
 @media screen and (min-width: 1168px) {
+    .main {
+        margin-top: 92px;
+    }
+
     .section {
         padding-top: 64px;
         padding-bottom: 64px;

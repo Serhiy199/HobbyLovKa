@@ -1,5 +1,5 @@
 import css from './card-category.module.css';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
