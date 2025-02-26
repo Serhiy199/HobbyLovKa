@@ -6,7 +6,7 @@ import { getAllBags } from '../../../../lib/mongoDB/controllers/bags-controllers
 import { productsProps, allProductsProps } from '../../../types/types';
 // import { HandBagProps } from '../../../../lib/mongoDB/models/bags-models';
 import ServerPagination from '../../../components/pagination/pagination';
-import Search from '../../../components/search/search';
+import Search from '../../../components/catalog/search/search';
 
 export default async function Bags(props: {
     searchParams?: Promise<{

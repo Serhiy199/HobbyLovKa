@@ -24,11 +24,6 @@ export default function NavBar() {
                     </Link>
                 </li>
                 <li className={css.item}>
-                    <Link className={css.link} href="">
-                        ✂️&nbsp;Інструменти для рукоділля
-                    </Link>
-                </li>
-                <li className={css.item}>
                     <Link
                         className={clsx(css.link, pathname === `/catalog/bags` && css.isActive)}
                         href="/catalog/bags"
@@ -38,17 +33,23 @@ export default function NavBar() {
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
+                        📿&nbsp;Біжутерія
+                    </Link>
+                </li>
+                <li className={css.item}>
+                    <Link className={css.link} href="">
+                        ✂️&nbsp;Інструменти для рукоділля
+                    </Link>
+                </li>
+
+                <li className={css.item}>
+                    <Link className={css.link} href="">
                         🧷&nbsp;Аксесуари
                     </Link>
                 </li>
                 <li className={css.item}>
                     <Link className={css.link} href="">
                         🟡&nbsp;Бісер PRECIOSA
-                    </Link>
-                </li>
-                <li className={css.item}>
-                    <Link className={css.link} href="">
-                        📿&nbsp;Біжутерія
                     </Link>
                 </li>
             </ul>

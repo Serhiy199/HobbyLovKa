@@ -4,7 +4,7 @@ import css from './search.module.css';
 import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 
-import MagnifyingGlassIcon from '../../../../public/MagnifyingGlassIcon';
+import MagnifyingGlassIcon from '../../../../../public/MagnifyingGlassIcon';
 
 export default function Search({ placeholder }: { placeholder: string }) {
     const searchParams = useSearchParams();

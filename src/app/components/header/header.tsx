@@ -14,7 +14,7 @@ export default function Header() {
                 <BurgerMenu />
                 <Logo />
                 <Navigation />
-                {/* <ul className={css.contact}>
+                <ul className={css.contact}>
                     <li className={css.contactItem}>
                         <svg className={css.contactsContMail} width="16px" height="12px">
                             <use href="/icons.svg#icon-email"></use>
@@ -27,7 +27,7 @@ export default function Header() {
                         </svg>
                         <Link href="tel:+380961050086"> +38 096 105 00 86</Link>
                     </li>
-                </ul> */}
+                </ul>
                 <div className={css.cartShopping}>🛒</div>
             </div>
         </header>

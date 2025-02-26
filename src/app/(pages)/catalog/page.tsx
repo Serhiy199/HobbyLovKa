@@ -5,7 +5,7 @@ import CardProducts from '../../components/card-products/card-products';
 import { getAllProducts } from '../../../lib/mongoDB/controllers/products-controllers';
 import { productsProps, allProductsProps } from '../../types/types';
 import ServerPagination from '../../components/pagination/pagination';
-import Search from '../../components/search/search';
+import Search from '../../components/catalog/search/search';
 
 export default async function Catalog(props: {
     searchParams?: Promise<{
@@ -35,7 +35,6 @@ export default async function Catalog(props: {
     }
 
     return (
-        // <section className="section">
         <div className="container">
             <div className={css.search}>
                 <Search placeholder="Search for products..." />
@@ -47,6 +46,5 @@ export default async function Catalog(props: {
             </ul>
             <ServerPagination totalPages={totalPage} />
         </div>
-        // </section>
     );
 }
