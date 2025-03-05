@@ -64,7 +64,7 @@
     line-height: 1.18;
 }
 
-.link {
+/* .link {
     margin-right: 12px;
     font-size: 18px;
 }
@@ -91,7 +91,7 @@
 .iconLocation {
     width: 16px;
     height: 16px;
-}
+} */
 
 @media screen and (min-width: 480px) {
     .container {
@@ -100,6 +100,19 @@
 }
 
 @media screen and (min-width: 768px) {
+    .containerImage {
+        display: flex;
+        gap: 24px;
+    }
+    /* .boxPrice {
+        display: block;
+    } */
+    /* .box {
+        display: none;
+    } */
+    .buttonBox {
+        text-align: right;
+    }
 }
 
 @media screen and (min-width: 1168px) {

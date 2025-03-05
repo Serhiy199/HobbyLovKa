@@ -18,32 +18,49 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             <h2 className="sectionTitle">{data.title}</h2>
             <div className={css.wrapper}>
                 {' '}
-                <Image width={500} height={500} src={data.images[0]} alt={data.title} />
-                <div>
-                    <div className={css.boxPrice}>
-                        <p
-                            className={clsx(
-                                css.text && data.availability
-                                    ? css.availabilityTrue
-                                    : css.availabilityFalse
-                            )}
-                        >
-                            {availability}
-                        </p>
-                        <p className={css.price}>₴ {data.price}.00 грн</p>
+                <div className={css.containerImage}>
+                    <Image
+                        width={577}
+                        height={1000}
+                        src={data.images[0]}
+                        alt={data.title}
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            // maxHeight: '350px',
+                            objectFit: 'cover',
+                        }}
+                    />
+                    <div>
+                        {' '}
+                        <div className={css.boxPrice}>
+                            <p
+                                className={clsx(
+                                    css.text && data.availability
+                                        ? css.availabilityTrue
+                                        : css.availabilityFalse
+                                )}
+                            >
+                                {availability}
+                            </p>
+                            <p className={css.price}>₴ {data.price}.00 грн</p>
+                        </div>
+                        <div className={css.box}>
+                            <p className={css.text}>
+                                <span className={css.color}>Виробник:</span> {data.producer}
+                            </p>
+                            <p className={css.text}>
+                                <span className={css.color}>Модель:</span> {data.model}
+                            </p>
+                            <p className={css.text}>
+                                <span className={css.color}>Матеріал виготовлення:</span>{' '}
+                                {data.material}
+                            </p>
+                        </div>
                     </div>
-                    <p className={css.text}>
-                        <span className={css.color}>Виробник:</span> {data.producer}
-                    </p>
-                    <p className={css.text}>
-                        <span className={css.color}>Модель:</span> {data.model}
-                    </p>
-                    <p className={css.text}>
-                        <span className={css.color}>Матеріал виготовлення:</span> {data.material}
-                    </p>
-                    <div className={css.buttonBox}>
-                        <Button>Додати до 🛒</Button>
-                    </div>
+                </div>
+                <div className={css.buttonBox}>
+                    <Button>Додати до 🛒</Button>
                 </div>
                 <div className={css.characteristics}>
                     <h4 className={css.characteristicsTitle}>Характеристики</h4>
