@@ -11,7 +11,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     const { id } = await params;
     // const { getRequest } = await params;
     const data: productsProps = await getOneBag(id);
-    const availability = data.availability ? 'В наявності' : 'Немає в наявності';
+    const availability: string = data.availability ? 'В наявності' : 'Немає в наявності';
+    const tags = data.tags.map(tag => (
+        <li key={tag} className={css.tag}>
+            {tag}
+        </li>
+    ));
 
     return (
         <div className={clsx('container', css.container)}>
@@ -26,6 +31,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         alt={data.title}
                         style={{
                             width: '100%',
+                            maxWidth: '350px',
                             height: 'auto',
                             // maxHeight: '350px',
                             objectFit: 'cover',
@@ -53,8 +59,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                                 <span className={css.color}>Модель:</span> {data.model}
                             </p>
                             <p className={css.text}>
-                                <span className={css.color}>Матеріал виготовлення:</span>{' '}
-                                {data.material}
+                                <span className={css.color}>Теги:</span> {tags}
                             </p>
                         </div>
                     </div>
