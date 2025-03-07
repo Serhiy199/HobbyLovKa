@@ -17,6 +17,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
             {tag}
         </li>
     ));
+    // console.log(tags);
 
     return (
         <div className={clsx('container', css.container)}>
@@ -31,7 +32,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         alt={data.title}
                         style={{
                             width: '100%',
-                            maxWidth: '350px',
+                            maxWidth: '450px',
                             height: 'auto',
                             // maxHeight: '350px',
                             objectFit: 'cover',
@@ -58,23 +59,24 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                             <p className={css.text}>
                                 <span className={css.color}>Модель:</span> {data.model}
                             </p>
-                            <p className={css.text}>
-                                <span className={css.color}>Теги:</span> {tags}
-                            </p>
+                            <div className={css.contain}>
+                                <p className={clsx(css.text, css.color)}>Теги:</p>
+                                <ul className={clsx(css.text, css.listTags)}>{tags}</ul>
+                            </div>
+                        </div>
+                        <div className={css.buttonBox}>
+                            <Button>Додати до 🛒</Button>
                         </div>
                     </div>
                 </div>
-                <div className={css.buttonBox}>
-                    <Button>Додати до 🛒</Button>
-                </div>
                 <div className={css.characteristics}>
                     <h4 className={css.characteristicsTitle}>Характеристики</h4>
-                    <p className={css.text}>
+                    {/* <p className={css.text}>
                         <span className={css.color}>Виробник:</span> {data.producer}
                     </p>
                     <p className={css.text}>
                         <span className={css.color}>Модель:</span> {data.model}
-                    </p>
+                    </p> */}
                     <p className={css.text}>
                         <span className={css.color}>Матеріал виготовлення:</span> {data.material}
                     </p>

@@ -42,6 +42,18 @@
     color: var(--title-text-color);
 }
 
+.contain {
+    display: flex;
+    gap: 10px;
+    justify-items: baseline;
+}
+
+.listTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 .buttonBox {
     text-align: center;
 }
@@ -102,7 +114,8 @@
 @media screen and (min-width: 768px) {
     .containerImage {
         display: flex;
-        gap: 24px;
+        justify-content: space-between;
+        /* gap: 24px; */
     }
     /* .boxPrice {
         display: block;
@@ -110,9 +123,9 @@
     /* .box {
         display: none;
     } */
-    .buttonBox {
+    /* .buttonBox {
         text-align: right;
-    }
+    } */
 }
 
 @media screen and (min-width: 1168px) {
