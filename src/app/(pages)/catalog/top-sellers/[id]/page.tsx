@@ -3,6 +3,9 @@ import Image from 'next/image';
 import { getOneTopSellers } from '../../../../../lib/mongoDB/controllers/top-sellers-controllers';
 import { productsProps } from '../../../../types/types';
 import css from './page.module.css';
+import '../../../../styles/globals.css';
+import clsx from 'clsx';
+import Button from '../../../../components/button/button';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -10,24 +13,107 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     // const { getRequest } = await params;
     const data: productsProps = await getOneTopSellers(id);
 
+    const availability: string = data.availability ? 'В наявності' : 'Немає в наявності';
+
+    const tags = data.tags.map(tag => (
+        <li key={tag} className={css.tag}>
+            {tag}
+        </li>
+    ));
+
     return (
-        <div className={css.container}>
-            <h2>New TopSellers page id</h2>
-            <Image width={500} height={500} src={data.images[0]} alt={data.title} />
-            <div>
-                <h2 className={css.name}>{data.title}</h2>
-                {/* <InfoLocation bag={bagData} /> */}
-                <h2 className={css.price}>₴ {data.price}.00 грн</h2>
-                <p className={css.text}>{data.description}</p>
+        <div className={clsx('container', css.container)}>
+            <h2 className="sectionTitle">{data.title}</h2>
+            <div className={css.wrapper}>
+                {' '}
+                <div className={css.containerImage}>
+                    <Image width={577} height={1000} src={data.images[0]} alt={data.title} />
+                </div>
+                <div className={css.containerCharacteristics}>
+                    <div className={css.box}>
+                        {' '}
+                        <div className={css.boxPrice}>
+                            <p
+                                className={clsx(
+                                    data.availability ? css.availabilityTrue : css.availabilityFalse
+                                )}
+                            >
+                                {availability}
+                            </p>
+                            <p className={css.price}>₴ {data.price}.00 грн</p>
+                        </div>
+                        <div className={css.boxInfo}>
+                            <p>
+                                <span className={css.titleListSymbolColor}>Виробник:</span>{' '}
+                                {data.producer}
+                            </p>
+                            <p>
+                                <span className={css.titleListSymbolColor}>Модель:</span>{' '}
+                                {data.model}
+                            </p>
+                            <div className={css.boxInfoTags}>
+                                <p className={clsx(css.titleListSymbolColor)}>Теги:</p>
+                                <ul className={clsx(css.listTags)}>{tags}</ul>
+                            </div>
+                        </div>
+                        <div className={css.boxButton}>
+                            <Button>Додати до 🛒</Button>
+                        </div>
+                    </div>
+                    <div className={css.characteristics}>
+                        <h4 className={css.titleCharacteristics}>Характеристики</h4>
+
+                        <p>
+                            <span className={css.titleListSymbolColor}>Матеріал виготовлення:</span>{' '}
+                            {data.material}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Матеріал декору:</span>{' '}
+                            {data.decorationMaterial}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Колір:</span> {data.color}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Тип вишивки:</span>{' '}
+                            {data.filling}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Розміри:</span>{' '}
+                            {data.dimensions.width} x {data.dimensions.height} x{' '}
+                            {data.dimensions.depth} см
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Довжина ручки:</span>{' '}
+                            {data.handle} см
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Тип застібки:</span>{' '}
+                            {data.typeClasp}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Призначення товару:</span>{' '}
+                            {data.appointment}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Артикль товару:</span>{' '}
+                            {data.article}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Країна виробник:</span>{' '}
+                            {data.countryOfManufacture}
+                        </p>
+                        <p>
+                            <span className={css.titleListSymbolColor}>Тематика:</span>{' '}
+                            {data.subject}
+                        </p>
+                    </div>
+                </div>
             </div>
-            {/* <section>
-                <Link className={css.link} href={'features'}>
-                    Features
-                </Link>
-                <Link className={css.link} href={'reviews'}>
-                    Reviews
-                </Link>
-            </section> */}
+            <div className={css.description}>
+                <h4 className={css.titleDescription}>Опис товару:</h4>
+                <p>{data.description}</p>
+            </div>
         </div>
     );
 }

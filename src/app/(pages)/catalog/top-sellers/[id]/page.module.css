@@ -1,55 +1,142 @@
 .container {
-    margin-top: 48px;
-    padding-left: 64px;
-    padding-right: 64px;
-    padding-bottom: 80px;
+    margin-top: 80px;
+}
+
+.wrapper {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.18;
+}
+
+.containerImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.box {
+    margin-bottom: 30px;
+}
+
+.boxPrice {
     display: flex;
-    gap: 12px;
-}
-
-.name {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.3;
-}
-
-.link {
-    margin-right: 12px;
-    font-size: 18px;
-}
-
-.ratingCamper {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
+    justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 12px;
 }
 
-.ratingText {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.availabilityTrue {
+    color: #00b894;
 }
 
-.iconStar {
-    width: 16px;
-    height: 16px;
-    fill: #ffc531;
-}
-
-.iconLocation {
-    width: 16px;
-    height: 16px;
+.availabilityFalse {
+    color: #d63031;
 }
 
 .price {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.3;
-    margin-top: 16px;
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.18;
 }
 
-.text {
-    color: #475467;
-    margin-top: 28px;
+.boxInfo {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.listParagraphs {
+    margin-bottom: 12px;
+}
+
+.titleListSymbolColor {
+    color: var(--title-text-color);
+}
+
+.boxInfoTags {
+    display: flex;
+    gap: 10px;
+    justify-items: baseline;
+}
+
+.listTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.boxButton {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.characteristics {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.titleCharacteristics {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.18;
+}
+.description {
+    font-size: 16px;
+    line-height: 1.18;
+}
+
+.titleDescription {
+    color: var(--title-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.18;
+    margin-bottom: 12px;
+}
+@media screen and (min-width: 480px) {
+    .container {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 16px;
+    }
+    .containerImage {
+        max-width: 350px;
+        margin-bottom: 0px;
+    }
+    .boxButton {
+        margin-right: 0;
+    }
+
+    .titleDescription {
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (min-width: 1168px) {
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .containerImage {
+        max-width: 450px;
+        margin-bottom: 0px;
+    }
+    .containerCharacteristics {
+        display: flex;
+        gap: 24px;
+        justify-content: space-around;
+        flex-grow: 1;
+    }
 }

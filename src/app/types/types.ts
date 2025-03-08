@@ -13,9 +13,10 @@ export interface productsProps {
     decorationMaterial: string; // Матеріал декору
     type: string; // тип
     handle: number; // довжина ручки
-    сountryOfManufacture: string; // країна виробник
+    countryOfManufacture: string; // країна виробник
     typeClasp: string; // тип застібки
     appointment: string; // призначення сумки
+    filling: string; // заповнення
     subject: string; // тематика
     dimensions: {
         width: number; // Ширина в см
@@ -46,9 +47,10 @@ export const productsSchema = new mongoose.Schema<productsProps>({
     decorationMaterial: { type: String, required: false },
     type: { type: String, required: true },
     handle: { type: Number, required: false },
-    сountryOfManufacture: { type: String, required: true },
+    countryOfManufacture: { type: String, required: true },
     typeClasp: { type: String, required: false },
     appointment: { type: String, required: false },
+    filling: { type: String, required: false },
     subject: { type: String, required: false },
     dimensions: {
         width: { type: Number, required: true },
