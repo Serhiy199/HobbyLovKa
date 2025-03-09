@@ -34,7 +34,7 @@
     display: none;
 }
 
-.isOpen {
+.category {
     display: flex;
     flex-direction: column;
     justify-content: center;

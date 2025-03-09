@@ -14,7 +14,7 @@
 }
 
 .mobileMenu {
-    position: fixed;
+    /* position: fixed;
     left: 0;
     top: 0;
     z-index: 99999999;
@@ -26,8 +26,44 @@
     pointer-events: none;
     width: 100vw;
     height: 100vh;
+
+    border-radius: 30px;
+    background: #7e847f;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 20px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translate(0);
+    pointer-events: auto;
+    opacity: 1; */
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999999;
+    /* transform: translate(100vw); */
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
     overflow-y: auto;
 
+    display: block;
+    /* flex-direction: column;
+    justify-content: space-between; */
+    /* transform: translate(0); */
+
+    /* pointer-events: auto; */
+    /* opacity: 1; */
+}
+
+.mobileMenuContainer {
     border-radius: 30px;
     background: #7e847f;
     height: 100%;
@@ -41,15 +77,6 @@
 .boxHead {
     display: flex;
     justify-content: space-between;
-}
-
-.isOpen {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: translate(0);
-    pointer-events: auto;
-    opacity: 1;
 }
 
 .closeBtn {
@@ -75,6 +102,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contactItem {
