@@ -15,11 +15,13 @@ export default function Logo({ textColor }: LogoProps) {
             className={clsx(
                 raleway.className,
                 css.logoType,
-                textColor === 'footer' && css.textColor
+                textColor === 'footer' && css.textColor,
+                textColor === 'mobile-menu' && css.textColor
             )}
             title="До головної сторінки"
         >
-            <span className={css.logo}>Hobby</span>LovKa
+            <span className={css.logo}>Hobby</span>
+            <span className={css.lov}>Lov</span>Ka
         </Link>
     );
 }

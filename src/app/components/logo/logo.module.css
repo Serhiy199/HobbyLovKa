@@ -1,5 +1,6 @@
 .logoType {
     color: var(--title-text-color);
+
     font-weight: bold;
     font-size: 24px;
     line-height: 1.16;
@@ -7,13 +8,16 @@
 }
 
 .logo {
-    color: var(--accent-color);
+    color: #0057b8;
 }
 
 .textColor {
     color: white;
 }
 
+.lov {
+    color: #ffd700;
+}
 @media screen and (min-width: 1200px) {
     .footer-logo {
         font-size: 26px;

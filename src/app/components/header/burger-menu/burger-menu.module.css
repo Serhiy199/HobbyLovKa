@@ -6,11 +6,97 @@
 }
 
 .icon {
-    fill: #000000;
+    fill: var(--title-text-color);
 }
 .icon:hover,
 .icon:focus {
     fill: var(--accent-color);
+}
+
+.mobileMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999999;
+    transform: translate(100vw) 250ms linear;
+    padding: 20px 20px 40px;
+    opacity: 0;
+    background-color: #f6f6f6;
+    display: none;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+
+    border-radius: 30px;
+    background: #7e847f;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 20px 40px;
+}
+
+.boxHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.isOpen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translate(0);
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.closeBtn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+}
+
+.closeIcon {
+    color: #ffffff;
+    width: 24px;
+    height: 24px;
+}
+
+.boxContact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contactItem {
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    align-items: center;
+    transition:
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        fill 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contactItem:focus,
+.contactItem:hover {
+    color: var(--accent-color);
+    fill: currentColor;
+}
+
+.contactsContMail {
+    margin-right: 10px;
+    fill: currentColor;
 }
 
 @media screen and (min-width: 768px) {
