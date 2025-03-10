@@ -6,6 +6,7 @@ import css from './page.module.css';
 import '../../../../styles/globals.css';
 import clsx from 'clsx';
 import Button from '../../../../components/button/button';
+import { MdAddShoppingCart } from 'react-icons/md';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -55,7 +56,17 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                             </div>
                         </div>
                         <div className={css.boxButton}>
-                            <Button>Додати до 🛒</Button>
+                            <Button
+                                onImages={data.images}
+                                onTags={data.tags}
+                                onDescription={data.description}
+                                onTitle={data.title}
+                                onModel={data.model}
+                                onPrice={data.price}
+                                onRatings={data.ratings.average}
+                            >
+                                Додати до <MdAddShoppingCart className={css.iconShopping} />
+                            </Button>
                         </div>
                     </div>
                     <div className={css.characteristics}>

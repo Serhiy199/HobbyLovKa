@@ -1,13 +1,13 @@
-// import { Link, useLocation } from 'react-router-dom';тзь кгт вум
 import React from 'react';
 
-// import { IoMdHeartEmpty } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
-// import Button from '../button/button';
+
 import { productsProps } from '../../types/types';
 import clsx from 'clsx';
 import css from '../card-products/card-products.module.css';
+import Button from '../../components/button/button';
+import { MdAddShoppingCart } from 'react-icons/md';
 
 function truncateText(text: string, wordLimit: number): string {
     const words = text.split(' '); // Розділяємо текст на слова
@@ -71,9 +71,17 @@ export default function CardProducts({
                 <div className={css.itemSection}>
                     <div className={css.imgTextTitle}>
                         <h2 className={css.productTitle}>{listProducts.title}</h2>
-                        <button type="button" className={css.btn}>
-                            🛒
-                        </button>
+                        <Button
+                            onImages={listProducts.images}
+                            onTags={tags}
+                            onDescription={listProducts.description}
+                            onTitle={listProducts.title}
+                            onModel={listProducts.model}
+                            onPrice={listProducts.price}
+                            onRatings={listProducts.ratings.average}
+                        >
+                            <MdAddShoppingCart className={css.iconShopping} />
+                        </Button>
                     </div>
 
                     <div className={css.priceText}>
