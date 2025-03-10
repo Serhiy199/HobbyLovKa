@@ -1,6 +1,6 @@
 // import Search from '@/app/components/search/search';
 import css from './layout.module.css';
-import NavBar from '@/app/components/catalog/navBar/nav-bar';
+import NavBar from '@/app/components/catalog/nav-bar/nav-bar';
 
 export default function CatalogLayout({
     children,

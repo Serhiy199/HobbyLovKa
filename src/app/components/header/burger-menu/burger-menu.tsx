@@ -2,7 +2,6 @@
 import Link from 'next/link';
 // import { usePathname } from 'next/navigation';
 import css from './burger-menu.module.css';
-import clsx from 'clsx';
 import { useState } from 'react';
 import Logo from '../../logo/logo';
 import { RiCloseLargeLine } from 'react-icons/ri';

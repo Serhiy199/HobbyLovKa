@@ -69,7 +69,11 @@ export default function MobileCategory({ onClickClose }: Props) {
                         </Link>
                     </li>
                     <li className={css.item}>
-                        <Link href={'/catalog'} onClick={handleClickClose} className={css.link}>
+                        <Link
+                            href={'/catalog/bags'}
+                            onClick={handleClickClose}
+                            className={css.link}
+                        >
                             Сумки
                         </Link>
                     </li>

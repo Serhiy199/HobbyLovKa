@@ -14,7 +14,7 @@ export default function NavBar() {
         <nav className={`${css.navbar} container`}>
             <ul className={css.navbarNav}>
                 <li className={css.item}>
-                    <Link className={css.link} href="/catalog">
+                    <Link className={css.link} href="">
                         🎁&nbsp;Готові вироби
                     </Link>
                 </li>
