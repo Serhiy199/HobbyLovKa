@@ -20,14 +20,15 @@
 }
 
 .cartShopping {
-    font-size: 24px; /* Розмір іконки */
-    color: #333; /* Колір */
-    cursor: pointer; /* Вказівник при наведенні */
-    transition: color 0.3s ease;
+    color: var(--title-text-color);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cartShopping:hover,
-.cartShopping:focus {
+.cartShopping:focus-visible {
     color: var(--accent-color); /* Колір при наведенні */
 }
 
@@ -71,5 +72,13 @@
     .contactsContMail {
         margin-right: 10px;
         fill: currentColor;
+    }
+
+    .cartShopping {
+        color: var(--title-text-color);
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 }

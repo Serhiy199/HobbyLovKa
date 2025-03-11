@@ -5,6 +5,7 @@ import css from './header.module.css';
 import '../../styles/globals.css';
 import Logo from '../logo/logo';
 import BurgerMenu from './burger-menu/burger-menu';
+import { PiShoppingCartDuotone } from 'react-icons/pi';
 
 export default function Header() {
     return (
@@ -28,7 +29,9 @@ export default function Header() {
                         <Link href="tel:+380961050086"> +38 096 105 00 86</Link>
                     </li>
                 </ul>
-                <div className={css.cartShopping}>🛒</div>
+                <Link href="/shopping" className={css.cartShopping}>
+                    <PiShoppingCartDuotone className={css.cartShopping} />
+                </Link>
             </div>
         </header>
     );

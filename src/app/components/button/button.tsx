@@ -3,6 +3,7 @@ import React from 'react';
 import css from './button.module.css';
 
 type buttonProps = {
+    onId: string;
     onImages: string[];
     onTags: string[];
     onDescription: string;

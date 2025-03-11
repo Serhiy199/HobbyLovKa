@@ -72,6 +72,7 @@ export default function CardProducts({
                     <div className={css.imgTextTitle}>
                         <h2 className={css.productTitle}>{listProducts.title}</h2>
                         <Button
+                            onId={listProducts._id}
                             onImages={listProducts.images}
                             onTags={tags}
                             onDescription={listProducts.description}
