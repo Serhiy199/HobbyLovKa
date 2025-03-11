@@ -27,7 +27,6 @@ export default function ServerPagination({
     };
 
     const allPages = generatePagination(currentPage, totalPages);
-    console.log(allPages);
 
     return (
         <>
@@ -40,8 +39,6 @@ export default function ServerPagination({
 
                 <div className={css.list}>
                     {allPages.map((page, index) => {
-                        console.log(page);
-
                         let position: 'first' | 'last' | 'single' | 'middle' | undefined;
 
                         if (index === 0) position = 'first';

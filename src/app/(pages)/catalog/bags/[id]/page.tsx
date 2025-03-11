@@ -57,6 +57,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
                         </div>
                         <div className={css.boxButton}>
                             <Button
+                                onId={data._id}
                                 onImages={data.images}
                                 onTags={data.tags}
                                 onDescription={data.description}

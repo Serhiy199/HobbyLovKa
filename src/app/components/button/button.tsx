@@ -11,6 +11,7 @@ type buttonProps = {
     onModel: string;
     onPrice: number;
     onRatings: number;
+
     children?: React.ReactNode;
 };
 
@@ -22,8 +23,14 @@ export default function Button(props: buttonProps) {
         if (typeof window !== 'undefined') {
             const savedProducts = localStorage.getItem('saved-products');
             const existingData = savedProducts ? JSON.parse(savedProducts) : [];
-            existingData.push(props);
-            localStorage.setItem('saved-products', JSON.stringify(existingData));
+            const findProducts = existingData.find((list: buttonProps) => {
+                return list.onId === props.onId;
+            });
+
+            if (findProducts === undefined) {
+                existingData.push(props);
+                localStorage.setItem('saved-products', JSON.stringify(existingData));
+            }
         }
     };
     return (

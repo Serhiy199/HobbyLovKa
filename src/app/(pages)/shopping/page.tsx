@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
-import { productsProps } from '../../types/types';
-import CardProducts from '../../components/card-products/card-products';
+import { useState, useEffect } from 'react';
+
 import css from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import '../../styles/globals.css';
+import { AiTwotoneDelete } from 'react-icons/ai';
 
 type buttonProps = {
     onId: string;
@@ -18,6 +18,7 @@ type buttonProps = {
     onModel: string;
     onPrice: number;
     onRatings: number;
+    onHref: string;
     children?: React.ReactNode;
 };
 
@@ -29,93 +30,98 @@ function truncateText(text: string, wordLimit: number): string {
     return text; // Якщо текст не перевищує ліміт, повертаємо його повністю
 }
 
-export default function Shopping() {
+export default function Page() {
     const [products, setProducts] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedProducts = window.localStorage.getItem('saved-products');
             return savedProducts !== null ? JSON.parse(savedProducts) : [];
-
-            // existingData.push(props);
-            // localStorage.setItem('saved-products', JSON.stringify(existingData));
         }
         return [];
     });
 
+    const deleteProducts = (event: React.MouseEvent<HTMLButtonElement>, productId: string) => {
+        event.preventDefault(); // Запобігає переходу на іншу сторінку
+        event.stopPropagation(); // Запобігає спрацьовуванню Link
+
+        setProducts((prevProduct: buttonProps[]) => {
+            return prevProduct.filter(product => product.onId !== productId);
+        });
+    };
+
+    useEffect(() => {
+        localStorage.setItem('saved-products', JSON.stringify(products));
+    }, [products]);
+
     return (
-        <section className="container">
-            <h2 className="sectionTitle">Shopping page</h2>
-            <ul className={css.wrapper}>
-                {products.map((list: buttonProps) => {
-                    console.log(list);
+        <section className="section">
+            <div className="container">
+                {' '}
+                <h2 className="sectionTitle">Придбані товари</h2>
+                <ul className={css.wrapper}>
+                    {products.map((list: buttonProps) => {
+                        return (
+                            <li key={list.onId} className={css.item}>
+                                <Link className={css.card} href="">
+                                    <div className={css.poster}>
+                                        <Image
+                                            width={884}
+                                            height={1280}
+                                            style={{
+                                                width: '100%',
+                                                height: '350px',
+                                                // maxHeight: '350px',
+                                                objectFit: 'cover',
+                                            }}
+                                            src={list.onImages[0]}
+                                            alt={list.onTitle}
+                                        />
 
-                    return (
-                        <li key={list.onId} className={css.item}>
-                            <Link className={css.card} href={``}>
-                                <div className={css.poster}>
-                                    <Image
-                                        width={884}
-                                        height={1280}
-                                        style={{
-                                            width: '100%',
-                                            height: '350px',
-                                            // maxHeight: '350px',
-                                            objectFit: 'cover',
-                                        }}
-                                        src={list.onImages[0]}
-                                        alt={list.onTitle}
-                                    />
-
-                                    <div className={css.details}>
-                                        <div className={css.rating}>
-                                            <i className={clsx(css.fas && css.faStar)}>★</i>
-                                            <i className={clsx(css.fas && css.faStar)}>★</i>
-                                            <i className={clsx(css.fas && css.faStar)}>★</i>
-                                            <i className={clsx(css.fas && css.faStar)}>★</i>
-                                            <i className={clsx(css.fas && css.faStar)}>★</i>
-                                            <span>{list.onRatings}</span>
+                                        <div className={css.details}>
+                                            <div className={css.rating}>
+                                                <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                <span>{list.onRatings}</span>
+                                            </div>
+                                            <div className={css.tags}>
+                                                {list.onTags.map((listTag: string, i: number) => (
+                                                    <span key={i} className={css.tag}>
+                                                        {listTag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <p className={css.desc}>
+                                                {truncateText(list.onDescription, 13)}
+                                            </p>
                                         </div>
-                                        <div className={css.tags}>
-                                            {list.onTags.map((listTag: string, i: number) => (
-                                                <span key={i} className={css.tag}>
-                                                    {listTag}
-                                                </span>
-                                            ))}
+                                    </div>
+
+                                    <div className={css.itemSection}>
+                                        <div className={css.imgTextTitle}>
+                                            <h2 className={css.productTitle}>{list.onTitle}</h2>
+                                            <button
+                                                onClick={event => deleteProducts(event, list.onId)}
+                                                type="button"
+                                                title="Delete"
+                                                className={css.button}
+                                            >
+                                                <AiTwotoneDelete className={css.iconShopping} />
+                                            </button>
                                         </div>
-                                        <p className={css.desc}>
-                                            {truncateText(list.onDescription, 13)}
-                                        </p>
-                                    </div>
-                                </div>
 
-                                <div className={css.itemSection}>
-                                    <div className={css.imgTextTitle}>
-                                        <h2 className={css.productTitle}>{list.onTitle}</h2>
-                                        {/* <Button
-                                            onId={listProducts._id}
-                                            onImages={listProducts.images}
-                                            onTags={tags}
-                                            onDescription={listProducts.description}
-                                            onTitle={listProducts.title}
-                                            onModel={listProducts.model}
-                                            onPrice={listProducts.price}
-                                            onRatings={listProducts.ratings.average}
-                                        >
-                                            <MdAddShoppingCart className={css.iconShopping} />
-                                        </Button> */}
+                                        <div className={css.priceText}>
+                                            <p className={css.text}>{list.onModel}</p>
+                                            <p className={css.text}>₴ {list.onPrice} грн</p>
+                                        </div>
                                     </div>
-
-                                    <div className={css.priceText}>
-                                        <p className={css.text}>{list.onModel}</p>
-                                        <p className={css.text}>₴ {list.onPrice} грн</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </li>
-                    );
-
-                    // return <CardProducts key={list.onId} listProducts={list} />;
-                })}
-            </ul>
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </section>
     );
 }

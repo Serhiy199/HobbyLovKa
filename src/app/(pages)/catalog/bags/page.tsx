@@ -36,7 +36,7 @@ export default async function Bags(props: {
     }
 
     return (
-        // <section className="section">
+      
         <div className="container">
             <div className={css.search}>
                 <Search placeholder="Search for products..." />
@@ -48,6 +48,6 @@ export default async function Bags(props: {
             </ul>
             <ServerPagination totalPages={totalPage} />
         </div>
-        // </section>
+       
     );
 }
