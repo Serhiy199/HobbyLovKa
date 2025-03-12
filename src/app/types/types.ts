@@ -1,5 +1,27 @@
 import mongoose from 'mongoose';
 
+export interface ShoppingProps {
+    onId?: string;
+    onImages?: string[];
+    onTags?: string[];
+    onDescription?: string;
+    onTitle?: string;
+    onModel?: string;
+    onPrice?: number;
+    onRatings?: number;
+}
+
+export const ShoppingSchema = new mongoose.Schema<ShoppingProps>({
+    onId: { type: String, required: false },
+    onImages: { type: [String], required: false },
+    onTags: { type: [String], required: false },
+    onDescription: { type: String, required: false },
+    onTitle: { type: String, required: false },
+    onModel: { type: String, required: false },
+    onPrice: { type: Number, required: false },
+    onRatings: { type: Number, required: false },
+});
+
 export interface productsProps {
     _id: string; // Унікальний ідентифікатор
     producer: string; // Виробник сумочки

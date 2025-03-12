@@ -1,26 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
 import css from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import '../../styles/globals.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
-
-type buttonProps = {
-    onId: string;
-    onImages: string[];
-    onTags: string[];
-    onDescription: string;
-    onTitle: string;
-    onModel: string;
-    onPrice: number;
-    onRatings: number;
-    onHref: string;
-    children?: React.ReactNode;
-};
+import { ShoppingProps } from '../../types/types';
+import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
 
 function truncateText(text: string, wordLimit: number): string {
     const words = text.split(' '); // Розділяємо текст на слова
@@ -30,20 +18,22 @@ function truncateText(text: string, wordLimit: number): string {
     return text; // Якщо текст не перевищує ліміт, повертаємо його повністю
 }
 
-export default function Page() {
+export default function Shopping() {
     const [products, setProducts] = useState(() => {
         if (typeof window !== 'undefined') {
-            const savedProducts = window.localStorage.getItem('saved-products');
+            const savedProducts = localStorage.getItem('saved-products');
+            // console.log(products);
             return savedProducts !== null ? JSON.parse(savedProducts) : [];
         }
+
         return [];
     });
-
+    console.log(products);
     const deleteProducts = (event: React.MouseEvent<HTMLButtonElement>, productId: string) => {
         event.preventDefault(); // Запобігає переходу на іншу сторінку
         event.stopPropagation(); // Запобігає спрацьовуванню Link
 
-        setProducts((prevProduct: buttonProps[]) => {
+        setProducts((prevProduct: ShoppingProps[]) => {
             return prevProduct.filter(product => product.onId !== productId);
         });
     };
@@ -52,13 +42,29 @@ export default function Page() {
         localStorage.setItem('saved-products', JSON.stringify(products));
     }, [products]);
 
+    if (products.length === 0) {
+        return (
+            <div className="container">
+                <p className={css.notProducts}>
+                    Шановний клієнте, кошик порожній, але в нас широкий вибір асортиментів, ми
+                    впевнені що Ви знайдете потрібний!!!
+                </p>
+            </div>
+        );
+    }
+
+    const postShopping = async () => {
+        const result = await createShopping(products);
+        console.log(result);
+    };
+
     return (
         <section className="section">
             <div className="container">
                 {' '}
                 <h2 className="sectionTitle">Придбані товари</h2>
                 <ul className={css.wrapper}>
-                    {products.map((list: buttonProps) => {
+                    {products.map((list: ShoppingProps) => {
                         return (
                             <li key={list.onId} className={css.item}>
                                 <Link className={css.card} href="">
@@ -121,6 +127,9 @@ export default function Page() {
                         );
                     })}
                 </ul>
+                <button onClick={postShopping} type="button">
+                    Замовити
+                </button>
             </div>
         </section>
     );
