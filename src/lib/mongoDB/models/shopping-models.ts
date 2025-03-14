@@ -1,3 +1,4 @@
+'use client';
 import mongoose from 'mongoose';
 import { ShoppingProps, ShoppingSchema } from '../../../app/types/types';
 

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import '../../styles/globals.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
+// import { ShoppingModel } from '../../types/types';
 import { ShoppingProps } from '../../types/types';
 import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
 
@@ -52,11 +53,12 @@ export default function Shopping() {
             </div>
         );
     }
+    console.log(createShopping);
 
-    const postShopping = async () => {
-        const result = await createShopping(products);
-        console.log(result);
-    };
+    // const postShopping = async () => {
+    //     const result = await createShopping(products);
+    //     console.log(result);
+    // };
 
     return (
         <section className="section">
@@ -127,9 +129,15 @@ export default function Shopping() {
                         );
                     })}
                 </ul>
-                <button onClick={postShopping} type="button">
+                {/* <button
+                    onClick={async () => {
+                        const result = await createShopping(products);
+                        console.log(result);
+                    }}
+                    type="button"
+                >
                     Замовити
-                </button>
+                </button> */}
             </div>
         </section>
     );

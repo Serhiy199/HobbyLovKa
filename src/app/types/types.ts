@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
 
 export interface ShoppingProps {
-    onId?: string;
-    onImages?: string[];
-    onTags?: string[];
-    onDescription?: string;
-    onTitle?: string;
-    onModel?: string;
-    onPrice?: number;
-    onRatings?: number;
+    onId: string;
+    onImages: string[];
+    onTags: string[];
+    onDescription: string;
+    onTitle: string;
+    onModel: string;
+    onPrice: number;
+    onRatings: number;
 }
 
 export const ShoppingSchema = new mongoose.Schema<ShoppingProps>({

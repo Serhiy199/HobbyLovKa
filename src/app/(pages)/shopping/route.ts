@@ -1,11 +1,8 @@
-'use client';
-
-import { ShoppingModel } from '../models/shopping-models';
-import { ShoppingProps } from '../../../app/types/types';
+import { ShoppingModel } from '../../../lib/mongoDB/models/shopping-models';
+import { ShoppingProps } from '../../types/types';
 import '../mongodb';
 
-// Асинхронна функція для отримання всіх товарів
-export const createShopping = async (data: ShoppingProps[]): Promise<ShoppingProps[]> => {
+export async function GET(data: ShoppingProps[]): Promise<ShoppingProps[]> {
     try {
         const result = await ShoppingModel.create(data);
         return result;
@@ -18,4 +15,4 @@ export const createShopping = async (data: ShoppingProps[]): Promise<ShoppingPro
             throw new Error('Unexpected error occurred while fetching products.');
         } // посилає помилку для обробки в місці виклику
     }
-};
+}

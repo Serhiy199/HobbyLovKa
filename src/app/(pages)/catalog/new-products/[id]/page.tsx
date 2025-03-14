@@ -9,8 +9,6 @@ import Button from '../../../../components/button/button';
 import { MdAddShoppingCart } from 'react-icons/md';
 
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    console.log(params);
-
     const { id } = await params;
     // const { getRequest } = await params;
     const data: productsProps = await getOneNewProducts(id);
