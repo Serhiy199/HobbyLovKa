@@ -14,7 +14,7 @@ if (!DB_URI) {
 //     process.exit(1);
 // }
 
-mongoose
+export default mongoose
     .connect(DB_URI)
     .then(() => {
         console.log('Database connection successful');

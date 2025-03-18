@@ -9,7 +9,7 @@ import '../../styles/globals.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
 // import { ShoppingModel } from '../../types/types';
 import { ShoppingProps } from '../../types/types';
-import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
+// import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
 
 function truncateText(text: string, wordLimit: number): string {
     const words = text.split(' '); // Розділяємо текст на слова
@@ -20,6 +20,7 @@ function truncateText(text: string, wordLimit: number): string {
 }
 
 export default function Shopping() {
+    // const [cart, setCart] = useState([]);
     const [products, setProducts] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedProducts = localStorage.getItem('saved-products');
@@ -29,7 +30,7 @@ export default function Shopping() {
 
         return [];
     });
-    console.log(products);
+
     const deleteProducts = (event: React.MouseEvent<HTMLButtonElement>, productId: string) => {
         event.preventDefault(); // Запобігає переходу на іншу сторінку
         event.stopPropagation(); // Запобігає спрацьовуванню Link
@@ -53,12 +54,19 @@ export default function Shopping() {
             </div>
         );
     }
-    console.log(createShopping);
 
-    // const postShopping = async () => {
-    //     const result = await createShopping(products);
-    //     console.log(result);
-    // };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const res = await fetch('/api/shopping', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(products),
+        });
+
+        const data = await res.json();
+        console.log('Response:', data);
+    };
 
     return (
         <section className="section">
@@ -129,15 +137,9 @@ export default function Shopping() {
                         );
                     })}
                 </ul>
-                {/* <button
-                    onClick={async () => {
-                        const result = await createShopping(products);
-                        console.log(result);
-                    }}
-                    type="button"
-                >
+                <button onClick={handleSubmit} type="button" className={css.button}>
                     Замовити
-                </button> */}
+                </button>
             </div>
         </section>
     );

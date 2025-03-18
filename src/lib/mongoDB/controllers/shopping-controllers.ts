@@ -1,5 +1,3 @@
-'use client';
-
 import { ShoppingModel } from '../models/shopping-models';
 import { ShoppingProps } from '../../../app/types/types';
 import '../mongodb';
