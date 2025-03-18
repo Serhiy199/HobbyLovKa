@@ -8,7 +8,7 @@ import clsx from 'clsx';
 import '../../styles/globals.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
 // import { ShoppingModel } from '../../types/types';
-import { ShoppingProps } from '../../types/types';
+import { orderProps } from '../../types/types';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 // import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
 
@@ -21,6 +21,8 @@ function truncateText(text: string, wordLimit: number): string {
 }
 
 export default function Shopping() {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
     // const [cart, setCart] = useState([]);
     const [products, setProducts] = useState(() => {
         if (typeof window !== 'undefined') {
@@ -36,7 +38,7 @@ export default function Shopping() {
         event.preventDefault(); // Запобігає переходу на іншу сторінку
         event.stopPropagation(); // Запобігає спрацьовуванню Link
 
-        setProducts((prevProduct: ShoppingProps[]) => {
+        setProducts((prevProduct: orderProps[]) => {
             return prevProduct.filter(product => product.onId !== productId);
         });
     };
@@ -64,14 +66,25 @@ export default function Shopping() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        const orderData = {
+            name,
+            phone,
+            arrShopping: products, // Передаємо масив товарів
+        };
+
         const res = await fetch('/api/shopping', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(products),
+            body: JSON.stringify(orderData),
         });
 
         const data = await res.json();
         console.log('Response:', data);
+        if (res.ok) {
+            alert('Замовлення відправлено!');
+        } else {
+            alert('Помилка при відправці замовлення!');
+        }
     };
 
     return (
@@ -80,7 +93,7 @@ export default function Shopping() {
                 {' '}
                 <h2 className="sectionTitle">Придбані товари</h2>
                 <ul className={css.wrapper}>
-                    {products.map((list: ShoppingProps) => {
+                    {products.map((list: orderProps) => {
                         return (
                             <li key={list.onId} className={css.item}>
                                 <Link className={css.card} href="">
@@ -143,9 +156,24 @@ export default function Shopping() {
                         );
                     })}
                 </ul>
-                <button onClick={handleSubmit} type="button" className={css.button}>
-                    Замовити
-                </button>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Ваше ім'я"
+                        value={name}
+                        name="name"
+                        onChange={e => setName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="tel"
+                        placeholder="Ваш телефон"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                        name="phone"
+                    />
+                    <button type="submit">Оформити замовлення</button>
+                </form>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export interface ShoppingProps {
+export interface orderProps {
     onId: string;
     onImages: string[];
     onTags: string[];
@@ -11,7 +11,13 @@ export interface ShoppingProps {
     onRatings: number;
 }
 
-export const ShoppingSchema = new mongoose.Schema<ShoppingProps>({
+export interface ShoppingProps {
+    name: string;
+    phone: string;
+    arrShopping: orderProps[];
+}
+
+export const orderSchema = new mongoose.Schema<orderProps>({
     onId: { type: String, required: false },
     onImages: { type: [String], required: false },
     onTags: { type: [String], required: false },
@@ -20,6 +26,12 @@ export const ShoppingSchema = new mongoose.Schema<ShoppingProps>({
     onModel: { type: String, required: false },
     onPrice: { type: Number, required: false },
     onRatings: { type: Number, required: false },
+});
+
+export const ShoppingSchema = new mongoose.Schema<ShoppingProps>({
+    name: { type: String, required: true },
+    phone: { type: String, required: true },
+    arrShopping: { type: [orderSchema], required: false },
 });
 
 export interface productsProps {

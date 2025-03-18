@@ -6,8 +6,10 @@ import '../../../lib/mongoDB/mongodb';
 export async function POST(req: Request) {
     try {
         const body = await req.json(); // Отримання даних з тіла запиту
+        console.log(body);
 
         const result = await ShoppingModel.create(body);
+        // console.log(result);
 
         return NextResponse.json(
             { message: 'Item added successfully', item: result },
