@@ -9,6 +9,7 @@ import '../../styles/globals.css';
 import { AiTwotoneDelete } from 'react-icons/ai';
 // import { ShoppingModel } from '../../types/types';
 import { ShoppingProps } from '../../types/types';
+import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 // import { createShopping } from '../../../lib/mongoDB/controllers/shopping-controllers';
 
 function truncateText(text: string, wordLimit: number): string {
@@ -46,12 +47,17 @@ export default function Shopping() {
 
     if (products.length === 0) {
         return (
-            <div className="container">
-                <p className={css.notProducts}>
-                    Шановний клієнте, кошик порожній, але в нас широкий вибір асортиментів, ми
-                    впевнені що Ви знайдете потрібний!!!
-                </p>
-            </div>
+            <section className="section">
+                <div className="container">
+                    <div className={css.boxIconNotProducts}>
+                        <MdOutlineRemoveShoppingCart className={css.iconNotProducts} />
+                    </div>
+                    <p className={css.notProducts}>
+                        Шановний клієнте, кошик порожній, але в нас широкий вибір асортиментів, ми
+                        впевнені що Ви знайдете потрібний!!!
+                    </p>
+                </div>
+            </section>
         );
     }
 

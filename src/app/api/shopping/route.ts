@@ -1,6 +1,6 @@
 import { ShoppingModel } from '../../../lib/mongoDB/models/shopping-models';
 import { NextResponse } from 'next/server';
-import { ShoppingProps } from '../../types/types';
+// import { ShoppingProps } from '../../types/types';
 import '../../../lib/mongoDB/mongodb';
 
 export async function POST(req: Request) {
