@@ -163,7 +163,7 @@ export default function Shopping() {
                     </ul>
                 </div>
             </section>
-            <section className="section">
+            <section className={css.sectionForm}>
                 <div className="container">
                     <div className={css.container}>
                         <form className={css.form} onSubmit={handleSubmit}>
