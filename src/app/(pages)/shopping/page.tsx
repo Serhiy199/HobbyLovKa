@@ -177,7 +177,6 @@ export default function Shopping() {
                                     value={name}
                                     name="name"
                                     onChange={e => setName(e.target.value)}
-                                    // color="rgba(255, 255, 255, 0.5)"
                                     required
                                 />
                                 <input
@@ -187,7 +186,6 @@ export default function Shopping() {
                                     value={phone}
                                     onChange={e => setPhone(e.target.value)}
                                     name="phone"
-                                    // color="rgba(255, 255, 255, 0.5)"
                                     required
                                 />
                             </div>
