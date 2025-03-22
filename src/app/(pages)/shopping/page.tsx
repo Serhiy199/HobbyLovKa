@@ -156,24 +156,58 @@ export default function Shopping() {
                         );
                     })}
                 </ul>
-                <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Ваше ім'я"
-                        value={name}
-                        name="name"
-                        onChange={e => setName(e.target.value)}
-                        required
-                    />
-                    <input
-                        type="tel"
-                        placeholder="Ваш телефон"
-                        value={phone}
-                        onChange={e => setPhone(e.target.value)}
-                        name="phone"
-                    />
-                    <button type="submit">Оформити замовлення</button>
-                </form>
+                <section className="section">
+                    <div className="container">
+                        <h3>Оформлення замовлення</h3>
+                        <div className={css.container}>
+                            <form className={css.form} onSubmit={handleSubmit}>
+                                <div className={css.info}>
+                                    {' '}
+                                    <input
+                                        className={css.field}
+                                        type="text"
+                                        placeholder="Введіть Ваше ім'я"
+                                        value={name}
+                                        name="name"
+                                        onChange={e => setName(e.target.value)}
+                                        color="rgba(255, 255, 255, 0.5)"
+                                        required
+                                    />
+                                    <input
+                                        className={css.field}
+                                        type="tel"
+                                        placeholder="Введіть Ваш номер телефону"
+                                        value={phone}
+                                        onChange={e => setPhone(e.target.value)}
+                                        name="phone"
+                                        color="rgba(255, 255, 255, 0.5)"
+                                        required
+                                    />
+                                </div>
+
+                                <button type="submit">Замовлення</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                {/* <Form className={css.form}>
+                    <div className={css.info}>
+                        <Input onName={'name'} onPlaceholder={'Enter your name'} />
+                        <Input
+                            onName={'email'}
+                            onPlaceholder={'Enter your email'}
+                            color="rgba(255, 255, 255, 0.5)"
+                        />
+                        <Input
+                            onName={'password'}
+                            onPlaceholder={'Confirm a password'}
+                            type="password"
+                            color="rgba(255, 255, 255, 0.5)"
+                        />
+                    </div>
+
+                    <Button text="Register Now" type="submit" />
+                </Form> */}
             </div>
         </section>
     );
