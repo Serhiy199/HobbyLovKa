@@ -88,127 +88,117 @@ export default function Shopping() {
     };
 
     return (
-        <section className="section">
-            <div className="container">
-                {' '}
-                <h2 className="sectionTitle">Придбані товари</h2>
-                <ul className={css.wrapper}>
-                    {products.map((list: orderProps) => {
-                        return (
-                            <li key={list.onId} className={css.item}>
-                                <Link className={css.card} href="">
-                                    <div className={css.poster}>
-                                        <Image
-                                            width={884}
-                                            height={1280}
-                                            style={{
-                                                width: '100%',
-                                                height: '350px',
-                                                // maxHeight: '350px',
-                                                objectFit: 'cover',
-                                            }}
-                                            src={list.onImages[0]}
-                                            alt={list.onTitle}
-                                        />
+        <>
+            <section className="section">
+                <div className="container">
+                    {' '}
+                    <h2 className="sectionTitle">Придбані товари</h2>
+                    <ul className={css.wrapper}>
+                        {products.map((list: orderProps) => {
+                            return (
+                                <li key={list.onId} className={css.item}>
+                                    <Link className={css.card} href="">
+                                        <div className={css.poster}>
+                                            <Image
+                                                width={884}
+                                                height={1280}
+                                                style={{
+                                                    width: '100%',
+                                                    height: '350px',
+                                                    // maxHeight: '350px',
+                                                    objectFit: 'cover',
+                                                }}
+                                                src={list.onImages[0]}
+                                                alt={list.onTitle}
+                                            />
 
-                                        <div className={css.details}>
-                                            <div className={css.rating}>
-                                                <i className={clsx(css.fas && css.faStar)}>★</i>
-                                                <i className={clsx(css.fas && css.faStar)}>★</i>
-                                                <i className={clsx(css.fas && css.faStar)}>★</i>
-                                                <i className={clsx(css.fas && css.faStar)}>★</i>
-                                                <i className={clsx(css.fas && css.faStar)}>★</i>
-                                                <span>{list.onRatings}</span>
+                                            <div className={css.details}>
+                                                <div className={css.rating}>
+                                                    <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                    <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                    <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                    <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                    <i className={clsx(css.fas && css.faStar)}>★</i>
+                                                    <span>{list.onRatings}</span>
+                                                </div>
+                                                <div className={css.tags}>
+                                                    {list.onTags.map(
+                                                        (listTag: string, i: number) => (
+                                                            <span key={i} className={css.tag}>
+                                                                {listTag}
+                                                            </span>
+                                                        )
+                                                    )}
+                                                </div>
+                                                <p className={css.desc}>
+                                                    {truncateText(list.onDescription, 13)}
+                                                </p>
                                             </div>
-                                            <div className={css.tags}>
-                                                {list.onTags.map((listTag: string, i: number) => (
-                                                    <span key={i} className={css.tag}>
-                                                        {listTag}
-                                                    </span>
-                                                ))}
+                                        </div>
+
+                                        <div className={css.itemSection}>
+                                            <div className={css.imgTextTitle}>
+                                                <h2 className={css.productTitle}>{list.onTitle}</h2>
+                                                <button
+                                                    onClick={event =>
+                                                        deleteProducts(event, list.onId)
+                                                    }
+                                                    type="button"
+                                                    title="Delete"
+                                                    className={css.button}
+                                                >
+                                                    <AiTwotoneDelete className={css.iconShopping} />
+                                                </button>
                                             </div>
-                                            <p className={css.desc}>
-                                                {truncateText(list.onDescription, 13)}
-                                            </p>
-                                        </div>
-                                    </div>
 
-                                    <div className={css.itemSection}>
-                                        <div className={css.imgTextTitle}>
-                                            <h2 className={css.productTitle}>{list.onTitle}</h2>
-                                            <button
-                                                onClick={event => deleteProducts(event, list.onId)}
-                                                type="button"
-                                                title="Delete"
-                                                className={css.button}
-                                            >
-                                                <AiTwotoneDelete className={css.iconShopping} />
-                                            </button>
+                                            <div className={css.priceText}>
+                                                <p className={css.text}>{list.onModel}</p>
+                                                <p className={css.text}>₴ {list.onPrice} грн</p>
+                                            </div>
                                         </div>
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </section>
+            <section className="section">
+                <div className="container">
+                    <div className={css.container}>
+                        <form className={css.form} onSubmit={handleSubmit}>
+                            <label className={css.formTitle}>Оформлення замовлення</label>
+                            <div className={css.info}>
+                                {' '}
+                                <input
+                                    className={css.field}
+                                    type="text"
+                                    placeholder="Введіть Ваше ім'я"
+                                    value={name}
+                                    name="name"
+                                    onChange={e => setName(e.target.value)}
+                                    // color="rgba(255, 255, 255, 0.5)"
+                                    required
+                                />
+                                <input
+                                    className={css.field}
+                                    type="tel"
+                                    placeholder="Введіть Ваш номер телефону"
+                                    value={phone}
+                                    onChange={e => setPhone(e.target.value)}
+                                    name="phone"
+                                    // color="rgba(255, 255, 255, 0.5)"
+                                    required
+                                />
+                            </div>
 
-                                        <div className={css.priceText}>
-                                            <p className={css.text}>{list.onModel}</p>
-                                            <p className={css.text}>₴ {list.onPrice} грн</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <section className="section">
-                    <div className="container">
-                        <h3>Оформлення замовлення</h3>
-                        <div className={css.container}>
-                            <form className={css.form} onSubmit={handleSubmit}>
-                                <div className={css.info}>
-                                    {' '}
-                                    <input
-                                        className={css.field}
-                                        type="text"
-                                        placeholder="Введіть Ваше ім'я"
-                                        value={name}
-                                        name="name"
-                                        onChange={e => setName(e.target.value)}
-                                        color="rgba(255, 255, 255, 0.5)"
-                                        required
-                                    />
-                                    <input
-                                        className={css.field}
-                                        type="tel"
-                                        placeholder="Введіть Ваш номер телефону"
-                                        value={phone}
-                                        onChange={e => setPhone(e.target.value)}
-                                        name="phone"
-                                        color="rgba(255, 255, 255, 0.5)"
-                                        required
-                                    />
-                                </div>
-
-                                <button type="submit">Замовлення</button>
-                            </form>
-                        </div>
+                            <button className={css.buttonShop} type="submit">
+                                Замовити
+                            </button>
+                        </form>
                     </div>
-                </section>
-                {/* <Form className={css.form}>
-                    <div className={css.info}>
-                        <Input onName={'name'} onPlaceholder={'Enter your name'} />
-                        <Input
-                            onName={'email'}
-                            onPlaceholder={'Enter your email'}
-                            color="rgba(255, 255, 255, 0.5)"
-                        />
-                        <Input
-                            onName={'password'}
-                            onPlaceholder={'Confirm a password'}
-                            type="password"
-                            color="rgba(255, 255, 255, 0.5)"
-                        />
-                    </div>
-
-                    <Button text="Register Now" type="submit" />
-                </Form> */}
-            </div>
-        </section>
+                </div>
+            </section>
+        </>
     );
 }
